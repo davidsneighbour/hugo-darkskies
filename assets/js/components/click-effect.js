@@ -25,7 +25,7 @@ class ClickSpark extends HTMLElement {
   }
 
   animateSpark() {
-    let sparks = [...this.svg.children];
+    let sparks = Array.from(this.svg.children);
     let size = parseInt(sparks[0].getAttribute("y1"));
     let offset = size / 2 + "px";
 

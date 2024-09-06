@@ -1,7 +1,7 @@
-document.querySelectorAll('.entry a[rel=bookmark]')
+// Convert NodeList to Array before using slice
+Array.from(document.querySelectorAll('.entry a[rel=bookmark]'))
   .slice(0, 3)
-  .forEach(e => e.classList.add('prerenderosa')
-  );
+  .forEach(e => e.classList.add('prerenderosa'));
 
 const pre = {
   "prerender": [{
@@ -17,6 +17,7 @@ const pre = {
     // conservative - on pointer down
   }]
 };
+
 const spec = document.createElement('script');
 spec.type = "speculationrules";
 spec.append(JSON.stringify(pre));

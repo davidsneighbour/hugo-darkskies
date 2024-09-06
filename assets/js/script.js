@@ -2,32 +2,32 @@ import Alpine from 'alpinejs';
 import collapse from '@alpinejs/collapse';
 import intersect from '@alpinejs/intersect';
 
-import ClickSpark from './components/click-effect.ts';
-import ProgressBar from './components/progress-bar.ts';
+import ClickSpark from './components/click-effect.js';
+import ProgressBar from './components/progress-bar.js';
 
-import './scripts/keyboard-layout.ts';
-import './scripts/theme-changes.ts';
-import { initializeAndSwitchClassOnScroll } from './scripts/navbar-opacity.ts';
+import './scripts/keyboard-layout.js';
+import './scripts/theme-changes.js';
+import { initializeAndSwitchClassOnScroll } from './scripts/navbar-opacity.js';
 
-// import bootstrap scripts
-import './scripts/bs-tooltips.ts';
+// Import bootstrap scripts
+import './scripts/bs-tooltips.js';
 
-// @ts-ignore - importing parameters from GoHugo
+// Import parameters from GoHugo
 import * as params from '@params';
 
-// youtube element
+// YouTube element
 import LiteYTEmbed from './lite-yt-embed.js';
 customElements.define('lite-youtube', LiteYTEmbed);
 
-// import custom elements
+// Import custom elements
 customElements.define('click-effect', ClickSpark);
 customElements.define('progress-bar', ProgressBar);
 
-// initialize navbar opacity
+// Initialize navbar opacity
 window.onload = initializeAndSwitchClassOnScroll;
 document.addEventListener('DOMContentLoaded', initializeAndSwitchClassOnScroll);
 
-// initialize theme switcher
+// Initialize theme switcher
 document.addEventListener('alpine:init', () => {
   Alpine.data('themeSwitcher', () => ({
     theme: 'dark',
@@ -81,6 +81,7 @@ document.onreadystatechange = () => {
     window.Alpine = Alpine;
     Alpine.plugin(collapse);
     Alpine.plugin(intersect);
+
     // Define the Alpine.js data component with initial placeholder values
     Alpine.data('versionData', () => {
       return {
@@ -112,10 +113,7 @@ document.onreadystatechange = () => {
 };
 
 document.addEventListener('scroll', function () {
-  const scroll =
-    ((document.documentElement.scrollTop || document.body.scrollTop) /
-      ((document.documentElement.scrollHeight || document.body.scrollHeight) - document.documentElement.clientHeight)) *
-    100;
+  const scroll = ((document.documentElement.scrollTop || document.body.scrollTop) / ((document.documentElement.scrollHeight || document.body.scrollHeight) - document.documentElement.clientHeight)) * 100;
   const progress = document.querySelector('.progress');
   progress.style.setProperty('--scroll', scroll + '%');
   progress.setAttribute('aria-valuenow', scroll);
