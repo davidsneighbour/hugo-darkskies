@@ -1,7 +1,12 @@
+##################################################################################
+# https://gohugo.io/getting-started/configuration/#merge-configuration-from-themes
+# some configurations require different merge settings from the default
+##################################################################################
+_merge = 'deep'
+
 home = [
   "HTML",
   "security",
-  "manifest",
   "REDIR",
   "HEADERS",
   "GISCUS",
