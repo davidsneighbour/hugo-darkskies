@@ -13,13 +13,15 @@ import { initializeAndSwitchClassOnScroll } from './scripts/navbar-opacity.js';
 import './scripts/bs-tooltips.js';
 
 // Import parameters from GoHugo
+// @ts-ignore - this is loaded at runtime by GoHugo
 import * as params from '@params';
 
 // YouTube element
+// @ts-ignore - this is loaded at runtime by GoHugo
 import LiteYTEmbed from './lite-yt-embed.js';
-customElements.define('lite-youtube', LiteYTEmbed);
 
-// Import custom elements
+// Initiate custom elements
+customElements.define('lite-youtube', LiteYTEmbed);
 customElements.define('click-effect', ClickSpark);
 customElements.define('progress-bar', ProgressBar);
 
