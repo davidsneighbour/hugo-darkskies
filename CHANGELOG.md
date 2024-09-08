@@ -1,4 +1,16 @@
 Changelog
+## [0.2024.3](https://github.com/davidsneighbour/hugo-darksky/compare/v0.2024.2...v0.2024.3) (2024-09-08)
+
+
+### Chore
+
+* **config:** add dependabot configuration ([464c24c](https://github.com/davidsneighbour/hugo-darksky/commit/464c24c829d2ee959e3e62f66edbcd5732fc1d11))
+
+
+### Build System
+
+* **fix:** add sassdoc into release workflow ([819861d](https://github.com/davidsneighbour/hugo-darksky/commit/819861d5ff0f101a2718d8e9e0382a9122e27e23))
+
 ## 0.2024.2 (2024-09-08)
 
 
