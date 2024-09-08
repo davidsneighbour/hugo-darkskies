@@ -113,12 +113,13 @@ notranslate = false                     # tell Google not to provide a translati
 monetization = ""
 
 [dnb.head.speedoptimisation]
-control = "on" # on/off - off disables all prefetching
+enable = true # either true or false, or an array of enable options like ["preconnect", "prefetch", "prerender", "preload"]
 prefetch = [
-  '/assets/webfonts/jetbrainsmono/jetbrainsmonoi.ttf',
   '/assets/webfonts/jetbrainsmono/jetbrainsmonoi.woff2',
-  '/assets/webfonts/jetbrainsmono/jetbrainsmono.ttf',
-  '/assets/webfonts/jetbrainsmono/jetbrainsmono.woff2'
+  '/assets/webfonts/jetbrainsmono/jetbrainsmono.woff2',
+  '/assets/webfonts/exo/italic.woff2',
+  '/assets/webfonts/exo/normal.woff2',
+  '/assets/webfonts/anton/regular.woff',
 ]
 preconnect = []
 prerender = []
