@@ -1,6 +1,6 @@
 {
   "name": "hugo-darksky",
-  "version": "0.2024.3",
+  "version": "0.2024.4",
   "main": "index.js",
   "scripts": {
     "sassdoc": "wireit",

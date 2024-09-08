@@ -1,4 +1,41 @@
 Changelog
+## [0.2024.4](https://github.com/davidsneighbour/hugo-darksky/compare/v0.2024.3...v0.2024.4) (2024-09-08)
+
+
+### Documentation
+
+* markdown fixes, adding README.md ([6914e61](https://github.com/davidsneighbour/hugo-darksky/commit/6914e6140da722d2b9dc6b4e6dd86e7cec9c54aa))
+* move more documentation into README.md ([604f37d](https://github.com/davidsneighbour/hugo-darksky/commit/604f37dd6a4b9d1a17f121a52702f503029d18ac))
+* update README.md ([b8a192e](https://github.com/davidsneighbour/hugo-darksky/commit/b8a192ead5d58f30e37368192b0505c1fde0469e))
+
+
+### Theme
+
+* **feat:** move font setup to theme vs. local setup ([f0ead2b](https://github.com/davidsneighbour/hugo-darksky/commit/f0ead2b3cc89b280c7c89d40361ffdaecff51cad))
+* **fix:** add ts-ignore tags to some lines ([f2cbd1d](https://github.com/davidsneighbour/hugo-darksky/commit/f2cbd1dbab674d8aaa29ee9c46318ec536b5ad53))
+* **fix:** cleanup alert settings ([ad4b985](https://github.com/davidsneighbour/hugo-darksky/commit/ad4b9858b0078527b3075b7005f6353c2dd6ae34))
+* **fix:** more space atop of headlines ([43450cf](https://github.com/davidsneighbour/hugo-darksky/commit/43450cfd960d623149dc19020bc5099e70dc9412))
+* **fix:** move color mode setup into theme setup ([373e872](https://github.com/davidsneighbour/hugo-darksky/commit/373e8721ef01a072ad51d39f4e0dc9df7d8bc78a))
+* **fix:** prefetch only woff fonts ([353c1bc](https://github.com/davidsneighbour/hugo-darksky/commit/353c1bcd9901e9a811cdcc0e1db15a992cc45e2f))
+* **fix:** preload for proper jetbrainsmono fonts ([1a9f282](https://github.com/davidsneighbour/hugo-darksky/commit/1a9f2828681337bda606eb2db8319aaa94cccf38))
+
+
+### Chore
+
+* **deps:** update dependencies ([0c1730c](https://github.com/davidsneighbour/hugo-darksky/commit/0c1730ccdf9f97952fa12ea6adb49c75847d4e0e))
+
+
+### Configuration
+
+* add vale configuration ([9aa3a9d](https://github.com/davidsneighbour/hugo-darksky/commit/9aa3a9d34e0abc988e7e17e96e2ac150621a6a0e))
+* **fix:** set remark emphasis and string to asterisk ([4033764](https://github.com/davidsneighbour/hugo-darksky/commit/4033764b4faca13bf4942bcfd484c004e00048ef))
+* smaller fixes to configuration ([c4ae2ca](https://github.com/davidsneighbour/hugo-darksky/commit/c4ae2ca95e3c12d7f096f8afdf88a369e4214ea1))
+
+
+### Build System
+
+* **config:** add markdown linting configuration ([7e9bad7](https://github.com/davidsneighbour/hugo-darksky/commit/7e9bad74f898723c342b2b25da31bfffa6c6e87e))
+
 ## [0.2024.3](https://github.com/davidsneighbour/hugo-darksky/compare/v0.2024.2...v0.2024.3) (2024-09-08)
 
 
