@@ -116,9 +116,9 @@ monetization = ""
 control = "on" # on/off - off disables all prefetching
 prefetch = [
   '/assets/webfonts/jetbrainsmono/jetbrainsmonoi.ttf',
-  '/assets/webfonts/jetbrainsmono/jetbrainsmonoi.ttf',
+  '/assets/webfonts/jetbrainsmono/jetbrainsmonoi.woff2',
   '/assets/webfonts/jetbrainsmono/jetbrainsmono.ttf',
-  '/assets/webfonts/jetbrainsmono/jetbrainsmono.ttf'
+  '/assets/webfonts/jetbrainsmono/jetbrainsmono.woff2'
 ]
 preconnect = []
 prerender = []
