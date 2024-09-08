@@ -4,8 +4,7 @@
   "main": "index.js",
   "scripts": {
     "sassdoc": "wireit",
-    "release": "npm run release:patch",
-    "release:patch": "commit-and-tag-version --sign -a -t \"v\" --releaseCommitMessageFormat \"chore(release): v{{currentTag}}\" -- --no-verify && ./bin/repo/release/postrelease"
+    "release": "wireit"
   },
   "keywords": [],
   "author": "Patrick Kollitsch <patrick@davids-neighbour.com>",
@@ -21,6 +20,19 @@
       "command": "sassdoc assets/scss/ --dest documentation/styles --strict",
       "files": [
         "assets/scss/**/*.scss"
+      ]
+    },
+    "release": {
+      "command": "commit-and-tag-version --sign -a -t \"v\" --releaseCommitMessageFormat \"chore(release): v{{currentTag}}\" -- --no-verify && ./bin/repo/release/postrelease",
+      "dependencies": [
+        "sassdoc",
+        "releasefiles"
+      ]
+    },
+    "releasefiles": {
+      "command": "git add documentation/styles",
+      "dependencies": [
+        "sassdoc"
       ]
     }
   }
