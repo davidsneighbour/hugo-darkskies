@@ -4,6 +4,14 @@
 
 [buildStats]
 enable = true          # default is false
-disableClasses = false # default is false
-disableIDs = false     # default is false
-disableTags = false    # default is false
+# disableClasses = false # default is false
+# disableIDs = false     # default is false
+# disableTags = false    # default is false
+
+[[cachebusters]]
+source = 'hugo_stats\.json'
+target = 'css'
+
+[[cachebusters]]
+source = 'assets/scss/*.scss'
+target = 'css'

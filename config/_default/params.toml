@@ -114,6 +114,8 @@ monetization = ""
 
 [dnb.head.speedoptimisation]
 enable = true # either true or false, or an array of enable options like ["preconnect", "prefetch", "prerender", "preload"]
+# careful what you prefetch... this can lead to issues if you preload too much, but can also speed up your site.
+# IMHO prefetching all woff(2) fonts is a good idea. Those fonts are supported in all modern browsers.
 prefetch = [
   '/assets/webfonts/jetbrainsmono/jetbrainsmonoi.woff2',
   '/assets/webfonts/jetbrainsmono/jetbrainsmono.woff2',
