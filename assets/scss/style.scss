@@ -6,6 +6,7 @@
 /// DNB: theme settings
 @import "09-hooks/settings-pre";
 @import "01-settings/fonts";
+@import "09-hooks/settings-fonts-post";
 
 /// Theme colors setup
 /// @todo move into configuration

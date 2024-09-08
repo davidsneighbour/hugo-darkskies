@@ -118,13 +118,7 @@ prefetch = [
   '/assets/webfonts/jetbrainsmono/jetbrainsmonoi.ttf',
   '/assets/webfonts/jetbrainsmono/jetbrainsmonoi.ttf',
   '/assets/webfonts/jetbrainsmono/jetbrainsmono.ttf',
-  '/assets/webfonts/jetbrainsmono/jetbrainsmono.ttf',
-  '/assets/webfonts/bahn/bahnpro_regular-webfont.woff2',
-  '/assets/webfonts/bahnpro_regular-webfont.woff',
-  '/assets/webfonts/bahnpro_regular-webfont.ttf',
-  '/assets/webfonts/bahnpro_light-webfont.woff2',
-  '/assets/webfonts/bahnpro_light-webfont.woff',
-  '/assets/webfonts/bahnpro_light-webfont.ttf',
+  '/assets/webfonts/jetbrainsmono/jetbrainsmono.ttf'
 ]
 preconnect = []
 prerender = []
