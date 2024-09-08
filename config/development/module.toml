@@ -7,10 +7,6 @@ source = "assets"
 target = "assets"
 
 [[mounts]]
-source = "content"
-target = "content"
-
-[[mounts]]
 source = "i18n"
 target = "i18n"
 
@@ -22,7 +18,7 @@ target = "layouts"
 # local development mounts
 [[mounts]]
 source = "documentation"
-target = "content/documentation"
+target = "content/hugo-darksky"
 ################################################################################
 
 [[imports]]
