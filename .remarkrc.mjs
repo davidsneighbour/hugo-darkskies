@@ -2,6 +2,10 @@ import remarkFrontmatter from 'remark-frontmatter';
 import remarkLintFrontmatterSchema from 'remark-lint-frontmatter-schema';
 
 const remarkConfig = {
+  "settings": {
+    "emphasis": "*",
+    "strong": "*"
+  },
   plugins: [
     [
       "@davidsneighbour/remark-config",
