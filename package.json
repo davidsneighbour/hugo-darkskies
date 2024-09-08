@@ -1,0 +1,27 @@
+{
+  "name": "hugo-darksky",
+  "version": "0.2024.1",
+  "main": "index.js",
+  "scripts": {
+    "sassdoc": "wireit",
+    "release": "npm run release:patch",
+    "release:patch": "commit-and-tag-version --sign -a -t \"v\" --releaseCommitMessageFormat \"chore(release): v{{currentTag}}\" -- --no-verify && ./bin/repo/release/postrelease"
+  },
+  "keywords": [],
+  "author": "Patrick Kollitsch <patrick@davids-neighbour.com>",
+  "license": "MIT",
+  "description": "",
+  "dependencies": {
+    "@davidsneighbour/release-config": "2024.3.44",
+    "@davidsneighbour/tools": "2024.3.44",
+    "wireit": "0.14.9"
+  },
+  "wireit": {
+    "sassdoc": {
+      "command": "sassdoc assets/scss/ --dest documentation/styles --strict",
+      "files": [
+        "assets/scss/**/*.scss"
+      ]
+    }
+  }
+}
