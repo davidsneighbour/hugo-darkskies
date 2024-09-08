@@ -1,6 +1,8 @@
 ////
 /// @group theme setup
 ////
+///
+///
 
 /// we use two color modes currently, `dark` (default) and `light`
 ///
@@ -145,3 +147,14 @@ $breadcrumb-divider-color: var(--bs-tertiary-color);
 // $breadcrumb-border-radius: null;
 
 $border-radius: 5px;
+
+/// alerts
+.alert-dnb-dark {
+  --bs-alert-bg: rgba(0, 0, 0, 0.1) !important;
+  --bs-alert-border-color: rgba(0, 0, 0, 0.2) !important;
+}
+
+.alert-dnb-light {
+  --bs-alert-bg: rgba(, 0.1) !important;
+  --bs-alert-border-color: rgba(0, 0, 0, 0.2) !important;
+}
