@@ -13,6 +13,9 @@ h3,
 h4,
 h5,
 h6 {
+
+  margin-top: 3rem;
+
   .heading-tools {
     @extend .float-end;
     @extend .ms-2;
@@ -31,6 +34,7 @@ h6 {
 h1,
 h2,
 h3 {
+
   @extend .border-bottom;
   @extend .border-light-subtle;
 }
