@@ -1,15 +1,3 @@
-
-
-{{- $type := "list" -}}
-{{- with .type -}}
-  {{- $type = . -}}
-{{- end -}}
-
-{{- $icon := "tag-fill" -}}
-{{- with .icon -}}
-  {{- $icon = . -}}
-{{- end -}}
-
 {{- $page := .context -}}
 
 {{- if compare.Eq (.type | compare.Default "page") "page" -}}
@@ -59,7 +47,9 @@
       text-bg-light
     {{ end }} ms-2">
     {{ with .Params.icon -}}
-      {{ partials.Include "icon.html" . }}
+      {{ partials.IncludeCached "icon.html" . . }}
+    {{ else }}
+      {{ partials.IncludeCached "icon.html" "tag" "tag" }}
     {{ end }}
     <a rel="tag" href="{{- .Permalink -}}">#{{- .Title | strings.ToLower -}}</a>
   </span>
