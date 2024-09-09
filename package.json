@@ -1,21 +1,20 @@
 {
   "name": "hugo-darksky",
-  "version": "0.2024.4",
-  "main": "index.js",
-  "scripts": {
-    "sassdoc": "wireit",
-    "release": "wireit"
-  },
-  "keywords": [],
-  "author": "Patrick Kollitsch <patrick@davids-neighbour.com>",
-  "license": "MIT",
   "description": "",
+  "version": "0.2024.4",
+  "license": "MIT",
+  "author": "Patrick Kollitsch <patrick@davids-neighbour.com>",
+  "keywords": [],
   "dependencies": {
-    "@davidsneighbour/markdownlint-config": "^2024.3.44",
+    "@davidsneighbour/markdownlint-config": "2024.3.44",
     "@davidsneighbour/release-config": "2024.3.44",
-    "@davidsneighbour/remark-config": "^2024.3.44",
+    "@davidsneighbour/remark-config": "2024.3.44",
     "@davidsneighbour/tools": "2024.3.44",
     "wireit": "0.14.9"
+  },
+  "scripts": {
+    "release": "wireit",
+    "sassdoc": "wireit"
   },
   "wireit": {
     "sassdoc": {
@@ -37,5 +36,6 @@
         "sassdoc"
       ]
     }
-  }
+  },
+  "main": "index.js"
 }
