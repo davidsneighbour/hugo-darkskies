@@ -7,7 +7,7 @@
 /// @author Patrick Kollitsch
 ////
 
-@use "sass:color";
+@use sass:color;
 
 /// Setup container sizes
 $containers: (
@@ -30,7 +30,7 @@ $utilities: (
 ///
 $utils-fsize: (
   /// fsize utility
-  "fsize": (property: font-size,
+  fsize: (property: font-size,
     class: fontsize,
     values: (1: 0.8rem,
       2: 0.9rem,
@@ -45,7 +45,7 @@ $utilities: map-merge($utilities, $utils-fsize);
 
 /// container utilities
 $utils-containery: (
-  "containery": (property: height,
+  containery: (property: height,
     values: $containers,
     class: cy,
   ),
@@ -54,7 +54,7 @@ $utilities: map-merge($utilities, $utils-containery);
 
 /// container utilities
 $utils-containerx: (
-  "containerx": (property: width,
+  containerx: (property: width,
     values: $containers,
     class: cx,
   ),
@@ -63,7 +63,7 @@ $utilities: map-merge($utilities, $utils-containerx);
 
 /// container utilities
 $utils-container: (
-  "container": (property: width,
+  container: (property: width,
     values: $containers,
     class: c,
   ),
@@ -72,7 +72,7 @@ $utilities: map-merge($utilities, $utils-container);
 
 /// font-size utilities
 $utils-fontsize2: (
-  "fontsize2": (property: font-size,
+  fontsize2: (property: font-size,
     class: fsv,
     values: (12: 12vm,
       17: 17vm,
@@ -83,7 +83,7 @@ $utilities: map-merge($utilities, $utils-fontsize2);
 
 /// viewport utilities
 $utils-viewport: (
-  "viewport": (property: margin-top,
+  viewport: (property: margin-top,
     class: vh,
     values: (120: 120vh,
       100: 100vh,
@@ -94,3 +94,49 @@ $utils-viewport: (
   ),
 );
 $utilities: map-merge($utilities, $utils-viewport);
+
+// cursor utilities
+$values: (
+  alias: alias,
+  all-scroll: all-scroll,
+  auto: auto,
+  cell: cell,
+  col-resize: col-resize,
+  context-menu: context-menu,
+  copy: copy,
+  crosshair: crosshair,
+  default: default,
+  e-resize: e-resize,
+  ew-resize: ew-resize,
+  grab: grab,
+  grabbing: grabbing,
+  help: help,
+  move: move,
+  n-resize: n-resize,
+  ne-resize: ne-resize,
+  nesw-resize: nesw-resize,
+  ns-resize: ns-resize,
+  nw-resize: nw-resize,
+  nwse-resize: nwse-resize,
+  no-drop: no-drop,
+  none: none,
+  not-allowed: not-allowed,
+  pointer: pointer,
+  progress: progress,
+  row-resize: row-resize,
+  s-resize: s-resize,
+  se-resize: se-resize,
+  sw-resize: sw-resize,
+  text: text,
+  w-resize: w-resize,
+  wait: wait,
+  zoom-in: zoom-in,
+  zoom-out: zoom-out
+);
+$utils-cursor: (
+  cursor: (property: cursor,
+    class: cursor,
+    values: $values,
+  ),
+);
+$utilities: map-merge($utilities, $utils-cursor);
