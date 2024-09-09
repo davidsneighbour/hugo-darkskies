@@ -1,4 +1,29 @@
 Changelog
+## [0.2024.5](https://github.com/davidsneighbour/hugo-darksky/compare/v0.2024.4...v0.2024.5) (2024-09-09)
+
+
+### Theme
+
+* **fix:** adding cursor utilities ([8ce1c1b](https://github.com/davidsneighbour/hugo-darksky/commit/8ce1c1bb5721f6ce433e2be61be6129041434775))
+* **fix:** fix icons in tag badges ([d913124](https://github.com/davidsneighbour/hugo-darksky/commit/d9131246dc0754afc7e86910a984ef53b96533d1))
+* **fix:** headers on term pages ([3874230](https://github.com/davidsneighbour/hugo-darksky/commit/387423058135aa6e6d0a08e8b0d8273c4fe12cf7))
+* **fix:** less padding on the bottom of breadcrumbs ([bef2fe3](https://github.com/davidsneighbour/hugo-darksky/commit/bef2fe37980a4817b17b70e2af888d3dd26e8cfe))
+* **fix:** move back-to-top design into layout file ([f4e260d](https://github.com/davidsneighbour/hugo-darksky/commit/f4e260df195839fd0d687c0e62cd32bb1966e2d7))
+* **fix:** proper cachebusters and manifest integration ([02f69ba](https://github.com/davidsneighbour/hugo-darksky/commit/02f69ba8c688e85065302e7112ec6887cb6199d6))
+* **fix:** remove padding from archive preview headlines ([ac436b9](https://github.com/davidsneighbour/hugo-darksky/commit/ac436b93ea45659bdc5aecdf15a21273905d348b))
+
+
+### Chore
+
+* **deps:** update dependencies ([a146c63](https://github.com/davidsneighbour/hugo-darksky/commit/a146c631939bef734a7c6cdc45845085a4d04899))
+
+
+### Configuration
+
+* **fix:** cache buster configuration (wip) ([636edd3](https://github.com/davidsneighbour/hugo-darksky/commit/636edd3164cceca57e1930170cefd04a6e4393df))
+* **fix:** proper gitignore config ([19d49d9](https://github.com/davidsneighbour/hugo-darksky/commit/19d49d9dd00ae51996ba4e7336eadcdb1fbf98e5))
+* **fix:** update stylesheet generation configuration ([ec94d99](https://github.com/davidsneighbour/hugo-darksky/commit/ec94d99301322171e295cc0022d0b0a2eb59d7e8))
+
 ## [0.2024.4](https://github.com/davidsneighbour/hugo-darksky/compare/v0.2024.3...v0.2024.4) (2024-09-08)
 
 
