@@ -1,7 +1,7 @@
 {{- $item := .context -}}
 {{- $lines := .lines | compare.Default 3 -}}
 {{- $postClasses := partials.IncludeCached "func/getArticleClasses.html" $item $item -}}
-<article class="{{- $postClasses }} mb-3 prose px-3 py-2 component--archive-card">
+<article class="{{- $postClasses }} mb-3 px-3 py-2 component--archive-card">
   <div class="is--item d-flex align-items-start flex-column flex-sm-row">
     <div class="px-3 py-2 mt-2 mb-3 text-center border rounded is--date me-3 border-primary-subtle border-3">
       <span>{{- $item.Date.Format "Jan" -}}</span>
