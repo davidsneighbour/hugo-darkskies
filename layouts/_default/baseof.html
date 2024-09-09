@@ -252,11 +252,17 @@
       {{- partials.Include "func/hook.html" ( collections.Dictionary "hook" "footer-end" "context" . ) -}}
     </footer>
     {{- $config := site.Params.dnb.theme -}}
+    {{- /* MARK: Back to Top
+    */ -}}
     {{- if compare.Eq true $config.backtotop.enabled -}}
       {{- $icon := $config.backtotop.icon -}}
       <div x-data="{ showBackToTop: false }"
           x-on:scroll.window="showBackToTop = window.pageYOffset >= 200"
-          class="p-3 mb-1 scroll-to-top me-1" x-show="showBackToTop"
+          class="scroll-to-top px-3 py-2 mb-1 me-1 lh-1
+                  position-fixed bottom-0 end-0
+                  rounded fw-normal
+                  text-bg-secondary
+                  cursor-pointer" x-show="showBackToTop"
           x-transition.duration.500ms
           x-on:click.prevent="window.scrollTo({top: 0, behavior: 'smooth'});">
         <span class="me-2">
