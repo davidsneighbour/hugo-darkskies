@@ -12,7 +12,7 @@ enable = true            # default is false
 
 [[cachebusters]]
 source = "assets/scss/.*\\.scss"
-target = "css"
+target = "*\\.css"
 
 # [[cachebusters]]
 # source = "assets/watching/hugo_stats\\.json"
