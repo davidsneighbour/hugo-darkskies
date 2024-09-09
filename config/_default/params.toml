@@ -134,14 +134,10 @@ alexa = ""
 pinterest = ""
 norton = ""
 
-[dnb.head.styles]
-method = "postcss"
-
-[dnb.head.styles.options]
+[dnb.head.styles.sassOptions]
 # options for the compilation of CSS
 # see https://gohugo.io/hugo-pipes/scss-sass/#options
 # transpiler = "dartsass"
-outputType = "direct"
 outputStyle = "compressed"
 targetPath = "theme.css"
 enableSourceMap = true
