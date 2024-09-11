@@ -16,8 +16,8 @@
   {{- $p := collections.Where site.RegularPages "Type" "in" site.Params.mainSections -}}
   {{- $p = collections.Sort $p "Date" "desc" -}}
   {{- $paginator = $.Paginate $p 50 -}}
-{{- else if .IsNode -}}
-  {{- $paginator = $.Paginator -}}
+{{/* {{- else if .IsNode -}}
+  {{- $paginator = $.Paginate (site.RegularPages) -}} */}}
 {{- end -}}
 {{- .Scratch.Set "paginator" $paginator -}}
 {{- partials.Include "func/hook.html" ( collections.Dictionary "hook" "init-end" "context" . ) -}}
