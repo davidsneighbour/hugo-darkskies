@@ -1,4 +1,14 @@
 Changelog
+## [0.2024.6](https://github.com/davidsneighbour/hugo-darksky/compare/v0.2024.5...v0.2024.6) (2024-09-11)
+
+
+### Theme
+
+* **fix:** better margin for back-to-top button ([19fbf1e](https://github.com/davidsneighbour/hugo-darksky/commit/19fbf1e8616b8e8b28c9a512b91591ab85ab92a3))
+* **fix:** disable pagination init for posttypes without pages ([6988792](https://github.com/davidsneighbour/hugo-darksky/commit/698879225f6769758bdc7edebca63e54b9e38ee7))
+* **fix:** re-add pagination for node pages ([96e13b0](https://github.com/davidsneighbour/hugo-darksky/commit/96e13b019a6224c64c4b1314a5a61e9bba161166))
+* **refactor:** clear out empty lines ([13c95f2](https://github.com/davidsneighbour/hugo-darksky/commit/13c95f29c8797895d4b2b45768815aca373b48d2))
+
 ## [0.2024.5](https://github.com/davidsneighbour/hugo-darksky/compare/v0.2024.4...v0.2024.5) (2024-09-09)
 
 
