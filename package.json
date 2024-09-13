@@ -7,7 +7,7 @@
   "keywords": [],
   "dependencies": {
     "@davidsneighbour/markdownlint-config": "2024.3.44",
-    "@davidsneighbour/release-config": "2024.3.44",
+    "@davidsneighbour/release-config": "2024.3.45",
     "@davidsneighbour/remark-config": "2024.3.44",
     "@davidsneighbour/tools": "2024.3.44",
     "wireit": "0.14.9"
