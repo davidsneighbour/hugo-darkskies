@@ -98,9 +98,9 @@
           {{- end -}}
         </div>
         {{- end -}}
-        {{/* {{- with $title -}}
-          <figcaption class="text-center">{{- $title -}}</figcaption>
-        {{- end -}} */}}
+        {{- with $title -}}
+          <figcaption class="text-center text-truncate text-truncate-1 px-2">{{- $title -}}</figcaption>
+        {{- end -}}
       </figure>
     </div>
   {{ end }}
