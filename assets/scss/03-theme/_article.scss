@@ -83,4 +83,11 @@ figure {
 
   @extend .rounded;
   @extend .position-relative;
+
+  figcaption {
+    @extend .text-end;
+    @extend .text-secondary;
+    @extend .mt-0;
+    font-size: 0.9rem;
+  }
 }
