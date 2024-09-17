@@ -15,6 +15,7 @@ package_path = "dnb/%s.json"
 ################################################################################
 [dnb.theme]
 slug = "darksky"
+mainsection = "blog"
 
 # default color scheme (dark/light)
 # this is ignored if `dnb.theme.switcher.enabled` is true. In that case the

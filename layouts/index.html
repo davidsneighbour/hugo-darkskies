@@ -1,5 +1,7 @@
 {{- define "main" -}}
 
+  {{- $config := site.Params.dnb.theme -}}
+
   {{- if compare.Lt (.Scratch.Get "paginator").PageNumber 2 -}}
     <section class="section--sitetitle">
       <div class="container">
@@ -12,7 +14,7 @@
     </section>
   {{- end -}}
 
-  {{- $mainsectionlink := fmt.Printf "%s%s/" "/" site.Params.mainSection -}}
+  {{- $mainsectionlink := fmt.Printf "%s%s/" "/" $config.mainsection -}}
   <section class="section--content">
     <div class="container-fluid">
 
