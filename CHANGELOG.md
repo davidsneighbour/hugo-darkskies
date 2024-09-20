@@ -1,4 +1,32 @@
 Changelog
+## [0.2024.7](https://github.com/davidsneighbour/hugo-darksky/compare/v0.2024.6...v0.2024.7) (2024-09-20)
+
+
+### Theme
+
+* **fix:** add clipboard script for code renderhook ([0c4e75e](https://github.com/davidsneighbour/hugo-darksky/commit/0c4e75ed209c72a34e4f0e945fd5db4660dff72f))
+* **fix:** add explicit is_preview as true for previews ([cabd910](https://github.com/davidsneighbour/hugo-darksky/commit/cabd91009863d038853689b871f89483e2ca3e17))
+* **fix:** add formatting for figcaptions ([7ebb740](https://github.com/davidsneighbour/hugo-darksky/commit/7ebb74080d1d10a0dfc7cb52619b912e34b605e7))
+* **fix:** add limit and filter out current page on tagnavigation ([42da770](https://github.com/davidsneighbour/hugo-darksky/commit/42da77025a7722f162b9e821a5ffc2e4aefcbaad))
+* **fix:** define main section via theme config ([1ca97ed](https://github.com/davidsneighbour/hugo-darksky/commit/1ca97ed6ab192d54d15eb292a5f0ab4f0c877594))
+* **fix:** figcaptions and width of figcaptions ([da5ab6f](https://github.com/davidsneighbour/hugo-darksky/commit/da5ab6f2c4c28dd2f6bb6853508db38f2b32ee48))
+* **fix:** move highlighting component into module ([8c79afc](https://github.com/davidsneighbour/hugo-darksky/commit/8c79afc8c50a335e5a9c630284f5bd9c713b7b52))
+* **fix:** moving local hooks to kollitsch.dev ([8bc4713](https://github.com/davidsneighbour/hugo-darksky/commit/8bc4713704d55b5e7beb596a13afbc4bc477f963))
+* **fix:** shorten excerpt ([40b6b3f](https://github.com/davidsneighbour/hugo-darksky/commit/40b6b3f2e0593607577d5c964f676eabb02ac6a5))
+
+
+### Chore
+
+* **deps:** update dependencies ([87155dc](https://github.com/davidsneighbour/hugo-darksky/commit/87155dc9c2a6455bde1d669b82179c85290a7b85))
+
+
+### Build System
+
+* **deps:** Bump @davidsneighbour/markdownlint-config from 2024.3.44 to 2024.3.45 ([#4](https://github.com/davidsneighbour/hugo-darksky/issues/4)) ([3459c03](https://github.com/davidsneighbour/hugo-darksky/commit/3459c035e01456fe9a137d058de19dee2a91218f))
+* **deps:** Bump @davidsneighbour/release-config from 2024.3.44 to 2024.3.45 ([#6](https://github.com/davidsneighbour/hugo-darksky/issues/6)) ([11fb756](https://github.com/davidsneighbour/hugo-darksky/commit/11fb75621b6f87412631832e3d331b7841558889))
+* **deps:** Bump @davidsneighbour/remark-config from 2024.3.44 to 2024.3.45 ([#3](https://github.com/davidsneighbour/hugo-darksky/issues/3)) ([a04b3c2](https://github.com/davidsneighbour/hugo-darksky/commit/a04b3c29341f329c20f9a7815a020510747d1f42))
+* **deps:** Bump @davidsneighbour/tools from 2024.3.44 to 2024.3.45 ([#5](https://github.com/davidsneighbour/hugo-darksky/issues/5)) ([645435f](https://github.com/davidsneighbour/hugo-darksky/commit/645435f25cbcf855700e99b6382722cc6799c01b))
+
 ## [0.2024.6](https://github.com/davidsneighbour/hugo-darksky/compare/v0.2024.5...v0.2024.6) (2024-09-11)
 
 
