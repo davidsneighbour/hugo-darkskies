@@ -1,17 +1,24 @@
-{{ $tag := "" }}
+{{- $tag := "" -}}
+{{- $maxCounter := .Get "limit" | compare.Default 5 -}}
+{{- $counter := 0 -}}
+{{- $currentPage := .Page -}}
 
-{{ if .IsNamedParams }}
-  {{ $tag = .Get "tag" }}
-{{ else }}
-  {{ $tag = .Get 0 }}
-{{ end }}
+{{- if .IsNamedParams -}}
+  {{- $tag = .Get "tag" -}}
+{{- else -}}
+  {{- $tag = .Get 0 -}}
+{{- end -}}
+
+{{- $pages := site.RegularPages.ByDate.Reverse
+                | collections.Complement (collections.Slice .Page) -}}
 
 <ul>
-  {{ range .Site.RegularPages.ByDate.Reverse }}
+  {{ range $pages }}
     {{ $page := . }}
-    {{ range .Params.tags }}
-      {{ if compare.Eq . $tag }}
-        <li><a href="{{ $page.Permalink }}">{{ $page.Title }}</a></li>
+    {{ range  $page.Params.tags }}
+      {{ if and (compare.Eq . $tag) (compare.Lt $counter $maxCounter) }}
+        <li><a href="{{ $page.Permalink }}">{{ $page.Title }}</a> on {{ $page.Date.Format "2 Jan 2006 at 15:04" }}</li>
+        {{ $counter = math.Add $counter 1 }}
       {{ end }}
     {{ end }}
   {{ end }}
