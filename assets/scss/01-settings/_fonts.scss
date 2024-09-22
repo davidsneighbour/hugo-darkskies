@@ -51,8 +51,30 @@ $fontdir: "/assets/webfonts";
   text-rendering: optimizelegibility;
 }
 
+@font-face {
+  font-family: 'changa_oneitalic';
+  src: url('#{$fontdir}/changa/changaone-italic-webfont.woff2') format('woff2'),
+  url('#{$fontdir}/changa/changaone-italic-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+  text-rendering: optimizelegibility;
+
+}
+
+@font-face {
+  font-family: 'changa_oneregular';
+  src: url('#{$fontdir}/changa/changaone-regular-webfont.woff2') format('woff2'),
+  url('#{$fontdir}/changa/changaone-regular-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+  text-rendering: optimizelegibility;
+
+}
+
 :root {
-  --ff-title: Anton, sans-serif;
+  --ff-title: changa_oneregular, Anton, sans-serif;
   --ff-body: Exo2, sans-serif;
   --ff-mono: JetBrainsMono, monospace;
 }

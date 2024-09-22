@@ -72,6 +72,8 @@ $font-weight-bold: 600;
 $font-weight-bolder: 700;
 
 /// headings
+$headings-font-family: var(--ff-title);
+$headings-font-weight: 400;
 $h1-font-size: $font-size-base * 1.75;
 $h2-font-size: $font-size-base * 1.4;
 $h3-font-size: $font-size-base * 1.25;
