@@ -9,14 +9,16 @@ definitionList = true
 footnote = true
 linkify = false
 linkifyProtocol = "https"
-strikethrough = true
+strikethrough = false # needs to be disabled because of extras.subscript and extras.superscript
 table = true
 taskList = true
 # https://gohugo.io/getting-started/configuration-markup/#typographer-extension
 typographer = true
 
-# https://gohugo.io/getting-started/configuration-markup/#extras-extension
+# https://gohugo.io/getting-started/configuration-markup/#extras
 [goldmark.extensions.extras]
+[goldmark.extensions.extras.strikethrough]
+enable = true
 [goldmark.extensions.extras.insert]
 enable = true
 [goldmark.extensions.extras.mark]
