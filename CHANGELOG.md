@@ -1,4 +1,17 @@
 Changelog
+## [0.2024.9](https://github.com/davidsneighbour/hugo-darksky/compare/v0.2024.8...v0.2024.9) (2024-09-22)
+
+
+### Theme
+
+* **feat:** add interpolate-size config for allow-keywords ([ddb1afe](https://github.com/davidsneighbour/hugo-darksky/commit/ddb1afe193dbc4c5721411c9fc67eab27b0fc0e9))
+* **fix:** add span around back-to-top text ([b532e04](https://github.com/davidsneighbour/hugo-darksky/commit/b532e04f391a0fc2104fdb994d778f4ff45be3c3))
+
+
+### Configuration
+
+* **fix:** proper config for subscript vs. deleted markdown extension ([1dde3eb](https://github.com/davidsneighbour/hugo-darksky/commit/1dde3eb85de35f108c4bfd78b2ff3cfc4ad2dca3))
+
 ## [0.2024.8](https://github.com/davidsneighbour/hugo-darksky/compare/v0.2024.7...v0.2024.8) (2024-09-22)
 
 
