@@ -147,10 +147,10 @@ mark {
   @extend .mark-orange;
 }
 
-mark::before {
-  content: " [highlight start] ";
-}
+// mark::before {
+//   content: " [highlight start] ";
+// }
 
-mark::after {
-  content: " [highlight end] ";
-}
+// mark::after {
+//   content: " [highlight end] ";
+// }
