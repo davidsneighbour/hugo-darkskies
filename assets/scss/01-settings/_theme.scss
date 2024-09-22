@@ -21,6 +21,11 @@
 ///   //   background-color: var(--bs-primary-bg-subtle);
 ///   // }
 
+:root {
+  /// @see https://developer.chrome.com/docs/css-ui/animate-to-height-auto/
+  interpolate-size: allow-keywords;
+}
+
 :root,
 [data-bs-theme="dark"] {
   color-scheme: dark;
