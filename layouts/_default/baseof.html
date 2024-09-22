@@ -268,7 +268,9 @@
         <span class="me-2">
           {{- partials.Include "icon.html" $icon -}}
         </span>
-        {{- lang.Translate "theme.back_to_top" -}}
+        <span class="text">
+          {{- lang.Translate "theme.back_to_top" -}}
+        </span>
       </div>
     {{- end -}}
     {{- if templates.Exists "partials/schema.html" -}}
