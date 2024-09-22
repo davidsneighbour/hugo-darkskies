@@ -1,4 +1,18 @@
 Changelog
+## [0.2024.8](https://github.com/davidsneighbour/hugo-darksky/compare/v0.2024.7...v0.2024.8) (2024-09-22)
+
+
+### Theme
+
+* **feat:** add typocaster shortcode ([cb81e81](https://github.com/davidsneighbour/hugo-darksky/commit/cb81e8196d61c42aaa76e93a6ff5708970b76eed))
+* **fix:** less letter-spacing in title ([0bc0b64](https://github.com/davidsneighbour/hugo-darksky/commit/0bc0b64683e14d319c221e75280bc2aea45528e8))
+* **fix:** remove debugging content from mark styles ([5e48d6c](https://github.com/davidsneighbour/hugo-darksky/commit/5e48d6cc712eba87d423b6181386805d2eadc7df))
+
+
+### Chore
+
+* **config:** run css pipes on scss changes ([51538dc](https://github.com/davidsneighbour/hugo-darksky/commit/51538dc5da9ab319926286c0e7302534b84714e1))
+
 ## [0.2024.7](https://github.com/davidsneighbour/hugo-darksky/compare/v0.2024.6...v0.2024.7) (2024-09-20)
 
 
