@@ -97,9 +97,9 @@ textarea {
 }
 
 .site-title {
+  letter-spacing: -7px;
   font-size: 17vw;
 
-  // @link https://developer.mozilla.org/en-US/docs/Web/CSS/clamp
   @include media-breakpoint-up(sm) {
     font-size: 12vw;
   }
