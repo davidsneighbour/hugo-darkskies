@@ -1,4 +1,11 @@
 Changelog
+## [0.2024.10](https://github.com/davidsneighbour/hugo-darksky/compare/v0.2024.9...v0.2024.10) (2024-09-22)
+
+
+### Documentation
+
+* **fix:** remove style documentation (broken) ([101f1b6](https://github.com/davidsneighbour/hugo-darksky/commit/101f1b6075924df05f08db732d6297c66f0fa29f))
+
 ## [0.2024.9](https://github.com/davidsneighbour/hugo-darksky/compare/v0.2024.8...v0.2024.9) (2024-09-22)
 
 
