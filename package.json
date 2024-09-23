@@ -16,28 +16,11 @@
     "@apidevtools/json-schema-ref-parser": ">=11.7.0"
   },
   "scripts": {
-    "release": "wireit",
-    "sassdoc": "wireit"
+    "release": "wireit"
   },
   "wireit": {
-    "sassdoc": {
-      "command": "sassdoc assets/scss/ --dest documentation/styles --strict",
-      "files": [
-        "assets/scss/**/*.scss"
-      ]
-    },
     "release": {
-      "command": "commit-and-tag-version --sign -a -t \"v\" --releaseCommitMessageFormat \"chore(release): v{{currentTag}}\" -- --no-verify && ./bin/repo/release/postrelease",
-      "dependencies": [
-        "sassdoc",
-        "releasefiles"
-      ]
-    },
-    "releasefiles": {
-      "command": "git add documentation/styles",
-      "dependencies": [
-        "sassdoc"
-      ]
+      "command": "commit-and-tag-version --sign -a -t \"v\" --releaseCommitMessageFormat \"chore(release): v{{currentTag}}\" -- --no-verify && ./bin/repo/release/postrelease"
     }
   },
   "main": "index.js"
