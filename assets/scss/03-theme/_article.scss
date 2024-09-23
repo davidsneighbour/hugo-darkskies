@@ -93,4 +93,8 @@ figure {
     @extend .mt-0;
     font-size: 0.9rem;
   }
+
+  :not(:has(figcaption)) a {
+    margin-bottom: 1rem;
+  }
 }

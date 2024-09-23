@@ -72,7 +72,7 @@ $font-weight-bold: 600;
 $font-weight-bolder: 700;
 
 /// headings
-$headings-font-family: var(--ff-title);
+$headings-font-family: var(--ff-headline);
 $headings-font-weight: 400;
 $h1-font-size: $font-size-base * 1.75;
 $h2-font-size: $font-size-base * 1.4;
@@ -94,6 +94,9 @@ $link-hover-decoration: underline;
 /// badges
 $badge-font-weight: 500;
 $badge-font-size: 0.65em;
+
+/// buttons
+$btn-font-family: var(--ff-headline);
 
 /// navigation
 /// @link https://getbootstrap.com/docs/5.3/components/navbar/

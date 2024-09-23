@@ -65,14 +65,14 @@ $fontdir: "/assets/webfonts";
 }
 
 :root {
-  --ff-title: Changa, sans-serif;
+  --ff-headline: Changa, sans-serif;
   --ff-body: Exo2, sans-serif;
   --ff-mono: JetBrainsMono, monospace;
 }
 
 /// font family classes
 .ff-headline {
-  font-family: var(--ff-title);
+  font-family: var(--ff-headline);
 }
 
 .ff-body {
