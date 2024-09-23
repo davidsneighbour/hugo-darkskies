@@ -8,6 +8,15 @@
 .navbar {
   transition: background-color 2s;
 
+  .navbar-toggler {
+    line-height: 0.8;
+  }
+
+  .navbar-toggler-icon {
+    height: 1.5rem;
+    width: 1.5rem;
+  }
+
   body.dark & {
     background-color: rgba(0, 0, 0, 0.2);
   }
