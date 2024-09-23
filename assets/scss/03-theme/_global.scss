@@ -97,15 +97,14 @@ textarea {
 }
 
 .site-title {
-  letter-spacing: -7px;
-  font-size: 17vw;
+  font-size: 12vw;
 
   @include media-breakpoint-up(sm) {
-    font-size: 12vw;
+    font-size: 9vw;
   }
 
   @include media-breakpoint-up(xl) {
-    font-size: 180px;
+    font-size: 110px;
   }
 
   @extend .fw-semibold;
