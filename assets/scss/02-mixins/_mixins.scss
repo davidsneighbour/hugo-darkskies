@@ -15,13 +15,11 @@
 /// The color of the scrollbar.
 /// @param {color} $track [var(--bs-body-bg)]
 /// The color of the scrollbar track.
-@mixin dnb-scrollbars(
-  $outertag: "*",
+@mixin dnb-scrollbars($outertag: "*",
   $width: 8px,
   $radius: $border-radius,
   $color: var(--bs-primary),
-  $track: var(--bs-body-bg)
-) {
+  $track: var(--bs-body-bg)) {
   #{$outertag} {
     // firefox/
     scrollbar-width: $width;

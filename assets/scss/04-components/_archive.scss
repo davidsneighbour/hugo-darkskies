@@ -1,5 +1,6 @@
 /* stylelint-disable selector-max-compound-selectors --- sometimes it's required */
 .component--archive-card {
+
   /* @todo make tags a component */
   .is--tags {
     @extend .text-end;
