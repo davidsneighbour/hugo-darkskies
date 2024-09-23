@@ -1,4 +1,38 @@
 Changelog
+## [0.2024.11](https://github.com/davidsneighbour/hugo-darksky/compare/v0.2024.10...v0.2024.11) (2024-09-23)
+
+
+### Documentation
+
+* **fix:** update setup docs ([d3d6712](https://github.com/davidsneighbour/hugo-darksky/commit/d3d6712e30fce49a0e183c55eb6510bcbf35c0f9))
+
+
+### Theme
+
+* **feat:** add Changa One as headlines font ([cac5cd2](https://github.com/davidsneighbour/hugo-darksky/commit/cac5cd2dd3cbaf11a97b93da2fe45b6b6b0de2ae))
+* **feat:** changa one font for headlines ([3f19520](https://github.com/davidsneighbour/hugo-darksky/commit/3f19520af673fed2e37e4b83ba56218564996ec7))
+* **fix:** article padding ([ccaa471](https://github.com/davidsneighbour/hugo-darksky/commit/ccaa4718fff995cd116dfc77d7dc9df21454c366))
+* **fix:** article preview layout fixes ([f586929](https://github.com/davidsneighbour/hugo-darksky/commit/f586929246e553289a14f28132027cf4cdacde99))
+* **fix:** better formatting for the navbar toggler ([a8d4472](https://github.com/davidsneighbour/hugo-darksky/commit/a8d44729f47ca2f4fb277d9d287c63961ff33688))
+* **fix:** don't uppercase footer section titles ([225c476](https://github.com/davidsneighbour/hugo-darksky/commit/225c4769382b879f17926343595dae0c445b8660))
+* **fix:** font fixes ([6d55339](https://github.com/davidsneighbour/hugo-darksky/commit/6d55339e3e57f81e421a413d34793e588ed43a7b))
+* **fix:** navbar brand formatting ([8120b61](https://github.com/davidsneighbour/hugo-darksky/commit/8120b61ca9efbc9cc698fe027c331e430d55f5b4))
+* **fix:** remove anton font ([e1b6002](https://github.com/davidsneighbour/hugo-darksky/commit/e1b600218faf977df01cc7e354de15d0a74764ad))
+* **fix:** site-title font size fixes ([a8ffc7d](https://github.com/davidsneighbour/hugo-darksky/commit/a8ffc7d732a6a5dded3993536198fe9d4d31b8d5))
+* **fix:** use headline font as button font ([1250723](https://github.com/davidsneighbour/hugo-darksky/commit/1250723cd662a31e065adb8b9cf4f9b85791a2e6))
+* **fix:** youtube preview with proper spacing to title/content ([d539bda](https://github.com/davidsneighbour/hugo-darksky/commit/d539bda5824028fe1a8c02327b525b755e478f1f))
+* **refactor:** reformat style files ([39c8e6b](https://github.com/davidsneighbour/hugo-darksky/commit/39c8e6bcfcf5af3a94566de927a4d08662c89f94))
+
+
+### Chore
+
+* **deps:** update dependencies ([7752fc8](https://github.com/davidsneighbour/hugo-darksky/commit/7752fc805d00cf9adeec733aa87bdbdafff53b4e))
+
+
+### Build System
+
+* **fix:** remove sassdoc setup ([eac514e](https://github.com/davidsneighbour/hugo-darksky/commit/eac514ed6af14854210a462d2f5fa129622f1df5))
+
 ## [0.2024.10](https://github.com/davidsneighbour/hugo-darksky/compare/v0.2024.9...v0.2024.10) (2024-09-22)
 
 
