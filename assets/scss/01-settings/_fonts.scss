@@ -43,7 +43,7 @@ $fontdir: "/assets/webfonts";
 }
 
 @font-face {
-  font-family: 'changa_oneitalic';
+  font-family: Changa;
   src: url('#{$fontdir}/changa/changaone-italic-webfont.woff2') format('woff2'),
   url('#{$fontdir}/changa/changaone-italic-webfont.woff') format('woff');
   font-weight: normal;
@@ -54,7 +54,7 @@ $fontdir: "/assets/webfonts";
 }
 
 @font-face {
-  font-family: 'changa_oneregular';
+  font-family: Changa;
   src: url('#{$fontdir}/changa/changaone-regular-webfont.woff2') format('woff2'),
   url('#{$fontdir}/changa/changaone-regular-webfont.woff') format('woff');
   font-weight: normal;
@@ -65,7 +65,7 @@ $fontdir: "/assets/webfonts";
 }
 
 :root {
-  --ff-title: changa_oneregular, sans-serif;
+  --ff-title: Changa, sans-serif;
   --ff-body: Exo2, sans-serif;
   --ff-mono: JetBrainsMono, monospace;
 }
