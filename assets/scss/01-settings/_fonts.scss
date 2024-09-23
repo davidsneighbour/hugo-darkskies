@@ -42,15 +42,6 @@ $fontdir: "/assets/webfonts";
   text-rendering: optimizelegibility;
 }
 
-// @font-face {
-//   font-family: Anton;
-//   src: url("#{$fontdir}/anton/regular.woff") format("woff");
-//   font-style: normal;
-//   font-weight: normal;
-//   font-display: swap;
-//   text-rendering: optimizelegibility;
-// }
-
 @font-face {
   font-family: 'changa_oneitalic';
   src: url('#{$fontdir}/changa/changaone-italic-webfont.woff2') format('woff2'),
