@@ -9,7 +9,7 @@
     "@davidsneighbour/markdownlint-config": "2024.3.45",
     "@davidsneighbour/release-config": "2024.3.45",
     "@davidsneighbour/remark-config": "2024.3.45",
-    "@davidsneighbour/tools": "2024.3.45",
+    "@davidsneighbour/tools": "2024.3.46",
     "wireit": "0.14.9"
   },
   "devDependencies": {
