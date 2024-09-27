@@ -1,4 +1,11 @@
 Changelog
+## [0.2024.12](https://github.com/davidsneighbour/hugo-darksky/compare/v0.2024.11...v0.2024.12) (2024-09-27)
+
+
+### Chore
+
+* **deps:** update dependencies ([4cd5312](https://github.com/davidsneighbour/hugo-darksky/commit/4cd5312780da365a3e78ee986a97e2cd1a63ff25))
+
 ## [0.2024.11](https://github.com/davidsneighbour/hugo-darksky/compare/v0.2024.10...v0.2024.11) (2024-09-23)
 
 
