@@ -1,4 +1,13 @@
 Changelog
+## [0.2024.13](https://github.com/davidsneighbour/hugo-darksky/compare/v0.2024.12...v0.2024.13) (2024-09-27)
+
+
+### Theme
+
+* **fix:** badge font size ([e165bc0](https://github.com/davidsneighbour/hugo-darksky/commit/e165bc01b6f665dd28e1c95a6e6be953d027a1d0))
+* **fix:** font sizes based on golden ratio ([9f43155](https://github.com/davidsneighbour/hugo-darksky/commit/9f43155e1e965003037ba16f7dbc200fe5f7b42b))
+* **fix:** remove font size restrictions on footer headlines ([f0c1325](https://github.com/davidsneighbour/hugo-darksky/commit/f0c1325a2ff6601a26ecd6e8f53ee4b472b5f775))
+
 ## [0.2024.12](https://github.com/davidsneighbour/hugo-darksky/compare/v0.2024.11...v0.2024.12) (2024-09-27)
 
 
