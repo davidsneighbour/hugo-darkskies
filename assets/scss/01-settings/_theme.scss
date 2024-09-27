@@ -57,8 +57,17 @@ $body-bg-dark: $organic-noir;
 $body-bg: $arctic-powder;
 
 /// typography
-/// $font-size-root: 16px;
-$font-size-base: 1.2rem;
+/// based on golden ratio
+///
+/// Size (px)	Height (px)
+/// 47	74 52
+/// 37	59 32
+/// 29	48 20
+/// 23	39 12
+/// 18	32  7
+/// 14	26  4
+$font-size-root: 18px;
+$font-size-base: 1rem;
 $font-family-sans-serif: var(--ff-body);
 $font-family-monospace: var(--ff-mono);
 
@@ -74,12 +83,12 @@ $font-weight-bolder: 700;
 /// headings
 $headings-font-family: var(--ff-headline);
 $headings-font-weight: 400;
-$h1-font-size: $font-size-base * 1.75;
-$h2-font-size: $font-size-base * 1.4;
+$h1-font-size: $font-size-base * 2.05;
+$h2-font-size: $font-size-base * 1.6;
 $h3-font-size: $font-size-base * 1.25;
-$h4-font-size: $font-size-base * 1.15;
-$h5-font-size: $font-size-base;
-$h6-font-size: $font-size-base;
+$h4-font-size: $font-size-base;
+$h5-font-size: $font-size-base * 0.8;
+$h6-font-size: $font-size-base * 0.8;
 
 /// component color
 $component-active-color: var(--bs-dark);
@@ -104,7 +113,7 @@ $btn-font-family: var(--ff-headline);
 $navbar-padding-y: 0;
 $navbar-padding-x: 0;
 // $navbar-brand-padding-y: 0;
-$nav-link-font-size: 1.2rem;
+$nav-link-font-size: 1rem;
 $navbar-light-hover-color: $primary;
 $navbar-light-active-color: $primary;
 $navbar-dark-hover-color: $primary;
@@ -152,7 +161,7 @@ $aspect-ratio: 2 / 1;
 /// breadcrums setup
 /* stylelint-disable-next-line scss/no-global-function-names -- quote alone is ok */
 $breadcrumb-divider: quote(⟩);
-$breadcrumb-font-size: 1rem;
+$breadcrumb-font-size: 0.8rem;
 $breadcrumb-margin-bottom: 0.25rem;
 $breadcrumb-divider-color: var(--bs-tertiary-color);
 
