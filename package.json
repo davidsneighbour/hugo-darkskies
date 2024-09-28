@@ -1,7 +1,7 @@
 {
   "name": "@davidsneighbour/hugo-darksky",
   "description": "A blog theme for GoHugo.",
-  "version": "1.2024.14",
+  "version": "1.2024.15",
   "license": "MIT",
   "author": "Patrick Kollitsch <patrick@davids-neighbour.com>",
   "keywords": [],

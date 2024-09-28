@@ -1,4 +1,12 @@
 Changelog
+## [1.2024.15](https://github.com/davidsneighbour/hugo-darksky/compare/v1.2024.14...v1.2024.15) (2024-09-28)
+
+
+### Build System
+
+* **fix:** add npm package publishing step to post release hook ([c481056](https://github.com/davidsneighbour/hugo-darksky/commit/c4810569a0b4ac30131f3876fcec000e7690b057))
+* **fix:** encoding issues in changes.md ([b46c17f](https://github.com/davidsneighbour/hugo-darksky/commit/b46c17f505ee01c7383905f9145a093535c6a302))
+
 ## [1.2024.14](https://github.com/davidsneighbour/hugo-darksky/compare/v0.2024.13...v1.2024.14) (2024-09-28)
 
 
