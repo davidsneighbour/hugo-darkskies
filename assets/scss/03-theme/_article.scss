@@ -47,30 +47,6 @@ article {
   }
 }
 
-// figure {
-//
-
-//   .inline-icons {
-//     div {
-//       @extend .p-2;
-//     }
-
-//     @extend .text-primary;
-//     @extend .top-0;
-//     @extend .end-0;
-//     @extend .m-3;
-//     @extend .position-absolute;
-//     @extend .lh-1;
-//   }
-// }
-
-////
-/// images
-////
-figure {
-  @extend .mx-auto;
-}
-
 ////
 /// A container for the article image
 ////
@@ -97,6 +73,7 @@ figure {
   }
 }
 
+/// global figcaption design
 figcaption {
 
   @extend .text-end;

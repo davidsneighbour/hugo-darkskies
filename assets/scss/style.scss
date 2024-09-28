@@ -113,7 +113,6 @@ $organic-noir: #172b36;
 .prose {
   @import "09-hooks/prose-pre";
   @import "05-prose/prose";
-  @import "05-prose/images";
   @import "05-prose/tables";
 
   .light & {
