@@ -1,5 +1,4 @@
 #!/bin/bash
-# v2023.07.03
 
 set -e
 # IFS=$'\n\t'
@@ -12,7 +11,7 @@ REQUIRED_TOOLS=(
 )
 
 for TOOL in "${REQUIRED_TOOLS[@]}"; do
-  if ! command -v "${TOOL}" > /dev/null; then
+  if ! command -v "${TOOL}" >/dev/null; then
     echo "${TOOL} is required... "
     exit 1
   fi
@@ -30,7 +29,7 @@ if [ -f "$FILE" ]; then
 fi
 
 SCRIPTPATH="$(
-  cd "$(dirname "$0")" > /dev/null 2>&1 || exit
+  cd "$(dirname "$0")" >/dev/null 2>&1 || exit
   pwd -P
 )"
 CURPATH="$(pwd -P)"
@@ -41,7 +40,7 @@ CURPATH="$(pwd -P)"
 if test -f "$SCRIPTPATH"/bin/etc/hugo/replacements; then
   while read -ra __; do
     go mod edit -dropreplace "${__[0]}"
-  done < "$SCRIPTPATH"/bin/etc/hugo/replacements
+  done <"$SCRIPTPATH"/bin/etc/hugo/replacements
 fi
 
 hugo mod get -u ./...
@@ -69,18 +68,18 @@ MINOR=$(echo $base | sed -e "s#$RE#\2#")
 PATCH=$(echo $base | sed -e "s#$RE#\3#")
 
 case "$step" in
-  major)
-    ((MAJOR += 1))
-    ((MINOR = 0))
-    ((PATCH = 0))
-    ;;
-  minor)
-    ((MINOR += 1))
-    ((PATCH = 0))
-    ;;
-  patch)
-    ((PATCH += 1))
-    ;;
+major)
+  ((MAJOR += 1))
+  ((MINOR = 0))
+  ((PATCH = 0))
+  ;;
+minor)
+  ((MINOR += 1))
+  ((PATCH = 0))
+  ;;
+patch)
+  ((PATCH += 1))
+  ;;
 esac
 
 RELEASE="$MAJOR.$MINOR.$PATCH"
@@ -94,5 +93,5 @@ if test -f "$FILE"; then
   git add $FILE
 fi
 
-RELEASE_NOTES="$(npx commit-and-tag-version --dry-run | awk 'BEGIN { flag=0 } /^---$/ { if (flag == 0) { flag=1 } else { flag=2 }; next } flag == 1')"
-echo "${RELEASE_NOTES}" > changes.md
+RELEASE_NOTES="$(npx commit-and-tag-version --dry-run | sed -r 's/\x1B\[[0-9;]*[mK]//g' | awk 'BEGIN { flag=0 } /^---$/ { if (flag == 0) { flag=1 } else { flag=2 }; next } flag == 1')"
+echo "${RELEASE_NOTES}" >changes.md
