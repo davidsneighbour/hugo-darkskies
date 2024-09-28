@@ -64,3 +64,5 @@ else
   code changes.md
 fi
 xdg-open "${URL}" &>/dev/null
+
+npm publish --access public
