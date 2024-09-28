@@ -47,6 +47,17 @@ article {
   }
 }
 
+.breadcrumb {
+  margin-right: $spacer / 2;
+
+  .breadcrumb-item {
+    float: none;
+    overflow-x: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+}
+
 ////
 /// A container for the article image
 ////
