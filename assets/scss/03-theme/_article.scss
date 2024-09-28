@@ -93,3 +93,7 @@ figcaption {
   font-size: 0.9rem;
   width: 100%;
 }
+
+.shortcode--youtube {
+  @extend .mb-3;
+}
