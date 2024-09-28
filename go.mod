@@ -18,7 +18,7 @@ require (
 	github.com/davidsneighbour/hugo-modules/modules/pictures v1.2024.8 // indirect
 	github.com/davidsneighbour/hugo-modules/modules/publisher v1.2024.1 // indirect
 	github.com/davidsneighbour/hugo-modules/modules/pwa v1.2024.10 // indirect
-	github.com/davidsneighbour/hugo-modules/modules/renderhooks v1.2024.17 // indirect
+	github.com/davidsneighbour/hugo-modules/modules/renderhooks v1.2024.18 // indirect
 	github.com/davidsneighbour/hugo-modules/modules/robots v1.2024.8 // indirect
 	github.com/davidsneighbour/hugo-modules/modules/schema v1.2024.1 // indirect
 	github.com/davidsneighbour/hugo-modules/modules/security v1.2024.2 // indirect

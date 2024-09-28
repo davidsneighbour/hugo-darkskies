@@ -1,4 +1,25 @@
 Changelog
+## [1.2024.14](https://github.com/davidsneighbour/hugo-darksky/compare/v0.2024.13...v1.2024.14) (2024-09-28)
+
+
+### Documentation
+
+* **fix:** remove sassdoc output ([85e6a04](https://github.com/davidsneighbour/hugo-darksky/commit/85e6a04de60aaf0e9d56e5aac73d787d0c6f16a7)), closes [davidsneighbour/kollitsch.dev#1216](https://github.com/davidsneighbour/kollitsch.dev/issues/1216)
+
+
+### Theme
+
+* **fix:** remove clipping from icon setup ([f0bff0b](https://github.com/davidsneighbour/hugo-darksky/commit/f0bff0bd84187e56b89156fa8396ec48946f5cef))
+* **fix:** remove collapsible on meta information ([76da72d](https://github.com/davidsneighbour/hugo-darksky/commit/76da72d2936fd8005c0ea6d3cb57bbdbd5e33ab4))
+* **fix:** remove erroneous margin from read all button ([0cc087b](https://github.com/davidsneighbour/hugo-darksky/commit/0cc087be67e7da028e82bb469bd49bd348f13a0f))
+* **fix:** remove preload for bahn font ([1425d68](https://github.com/davidsneighbour/hugo-darksky/commit/1425d68b6cee81644652ae5d1bd66d7741b8e08d))
+* **styles:** cleanup and remove unused definitions ([a27f554](https://github.com/davidsneighbour/hugo-darksky/commit/a27f55492a13b4dc15ac0adae162fe84a5193935))
+
+
+### Chore
+
+* set to v1 and add namespace to name ([877ca80](https://github.com/davidsneighbour/hugo-darksky/commit/877ca809284c937c8825a295e5c71bdbf5e8fdb3))
+
 ## [0.2024.13](https://github.com/davidsneighbour/hugo-darksky/compare/v0.2024.12...v0.2024.13) (2024-09-27)
 
 
