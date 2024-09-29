@@ -129,11 +129,7 @@
     {{- /* MARK: Main Content
     */ -}}
     {{- partials.Include "func/hook.html" ( collections.Dictionary "hook" "body-pre-main" "context" . ) -}}
-    {{- $pagefindMarker := "" -}}
-    {{- if collections.In (collections.Slice "page") page.Kind }}
-      {{- $pagefindMarker = "data-pagefind-body" -}}
-    {{- end -}}
-    <main id="maincontent" {{ $pagefindMarker | safe.HTMLAttr }} tabindex="-1">
+    <main id="maincontent" tabindex="-1">
       {{- partials.Include "func/hook.html" ( collections.Dictionary "hook" "body-main-start" "context" . ) -}}
       {{- block "main" . -}}{{- end -}}
       {{- partials.Include "func/hook.html" ( collections.Dictionary "hook" "body-main-end" "context" . ) -}}

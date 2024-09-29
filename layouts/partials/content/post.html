@@ -2,8 +2,16 @@
 {{- $posttype := $post.Type | compare.Default "default" -}}
 {{- $config := partials.IncludeCached "func/getPostSetup.html" $posttype $posttype -}}
 
+{{- $pagefindMarker := "" -}}
+{{- if collections.In (collections.Slice "page") page.Kind }}
+  {{- $pagefindMarker = "data-pagefind-body" -}}
+  {{- if eq $post.Params.config.pagefind false | default true -}}
+    {{- $pagefindMarker = "" -}}
+  {{- end -}}
+{{- end -}}
+
 {{- $articleclasses := partials.IncludeCached "func/getArticleClasses.html" $post $post -}}
-<article class="full-post {{ $articleclasses -}}">
+<article {{ $pagefindMarker | safe.HTMLAttr }} class="full-post {{ $articleclasses -}}">
 
   {{- /* MARK: Status
   */ -}}
