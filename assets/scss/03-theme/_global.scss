@@ -154,3 +154,12 @@ mark {
 // mark::after {
 //   content: " [highlight end] ";
 // }
+
+code,
+kbd,
+pre,
+samp {
+  font-family: var(--ff-mono);
+  font-variant-ligatures: common-ligatures;
+  font-feature-settings: "liga", "clig", "dlig", "calt", "zero", "ss02", "cv18", "cv19", "cv20";
+}

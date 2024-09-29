@@ -24,8 +24,8 @@ $fontdir: "/assets/webfonts";
 
 @font-face {
   font-family: JetBrainsMono;
-  src: url("#{$fontdir}/jetbrainsmono/jetbrainsmonoi.woff2") format("woff2") tech("variations"),
-  url("#{$fontdir}/jetbrainsmono/jetbrainsmonoi.woff2") format("woff2-variations");
+  src: url("#{$fontdir}/jetbrainsmono/JetBrainsMono-Italic[wght].woff2") format("woff2") tech("variations"),
+  url("#{$fontdir}/jetbrainsmono/JetBrainsMono-Italic[wght].woff2") format("woff2-variations");
   font-weight: 100 800;
   font-style: italic;
   font-display: swap;
@@ -34,8 +34,8 @@ $fontdir: "/assets/webfonts";
 
 @font-face {
   font-family: JetBrainsMono;
-  src: url("#{$fontdir}/jetbrainsmono/jetbrainsmono.woff2") format("woff2") tech("variations"),
-  url("#{$fontdir}/jetbrainsmono/jetbrainsmono.woff2") format("woff2-variations");
+  src: url("#{$fontdir}/jetbrainsmono/JetBrainsMono[wght].woff2") format("woff2") tech("variations"),
+  url("#{$fontdir}/jetbrainsmono/JetBrainsMono[wght].woff2") format("woff2-variations");
   font-weight: 100 800;
   font-style: normal;
   font-display: swap;
@@ -81,4 +81,106 @@ $fontdir: "/assets/webfonts";
 
 .ff-jetbrains {
   font-family: var(--ff-mono);
+
+  // font-variant-ligatures: discretionary-ligatures;
+  // font-variant-ligatures: historical-ligatures;
+  // font-variant-ligatures: discretionary-ligatures historical-ligatures;
+  // font-variant-numeric: proportional-nums;
+  // font-variant-numeric: tabular-nums;
+  // font-variant-numeric: lining-nums;
+  // font-variant-numeric: oldstyle-nums;
+  // font-variant-numeric: slashed-zero;
+  // font-variant-numeric: proportional-nums slashed-zero;
+  // font-variant-numeric: tabular-nums slashed-zero;
+  // font-variant-numeric: lining-nums slashed-zero;
+  // font-variant-numeric: oldstyle-nums slashed-zero;
+  // font-variant-numeric: tabular-nums lining-nums slashed-zero;
+  // font-variant-numeric: diagonal-fractions;
+  // font-variant-numeric: stacked-fractions;
+  // font-variant-numeric: ordinal;
+  // font-variant-caps: small-caps;
+  // font-variant-caps: unicase;
+  // font-variant-alternates: historical-forms;
+
+}
+
+/// font variants
+
+.dlig {
+  font-variant-ligatures: discretionary-ligatures;
+}
+
+.hlig {
+  font-variant-ligatures: historical-ligatures;
+}
+
+.dlig.hlig {
+  font-variant-ligatures: discretionary-ligatures historical-ligatures;
+}
+
+/* Apply both historic and discretionary */
+
+.pnum {
+  font-variant-numeric: proportional-nums;
+}
+
+.tnum {
+  font-variant-numeric: tabular-nums;
+}
+
+.lnum {
+  font-variant-numeric: lining-nums;
+}
+
+.onum {
+  font-variant-numeric: oldstyle-nums;
+}
+
+.zero {
+  font-variant-numeric: slashed-zero;
+}
+
+.pnum.zero {
+  font-variant-numeric: proportional-nums slashed-zero;
+}
+
+/* Apply slashed zeroes to proportional numerals */
+.tnum.zero {
+  font-variant-numeric: tabular-nums slashed-zero;
+}
+
+.lnum.zero {
+  font-variant-numeric: lining-nums slashed-zero;
+}
+
+.onum.zero {
+  font-variant-numeric: oldstyle-nums slashed-zero;
+}
+
+.tnum.lnum.zero {
+  font-variant-numeric: tabular-nums lining-nums slashed-zero;
+}
+
+.frac {
+  font-variant-numeric: diagonal-fractions;
+}
+
+.afrc {
+  font-variant-numeric: stacked-fractions;
+}
+
+.ordn {
+  font-variant-numeric: ordinal;
+}
+
+.smcp {
+  font-variant-caps: small-caps;
+}
+
+.c2sc {
+  font-variant-caps: unicase;
+}
+
+.hist {
+  font-variant-alternates: historical-forms;
 }

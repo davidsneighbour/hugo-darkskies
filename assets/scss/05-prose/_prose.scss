@@ -7,6 +7,10 @@ a {
   @include word-wrap;
 }
 
+abbr {
+  font-variant-caps: all-small-caps;
+}
+
 h1,
 h2,
 h3,
