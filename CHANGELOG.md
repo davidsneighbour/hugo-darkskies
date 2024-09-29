@@ -1,4 +1,13 @@
 Changelog
+## [1.2024.16](https://github.com/davidsneighbour/hugo-darksky/compare/v1.2024.15...v1.2024.16) (2024-09-29)
+
+
+### Theme
+
+* **fix:** better overflow handling for long breadcrumbs ([9d7f8fd](https://github.com/davidsneighbour/hugo-darksky/commit/9d7f8fd74cba6de8e8cd4bd71bb628137bd7987c)), closes [#1](https://github.com/davidsneighbour/hugo-darksky/issues/1)
+* **fix:** better pagefind integration on single articles instead of all content ([74c7703](https://github.com/davidsneighbour/hugo-darksky/commit/74c7703378ed43daeb30b885ae9c85f78fd60eaf)), closes [davidsneighbour/kollitsch.dev#1237](https://github.com/davidsneighbour/kollitsch.dev/issues/1237)
+* **fix:** spacing below youtube shortcode ([86b0d0d](https://github.com/davidsneighbour/hugo-darksky/commit/86b0d0d8bb84718c875872302dd6ad008cf8caa3))
+
 ## [1.2024.15](https://github.com/davidsneighbour/hugo-darksky/compare/v1.2024.14...v1.2024.15) (2024-09-28)
 
 
