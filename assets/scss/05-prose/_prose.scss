@@ -1,3 +1,8 @@
+/// universal block formatting reset
+>*+* {
+  margin-block-start: var(--flow-space, 1em);
+}
+
 a {
   box-decoration-break: clone;
 
@@ -71,7 +76,7 @@ pre {
 }
 
 .highlight {
-  font-size: 0.9rem;
+  // font-size: 0.9rem;
   margin-bottom: $spacer;
 
   .chroma {
@@ -137,4 +142,98 @@ kbd {
 
 figure {
   @extend .mx-auto;
+}
+
+/// opentype font ligature and features
+.dlig {
+  font-variant-ligatures: discretionary-ligatures;
+}
+
+.hlig {
+  font-variant-ligatures: historical-ligatures;
+}
+
+.dlig.hlig {
+  font-variant-ligatures: discretionary-ligatures historical-ligatures;
+}
+
+/* Apply both historic and discretionary */
+
+.pnum {
+  font-variant-numeric: proportional-nums;
+}
+
+.tnum {
+  font-variant-numeric: tabular-nums;
+}
+
+.lnum {
+  font-variant-numeric: lining-nums;
+}
+
+.onum {
+  font-variant-numeric: oldstyle-nums;
+}
+
+.zero {
+  font-variant-numeric: slashed-zero;
+}
+
+.pnum.zero {
+  font-variant-numeric: proportional-nums slashed-zero;
+}
+
+/* Apply slashed zeroes to proportional numerals */
+.tnum.zero {
+  font-variant-numeric: tabular-nums slashed-zero;
+}
+
+.lnum.zero {
+  font-variant-numeric: lining-nums slashed-zero;
+}
+
+.onum.zero {
+  font-variant-numeric: oldstyle-nums slashed-zero;
+}
+
+.tnum.lnum.zero {
+  font-variant-numeric: tabular-nums lining-nums slashed-zero;
+}
+
+.frac {
+  font-variant-numeric: diagonal-fractions;
+}
+
+.afrc {
+  font-variant-numeric: stacked-fractions;
+}
+
+.ordn {
+  font-variant-numeric: ordinal;
+}
+
+.smcp {
+  font-variant-caps: small-caps;
+}
+
+.c2sc {
+  font-variant-caps: unicase;
+}
+
+.hist {
+  font-variant-alternates: historical-forms;
+}
+
+pre,
+code,
+var,
+samp,
+kbd,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  -webkit-hyphens: manual;
+  hyphens: manual;
 }

@@ -110,14 +110,41 @@ $organic-noir: #172b36;
 /// DNB: prose - article content formatting
 @include dnb-scrollbars(".prose", 3px);
 
+/// @see https://github.com/clagnut/TODS
 .prose {
   --flow-space: var($spacer * 2);
 
-  >*+* {
-    margin-block-start: var(--flow-space, 1em);
-  }
+  max-inline-size: 55rem;
 
   font-variant-numeric: oldstyle-nums;
+
+  /// @see https://kilianvalkhof.com/2022/css-html/your-css-reset-needs-text-size-adjust-probably/
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+
+  line-height: 1.5;
+  text-decoration-skip-ink: auto;
+  font-optical-sizing: auto;
+  font-variant-ligatures: common-ligatures no-discretionary-ligatures no-historical-ligatures contextual;
+  font-kerning: normal;
+
+  text-wrap: pretty;
+  font-variant-numeric: oldstyle-nums proportional-nums;
+  font-size-adjust: 0.458;
+
+  /// hyphenation
+  /// @see https://clagnut.com/blog/2395/
+  -webkit-hyphens: auto;
+  -webkit-hyphenate-limit-before: 4;
+  -webkit-hyphenate-limit-after: 3;
+  -webkit-hyphenate-limit-lines: 2;
+
+  hyphens: auto;
+  hyphenate-limit-chars: 7 4 3;
+  hyphenate-limit-lines: 2;
+  hyphenate-limit-zone: 8%;
+  hyphenate-limit-last: always;
 
   @import "09-hooks/prose-pre";
   @import "05-prose/prose";
