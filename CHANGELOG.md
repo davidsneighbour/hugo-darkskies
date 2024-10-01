@@ -1,4 +1,36 @@
 Changelog
+## [1.2024.17](https://github.com/davidsneighbour/hugo-darksky/compare/v1.2024.16...v1.2024.17) (2024-10-01)
+
+
+### Content
+
+* **fix:** move themetest to theme ([610e258](https://github.com/davidsneighbour/hugo-darksky/commit/610e258ffbe928530951d9b31fb00a19801950c6))
+
+
+### Theme
+
+* **fix:** center max widthed prose ([f8a2ace](https://github.com/davidsneighbour/hugo-darksky/commit/f8a2aceade344a1f4a28cd8c992400b6cf146fc5))
+* **fix:** fix typocaster shortcode setup ([460f0a6](https://github.com/davidsneighbour/hugo-darksky/commit/460f0a635c82cae1a6ece6caa27a4b8d1c72bddb))
+* **fix:** headline font does not need bold weight set ([5c6f0ae](https://github.com/davidsneighbour/hugo-darksky/commit/5c6f0ae04171b1ee1c2606ebb83007d6dae55dba)), closes [davidsneighbour/kollitsch.dev#1239](https://github.com/davidsneighbour/kollitsch.dev/issues/1239)
+* **fix:** mark padding breaks line heights ([5dc4cb7](https://github.com/davidsneighbour/hugo-darksky/commit/5dc4cb796672e064624539c4853042ca86077cc0)), closes [davidsneighbour/kollitsch.dev#1238](https://github.com/davidsneighbour/kollitsch.dev/issues/1238)
+* **fix:** move documentation layouts out of the theme ([5a2fb01](https://github.com/davidsneighbour/hugo-darksky/commit/5a2fb01ce5acd0b4cd039e973270464473d3ade3))
+* **fix:** remove alert shortcode in favour of new blockquote renderhook ([0dc39d2](https://github.com/davidsneighbour/hugo-darksky/commit/0dc39d29a487ae95be9cb20bb084eb5749f30fdd))
+* **fix:** rework typography in prose section ([f01a4a3](https://github.com/davidsneighbour/hugo-darksky/commit/f01a4a33de2396d3a715e41e6c88180d0c8dc61d))
+* **fix:** smaller fixes to shortcodes ([c1dffdc](https://github.com/davidsneighbour/hugo-darksky/commit/c1dffdc2de8a9485bb0387fdde9f9e2d7105e774))
+* **fix:** update font setup for code, add ligatures properly ([07d5430](https://github.com/davidsneighbour/hugo-darksky/commit/07d5430c629345854e8009d23bb34d39bac98a2c))
+
+
+### Chore
+
+* **deps:** update dependencies ([f0a8bba](https://github.com/davidsneighbour/hugo-darksky/commit/f0a8bba8346123402e87a4142430c4e456986fcd))
+
+
+### Configuration
+
+* **fix:** imaging configuration ([a9219c5](https://github.com/davidsneighbour/hugo-darksky/commit/a9219c52f5cc476fc9ca55e21f6c925ede930d7c))
+* **fix:** more cachebuster setup changes (js) ([3ccb7cf](https://github.com/davidsneighbour/hugo-darksky/commit/3ccb7cf74b7a9ebeaa256f3bba214f9bc2c7d1e9))
+* **fix:** update build match for stylesheets ([9d47f1b](https://github.com/davidsneighbour/hugo-darksky/commit/9d47f1b481e57aec3a9aa45bb3d3a88db5aa2225))
+
 ## [1.2024.16](https://github.com/davidsneighbour/hugo-darksky/compare/v1.2024.15...v1.2024.16) (2024-09-29)
 
 

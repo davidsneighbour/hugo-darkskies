@@ -22,8 +22,8 @@ github.com/davidsneighbour/hugo-modules/modules/netlification v1.2024.8 h1:dhznD
 github.com/davidsneighbour/hugo-modules/modules/netlification v1.2024.8/go.mod h1:5ewL7ZhqJAioSM8nSHWWMKfm3MnNz9klX/JdOzZAxvY=
 github.com/davidsneighbour/hugo-modules/modules/opensearch v1.2024.3 h1:1IFtXWWR7dRctmBn2sHtxdKw5fh3b1phyEnAj8I6kB4=
 github.com/davidsneighbour/hugo-modules/modules/opensearch v1.2024.3/go.mod h1:XmxFP1dqNoiLxL0hUFs8udbtG3qgSzZDFRQSDg5pGDs=
-github.com/davidsneighbour/hugo-modules/modules/pictures v1.2024.8 h1:/D7p08B/1xmtjWLRmqCj96Sds/BadegAfdPM0cbqqy0=
-github.com/davidsneighbour/hugo-modules/modules/pictures v1.2024.8/go.mod h1:wHveSSBmVY6BKY2fsBC+0S1rjDIa66CJh9tWkngvBhw=
+github.com/davidsneighbour/hugo-modules/modules/pictures v1.2024.10 h1:ehHUQY8aqJIh8P9ND3bfuUc69OkbBYQoL3InTbvjjxE=
+github.com/davidsneighbour/hugo-modules/modules/pictures v1.2024.10/go.mod h1:wHveSSBmVY6BKY2fsBC+0S1rjDIa66CJh9tWkngvBhw=
 github.com/davidsneighbour/hugo-modules/modules/publisher v1.2024.1 h1:beBYnli8uabFzvTEopU9lx6Nnk8Nd+hgwzXi2hUrbL4=
 github.com/davidsneighbour/hugo-modules/modules/publisher v1.2024.1/go.mod h1:CE+KzNh9eIMZYoZPXeTP/CtvLYIbAsCq+UWTZWsGBk4=
 github.com/davidsneighbour/hugo-modules/modules/pwa v1.2024.10 h1:41s4JXA17Lw/KA5gboBWt137gQQTUSQ9xiLVGAxaEhM=
