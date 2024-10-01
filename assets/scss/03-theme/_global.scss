@@ -137,7 +137,8 @@ $mark-lighten-percentage: 20%; // Configurable percentage for lightening
 }
 
 mark {
-  @extend .mark-orange;
+  @extend .mark-green;
+  @extend .rounded;
 }
 
 // mark::before {
