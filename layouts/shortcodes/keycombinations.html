@@ -11,7 +11,7 @@
         <td>
           {{- $combinations := strings.Split .combination " + " -}}
           {{- range $index, $combination := $combinations -}}
-            {{- if $index -}}+{{- end -}}
+            {{- if $index }} + {{ end -}}
             <kbd>{{- . -}}</kbd>
           {{- end -}}
         </td>
