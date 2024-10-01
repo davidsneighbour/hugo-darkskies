@@ -3,8 +3,9 @@
 # a simple and fast averaging filter appropriate for downscaling.
 # See https://github.com/disintegration/imaging
 ################################################################################
-resampleFilter = "lanczos"
-quality = 85
+resampleFilter = "box"
+hint = 'photo'
+quality = 90
 anchor = "smart"
 
 [exif]
