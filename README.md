@@ -2,6 +2,9 @@
 
 *DarkSky* is a fast and feature-rich theme for GoHugo, the fastest Static Site Generator (SSG) available. This theme is designed to provide an exceptional user experience, while also being highly customizable.
 
+> [!WARNING]
+> Please be aware that until recently Darksky was my own theme. I am now in the process of cutting it out of my personal website and into a standalone theme. This process will take some time and the theme might not work as expected. Please be patient, use the issue tracker for quite fast help with any issues that might occur, and check back later for updates.
+
 ## Features and benefits
 
 * **Dark and Light Themes**: Automatically adapts to the visitor's system settings or personal preference.
