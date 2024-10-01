@@ -25,7 +25,7 @@
         <div class="container">
           {{- partials.Include "func/hook.html" ( collections.Dictionary "hook" "header-topnav-start" "context" . ) -}}
           {{- /* Logo/Brand name */ -}}
-          <div class="navbar-brand fsize-12 fw-bold ff-headline">
+          <div class="navbar-brand fsize-12 ff-headline">
             {{- if site.Params.dnb.theme.logo -}}
             <a href="{{- site.BaseURL | urls.RelLangURL -}}" class="mt-2 d-inline-block text-decoration-none">
               <img class="rounded-circle" src="{{- site.Params.dnb.theme.logo | urls.AbsURL  -}}"
@@ -148,7 +148,7 @@
         {{- end -}}
         {{- with site.Menus.footer -}}
           <div class="widget footer-navigation">
-            <h3 class="my-5 fw-bold">{{ lang.Translate "theme.footer_menu_header" }}</h3>
+            <h3 class="my-5">{{ lang.Translate "theme.footer_menu_header" }}</h3>
             <ul class="mb-0 list-inline">
               {{- range . -}}
                 <li class="px-2 list-inline-item">
@@ -197,7 +197,7 @@
             {{- end -}}
           {{- end -}}
           <div class="widget social-media">
-            <h3 class="my-5 fw-bold">{{- lang.Translate "theme.connect-on-social" -}}</h3>
+            <h3 class="my-5">{{- lang.Translate "theme.connect-on-social" -}}</h3>
             <div class="container-sm">
               <div class="row row-cols-4 justify-content-md-center">
                 {{- range $order -}}
