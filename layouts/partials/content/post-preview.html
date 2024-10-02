@@ -55,20 +55,18 @@
     <div class="text-end">
       {{- /* @todo move into button component */ -}}
       {{- $label := fmt.Printf "%s: %s" (lang.Translate "theme.read_article") $post.Title -}}
-      <a href="{{- $post.Permalink -}}"
-          class="d-inline-flex justify-content-end align-items-center flex-row"
+      <button href="{{- $post.Permalink -}}"
+          class="btn btn-link text-decoration-none ff-body fw-bold"
           aria-label="{{- $label }}"
           {{ with $index }}
             data-hotkey="k+{{- $index -}}"
           {{ end }}
           rel="bookmark"
           >
-        <span class="d-inline-block pe-2">
-          {{- lang.Translate "theme.read_article" -}}
-        </span>
+        {{- lang.Translate "theme.read_article" -}}
         {{- $options := dict "icon" "chevron-double-right" "class" "d-inline-block" "width" "24" "height" "24" -}}
         {{- partials.Include "icon.html" $options -}}
-      </a>
+      </button>
     </div>
 
   </div>
