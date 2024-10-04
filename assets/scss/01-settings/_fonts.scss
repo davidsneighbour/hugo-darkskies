@@ -1,7 +1,13 @@
+////
+/// Theme font setup
 /// @group settings
+/// @author Patrick Kollitsch
+/// @link https://github.com/zachleat/glyphhanger How to create a font subset
+////
 
 $fontdir: "/assets/webfonts";
 
+/// @see https://github.com/NDISCOVER/Exo-2.0
 @font-face {
   font-family: Exo2;
   src: url("#{$fontdir}/exo/normal.woff2") format("woff2") tech("variations"),
@@ -22,6 +28,7 @@ $fontdir: "/assets/webfonts";
   text-rendering: optimizelegibility;
 }
 
+/// @link https://github.com/JetBrains/JetBrainsMono
 @font-face {
   font-family: JetBrainsMono;
   src: url("#{$fontdir}/jetbrainsmono/JetBrainsMono[wght].woff2") format("woff2") tech("variations"),
@@ -29,7 +36,6 @@ $fontdir: "/assets/webfonts";
   font-weight: 100 800;
   font-style: normal;
   font-display: fallback;
-  ;
   text-rendering: optimizelegibility;
 }
 
@@ -43,6 +49,7 @@ $fontdir: "/assets/webfonts";
   text-rendering: optimizelegibility;
 }
 
+/// @link https://github.com/etunni/changa-one
 @font-face {
   font-family: Changa;
   src: url('#{$fontdir}/changa/changaone-regular-webfont.woff2') format('woff2'),
@@ -62,23 +69,4 @@ $fontdir: "/assets/webfonts";
   font-style: italic;
   font-display: swap;
   text-rendering: optimizelegibility;
-}
-
-:root {
-  --ff-headline: Changa, sans-serif;
-  --ff-body: Exo2, sans-serif;
-  --ff-mono: JetBrainsMono, monospace;
-}
-
-/// font family classes
-.ff-headline {
-  font-family: var(--ff-headline) !important;
-}
-
-.ff-body {
-  font-family: var(--ff-body) !important;
-}
-
-.ff-jetbrains {
-  font-family: var(--ff-mono) !important;
 }
