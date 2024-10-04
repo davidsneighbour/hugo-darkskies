@@ -19,20 +19,20 @@
     {{- $output = $post.Summary -}}
   {{- else -}}
     {{- with $post.Description -}}
-      {{- $output = . | transform.Markdownify -}}
+      {{- $output = . | transform.Plainify -}}
     {{- else -}}
-      {{- $output = $post.Content | transform.Markdownify | strings.Truncate 100 -}}
+      {{- $output = $post.Content | transform.Plainify | strings.Truncate 100 -}}
     {{- end -}}
   {{- end -}}
 
-  <p class="text-truncate text-truncate-5">
+  <p class="text-truncate text-truncate-3">
   {{- if and (compare.Eq "" $output) (compare.Eq "music" $post.Type) -}}
     {{- lang.Translate "theme.this_is" }} "{{- $post.Params.video.title -}}" {{ lang.Translate "theme.by" }}
     <a href="{{- $artist.link -}}">
       {{- $artist.name -}}
-    </a>. {{ $artist.description | transform.Markdownify -}}
+    </a>. {{ $artist.description | transform.Plainify -}}
   {{ else }}
-    {{- $output -}}
+    {{- $output | transform.Plainify -}}
   {{- end -}}
   </p>
 
