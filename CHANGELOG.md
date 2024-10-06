@@ -1,4 +1,18 @@
 Changelog
+## [1.2024.21](https://github.com/davidsneighbour/hugo-darksky/compare/v1.2024.18...v1.2024.21) (2024-10-06)
+
+
+### Chore
+
+* **release:** v1.2024.19 ([6b68e6f](https://github.com/davidsneighbour/hugo-darksky/commit/6b68e6ff99e2e37d09a4e5a979a2156eceebbcd9))
+* **release:** v1.2024.20 ([e801c4c](https://github.com/davidsneighbour/hugo-darksky/commit/e801c4c12b778b01cefd1518b98a6dfa19905e1a))
+
+
+### Build System
+
+* **fix:** better .env loading method ([dc10db9](https://github.com/davidsneighbour/hugo-darksky/commit/dc10db9910741f85e57da172428478e0127c6a25))
+* **fix:** more rework of release hooks ([44fde7a](https://github.com/davidsneighbour/hugo-darksky/commit/44fde7a9368a183d87276ef193a7f9739f19d399))
+
 ## [1.2024.20](https://github.com/davidsneighbour/hugo-darksky/compare/v1.2024.18...v1.2024.20) (2024-10-06)
 
 
