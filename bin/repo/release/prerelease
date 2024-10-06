@@ -17,27 +17,30 @@ for TOOL in "${REQUIRED_TOOLS[@]}"; do
   fi
 done
 
-# Load ~/.env if it exists
-GLOBAL_ENV_FILE="$HOME/.env"
-if [ -f "$GLOBAL_ENV_FILE" ]; then
-  echo "Loading global ~/.env"
-  set -a
-  # shellcheck source=/dev/null
-  source "$GLOBAL_ENV_FILE"
-  set +a
-fi
+# Load all .env files from home (~) to the current directory
+current_dir=$(realpath .)
+home_dir=$(realpath ~)
 
-# Override with local .env if it exists
-LOCAL_ENV_FILE=".env"
-if [ -f "$LOCAL_ENV_FILE" ]; then
-  echo "Loading local .env"
-  set -a
-  # shellcheck source=/dev/null
-  source "$LOCAL_ENV_FILE"
-  set +a
-else
-  echo "No local .env file found"
-fi
+# Traverse directories from home to the current directory
+dir="$home_dir"
+while true; do
+  env_file="$dir/.env"
+  if [ -f "$env_file" ]; then
+    echo "Loading $env_file"
+    set -a
+    # shellcheck source=/dev/null
+    source "$env_file"
+    set +a
+  fi
+
+  # Break the loop if we've reached the current directory
+  if [ "$dir" == "$current_dir" ]; then
+    break
+  fi
+
+  # Move to the next directory in the path towards the current directory
+  dir=$(realpath "$dir/..")
+done
 
 SCRIPTPATH="$(
   cd "$(dirname "$0")" >/dev/null 2>&1 || exit

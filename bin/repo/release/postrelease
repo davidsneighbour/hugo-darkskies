@@ -19,28 +19,30 @@ for TOOL in "${REQUIRED_TOOLS[@]}"; do
   fi
 done
 
-# Load environment variables from .env file if it exists
-# Load ~/.env if it exists
-GLOBAL_ENV_FILE="$HOME/.env"
-if [ -f "$GLOBAL_ENV_FILE" ]; then
-  echo "Loading global ~/.env"
-  set -a
-  # shellcheck source=/dev/null
-  source "$GLOBAL_ENV_FILE"
-  set +a
-fi
+# Load all .env files from home (~) to the current directory
+current_dir=$(realpath .)
+home_dir=$(realpath ~)
 
-# Override with local .env if it exists
-LOCAL_ENV_FILE=".env"
-if [ -f "$LOCAL_ENV_FILE" ]; then
-  echo "Loading local .env"
-  set -a
-  # shellcheck source=/dev/null
-  source "$LOCAL_ENV_FILE"
-  set +a
-else
-  echo "No local .env file found"
-fi
+# Traverse directories from home to the current directory
+dir="$home_dir"
+while true; do
+  env_file="$dir/.env"
+  if [ -f "$env_file" ]; then
+    echo "Loading $env_file"
+    set -a
+    # shellcheck source=/dev/null
+    source "$env_file"
+    set +a
+  fi
+
+  # Break the loop if we've reached the current directory
+  if [ "$dir" == "$current_dir" ]; then
+    break
+  fi
+
+  # Move to the next directory in the path towards the current directory
+  dir=$(realpath "$dir/..")
+done
 
 # Set script and current paths
 SCRIPTPATH=$(realpath "$(dirname "$0")")
@@ -99,13 +101,22 @@ RELEASE="$MAJOR.$MINOR.$PATCH"
 # Update CITATION.cff version and date
 FILE="CITATION.cff"
 if [ -f "$FILE" ]; then
-  sed -i "s/^version: .*/version: ${RELEASE}/" "$FILE" || { echo "Error: Failed to update version in $FILE" >&2; exit 1; }
+  sed -i "s/^version: .*/version: ${RELEASE}/" "$FILE" || {
+    echo "Error: Failed to update version in $FILE" >&2
+    exit 1
+  }
   DATE=$(date +%F)
-  sed -i "s/date-released: .*/date-released: ${DATE}/" "$FILE" || { echo "Error: Failed to update date in $FILE" >&2; exit 1; }
+  sed -i "s/date-released: .*/date-released: ${DATE}/" "$FILE" || {
+    echo "Error: Failed to update date in $FILE" >&2
+    exit 1
+  }
   git add "$FILE"
 fi
 
 # Generate release notes
 RELEASE_NOTES=$(npx commit-and-tag-version --dry-run 2>/dev/null | sed -r 's/\x1B\[[0-9;]*[mK]//g' | awk 'BEGIN { flag=0 } /^---$/ { if (flag == 0) { flag=1 } else { flag=2 }; next } flag == 1')
 if [ -z "$RELEASE_NOTES" ]; then
-  echo "Error: Failed to generate release notes."
+  echo "Error: Failed to generate release notes." >&2
+  exit 1
+fi
+echo "${RELEASE_NOTES}" >changes.md
