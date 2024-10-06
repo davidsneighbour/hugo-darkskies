@@ -21,10 +21,6 @@
 ///   // }
 
 
-
-// dark = 12% diff
-// light = 7% diff
-
 :root {
   /// @see https://developer.chrome.com/docs/css-ui/animate-to-height-auto/
   interpolate-size: allow-keywords;
@@ -34,21 +30,18 @@
 [data-bs-theme="dark"] {
   color-scheme: dark;
 
-  --bs-body-bg: $nocturnal-expedition;
+  --bs-body-bg: $dark-2;
   --bs-primary: #dc322f;
 }
 
 [data-bs-theme="light"] {
   color-scheme: light;
 
-  --bs-body-bg: $arctic-powder;
-  --bs-primary: $nocturnal-expedition;
+  --bs-body-bg: $light-1;
+  --bs-primary: $dark-2;
 }
 
 $color-mode-type: data;
-
-/// @deprecated
-$primary: #dc322f;
 
 /// color settings
 $danger-text-emphasis: $primary;
@@ -57,8 +50,8 @@ $danger-text-emphasis: $primary;
 $border-width: 2px;
 
 /// body
-$body-bg-dark: $organic-noir;
-$body-bg: $arctic-powder;
+$body-bg-dark: $dark-1;
+$body-bg: $light-1;
 
 /// typography
 /// based on golden ratio

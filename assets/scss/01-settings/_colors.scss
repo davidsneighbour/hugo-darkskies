@@ -1,12 +1,13 @@
 ////
 /// Theme colors setup
-/// @group 01-settings
+/// @group settings
 /// @author Patrick Kollitsch
 ////
 
-$arctic-powder: #f1f6f4;
-$mystic-mint: #d9e8e3;
-$forsythia: #ffc801;
-$deep-saffron: #ff9932;
-$nocturnal-expedition: #114c5a;
-$organic-noir: #172b36;
+$dark-1: #172b36 !default;
+$dark-2: #114c5a !default;
+
+$light-1: #f1f6f4 !default;
+$light-2: #d9e8e3 !default;
+
+$primary: #dc322f !default;
