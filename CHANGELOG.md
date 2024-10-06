@@ -1,4 +1,16 @@
 Changelog
+## [1.2024.20](https://github.com/davidsneighbour/hugo-darksky/compare/v1.2024.18...v1.2024.20) (2024-10-06)
+
+
+### Chore
+
+* **release:** v1.2024.19 ([6b68e6f](https://github.com/davidsneighbour/hugo-darksky/commit/6b68e6ff99e2e37d09a4e5a979a2156eceebbcd9))
+
+
+### Build System
+
+* **fix:** more rework of release hooks ([44fde7a](https://github.com/davidsneighbour/hugo-darksky/commit/44fde7a9368a183d87276ef193a7f9739f19d399))
+
 ## [1.2024.19](https://github.com/davidsneighbour/hugo-darksky/compare/v1.2024.18...v1.2024.19) (2024-10-06)
 
 
