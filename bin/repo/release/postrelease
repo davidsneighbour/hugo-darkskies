@@ -1,122 +1,73 @@
 #!/bin/bash
 
-set -euo pipefail
-IFS=$'\n\t'
+# set -euo pipefail # http://redsymbol.net/articles/unofficial-bash-strict-mode
+# IFS=$'\n\t'
 
-# Define required tools
 REQUIRED_TOOLS=(
   git
-  hugo
-  typos
-  curl
+  sed
+  node
 )
 
-# Check if all required tools are installed
+# check if all requirements are met
 for TOOL in "${REQUIRED_TOOLS[@]}"; do
   if ! command -v "${TOOL}" >/dev/null; then
-    echo "Error: ${TOOL} is required but not installed. Please install ${TOOL} before running this script." >&2
+    echo "${TOOL} is required... "
     exit 1
   fi
 done
 
-# Load all .env files from home (~) to the current directory
-current_dir=$(realpath .)
-home_dir=$(realpath ~)
+VERSION=$(node -pe 'require("./package.json")["version"]')
 
-# Traverse directories from home to the current directory
-dir="$home_dir"
-while true; do
-  env_file="$dir/.env"
-  if [ -f "$env_file" ]; then
-    echo "Loading $env_file"
-    set -a
-    # shellcheck source=/dev/null
-    source "$env_file"
-    set +a
-  fi
-
-  # Break the loop if we've reached the current directory
-  if [ "$dir" == "$current_dir" ]; then
-    break
-  fi
-
-  # Move to the next directory in the path towards the current directory
-  dir=$(realpath "$dir/..")
-done
-
-# Set script and current paths
-SCRIPTPATH=$(realpath "$(dirname "$0")")
-CURPATH=$(realpath .)
-
-# Quietly shut down any running Hugo servers
-pkill -9 hugo || true
-
-# Remove module replacements if applicable
-if [ -f "$SCRIPTPATH/bin/etc/hugo/replacements" ]; then
-  while read -r replacement; do
-    go mod edit -dropreplace "${replacement}"
-  done <"$SCRIPTPATH/bin/etc/hugo/replacements"
+# Load ~/.env if it exists
+GLOBAL_ENV_FILE="$HOME/.env"
+if [ -f "$GLOBAL_ENV_FILE" ]; then
+  echo "Loading global ~/.env"
+  set -a
+  # shellcheck source=/dev/null
+  source "$GLOBAL_ENV_FILE"
+  set +a
 fi
 
-# Update Hugo modules
-hugo mod get -u ./...
-hugo mod tidy
-
-# Add updated go.mod and go.sum to git
-git add "${CURPATH}/go.mod"
-FILE="${CURPATH}/go.sum"
-if [ -f "$FILE" ]; then
-  git add go.sum
+# Override with local .env if it exists
+LOCAL_ENV_FILE=".env"
+if [ -f "$LOCAL_ENV_FILE" ]; then
+  echo "Loading local .env"
+  set -a
+  # shellcheck source=/dev/null
+  source "$LOCAL_ENV_FILE"
+  set +a
 fi
 
-# Remove public directory if it exists
-[ -d public/ ] && rm -rf public/
+# push everything up
+git push origin main --follow-tags
+git push origin --tags
 
-# Determine new release version
-step="${1:-patch}"
-base=$(node -pe 'require("./package.json")["version"]')
-IFS='.' read -r MAJOR MINOR PATCH <<<"$base"
+# create a release on GitHub
+CHANGES=$(jq -Rs . <changes.md)
+GITHUB_REPO=https://github.com/${GITHUB_REPOSLUG}
+TAGNAME=v${VERSION}
+URL="$GITHUB_REPO"/"releases/edit/v""$VERSION"
+response=$(curl -s -o response.json -w "%{http_code}" \
+  -X POST \
+  -H "Accept: application/vnd.github+json" \
+  -H "Authorization: token ${GITHUB_SECRET}" \
+  https://api.github.com/repos/"${GITHUB_REPOSLUG}"/releases \
+  -d "{ \
+      \"tag_name\":\"${TAGNAME}\", \
+      \"name\":\"${TAGNAME}\", \
+      \"body\":${CHANGES}, \
+      \"generate_release_notes\":false \
+  }")
 
-case "$step" in
-major)
-  ((MAJOR += 1))
-  MINOR=0
-  PATCH=0
-  ;;
-minor)
-  ((MINOR += 1))
-  PATCH=0
-  ;;
-patch)
-  ((PATCH += 1))
-  ;;
-*)
-  echo "Error: Invalid argument '$step'. Use 'major', 'minor', or 'patch'." >&2
-  exit 1
-  ;;
-esac
-
-RELEASE="$MAJOR.$MINOR.$PATCH"
-
-# Update CITATION.cff version and date
-FILE="CITATION.cff"
-if [ -f "$FILE" ]; then
-  sed -i "s/^version: .*/version: ${RELEASE}/" "$FILE" || {
-    echo "Error: Failed to update version in $FILE" >&2
-    exit 1
-  }
-  DATE=$(date +%F)
-  sed -i "s/date-released: .*/date-released: ${DATE}/" "$FILE" || {
-    echo "Error: Failed to update date in $FILE" >&2
-    exit 1
-  }
-  git add "$FILE"
+if [[ "$response" -ge 200 && "$response" -lt 300 ]]; then
+  echo "Release created successfully."
+  rm changes.md
+else
+  echo "Failed to create release. Status code: $response"
+  echo "Opening changes file for review."
+  code changes.md
 fi
+xdg-open "${URL}" &>/dev/null
 
-# Generate release notes
-RELEASE_NOTES=$(npx commit-and-tag-version --dry-run 2>/dev/null | sed -r 's/\x1B\[[0-9;]*[mK]//g' | awk 'BEGIN { flag=0 } /^---$/ { if (flag == 0) { flag=1 } else { flag=2 }; next } flag == 1')
-if [ -z "$RELEASE_NOTES" ]; then
-  echo "Error: Failed to generate release notes." >&2
-  exit 1
-fi
-echo "${RELEASE_NOTES}" >changes.md
+npm publish --access public
