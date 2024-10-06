@@ -1,4 +1,6 @@
 Changelog
+## [1.2024.23](https://github.com/davidsneighbour/hugo-darksky/compare/v1.2024.22...v1.2024.23) (2024-10-06)
+
 ## [1.2024.22](https://github.com/davidsneighbour/hugo-darksky/compare/v1.2024.18...v1.2024.22) (2024-10-06)
 
 
