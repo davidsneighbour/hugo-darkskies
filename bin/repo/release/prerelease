@@ -17,15 +17,26 @@ for TOOL in "${REQUIRED_TOOLS[@]}"; do
   fi
 done
 
-FILE=.env
-if [ -f "$FILE" ]; then
-  echo "exporting .env"
-  set -a # export all variables created next
-  # this routine ranges through a folder of files that we don't explicitly know (@davidsneighbour)
-  # see https://github.com/koalaman/shellcheck/wiki/SC1090
+# Load ~/.env if it exists
+GLOBAL_ENV_FILE="$HOME/.env"
+if [ -f "$GLOBAL_ENV_FILE" ]; then
+  echo "Loading global ~/.env"
+  set -a
   # shellcheck source=/dev/null
-  source "${FILE}"
-  set +a # stop exporting
+  source "$GLOBAL_ENV_FILE"
+  set +a
+fi
+
+# Override with local .env if it exists
+LOCAL_ENV_FILE=".env"
+if [ -f "$LOCAL_ENV_FILE" ]; then
+  echo "Loading local .env"
+  set -a
+  # shellcheck source=/dev/null
+  source "$LOCAL_ENV_FILE"
+  set +a
+else
+  echo "No local .env file found"
 fi
 
 SCRIPTPATH="$(
