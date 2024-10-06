@@ -1,4 +1,17 @@
 Changelog
+## [1.2024.26](https://github.com/davidsneighbour/hugo-darksky/compare/v1.2024.25...v1.2024.26) (2024-10-06)
+
+
+### Theme
+
+* **fix:** utilitarian color names, fixes ([598a64c](https://github.com/davidsneighbour/hugo-darksky/commit/598a64ce36797e693d2a83962f9189762a54c4c2))
+* **wip:** more sass theme documentation ([6e38a4e](https://github.com/davidsneighbour/hugo-darksky/commit/6e38a4e1a4c21d84fabe8b1dd5f792497484081b))
+
+
+### Build System
+
+* **fix:** update .env.template ([94640b9](https://github.com/davidsneighbour/hugo-darksky/commit/94640b9991c52fb86ea60ddfc3bd7f3ae06b4289))
+
 ## [1.2024.25](https://github.com/davidsneighbour/hugo-darksky/compare/v1.2024.18...v1.2024.25) (2024-10-06)
 
 
