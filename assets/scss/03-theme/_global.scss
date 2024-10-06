@@ -1,3 +1,28 @@
+////
+/// @group 03-theme
+/// @author Patrick Kollitsch
+////
+
+:root {
+  --ff-headline: Changa, sans-serif;
+  --ff-body: Exo2, sans-serif;
+  --ff-mono: JetBrainsMono, monospace;
+}
+
+/// font family classes
+.ff-headline {
+  font-family: var(--ff-headline) !important;
+}
+
+.ff-body {
+  font-family: var(--ff-body) !important;
+}
+
+.ff-jetbrains {
+  font-family: var(--ff-mono) !important;
+}
+
+
 html {
   scroll-behavior: smooth;
 
@@ -16,6 +41,13 @@ body {
   font-feature-settings: "liga" on, "calt" on;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizelegibility;
+
+  /// @todo see if required
+
+  //   max-width: clamp(320px, 90%, 1000px);
+  //   /* additional recommendation */
+  //   margin: auto;
+
 }
 
 .rainbow-box {
@@ -50,8 +82,27 @@ main {
   }
 }
 
+.breadcrumb {
+  margin-right: $spacer / 2;
+
+  .breadcrumb-item {
+    float: none;
+    overflow-x: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+}
+
+
 a.text-hover-decoration-none:hover {
   @extend .text-decoration-none;
+}
+
+// $search = '/\b([A-Z][A-Z0-9]{2,})\b/';
+// $replace = '<abbr>$1</abbr>';
+// $text = preg_replace($search,$replace,$text);
+abbr {
+  letter-spacing: 0.1em;
 }
 
 .alert {
@@ -115,9 +166,12 @@ textarea {
 
 }
 
+
+
 /* highlighting via `mark` tag */
 $mark-lighten-percentage: 20%; // Configurable percentage for lightening
 
+/// @name mark-[error|warning|success|info]
 @each $name, $color in $colors {
   $light-color: mix(white, $color, $mark-lighten-percentage);
 
@@ -168,4 +222,28 @@ h6,
 caption,
 figcaption {
   text-wrap: balance;
+}
+
+// DNB: prose - article content formatting
+@include dnb-scrollbars;
+@include dnb-scrollbars(".prose", 3px);
+
+// @see https://github.com/clagnut/TODS
+.prose {
+
+  @import "09-hooks/prose-pre";
+  @import "05-prose/prose";
+  @import "05-prose/tables";
+
+  .light & {
+    // light theme syntax highlighting
+    @import "05-prose/syntax/light";
+  }
+
+  .dark & {
+    // dark theme syntax highlighting
+    @import "05-prose/syntax/dark";
+  }
+
+  @import "09-hooks/prose-post";
 }

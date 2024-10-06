@@ -1,9 +1,15 @@
 ////
 /// A container for the article
+/// @group 03-theme
+/// @author Patrick Kollitsch
 ////
 
 article {
   width: 100%;
+  /// max width and then center the article
+  max-width: 55rem;
+  margin-inline: auto;
+
 
   code {
 
@@ -45,56 +51,64 @@ article {
     @extend .rounded;
 
   }
-}
 
-.breadcrumb {
-  margin-right: $spacer / 2;
+  // @todo make this configurable by navbar
+  // [id] {
+  //   scroll-margin-top: var(--scroll-margin, 2rem);
+  // }
 
-  .breadcrumb-item {
-    float: none;
-    overflow-x: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-  }
-}
+  // @todo testing this out
+  // a:not([class]) {
+  //   text-underline-offset: 0.25em;
+  // }
+  // text-decoration-color to change the underline color
+  // text-decoration-thickness to change the underline stroke thickness.
 
-////
-/// A container for the article image
-////
-.post-slider {
 
-  figure {
-    @extend .w-100;
-    @extend .overflow-hidden;
-    @extend .rounded-top;
-    @extend .position-relative;
 
-    picture,
-    img,
-    .iframe-border,
-    video {
-      object-fit: cover;
-      aspect-ratio: 2/1;
 
-      @extend .overflow-hidden;
-      @extend .rounded;
+  /// A container for the article image
+  .post-slider {
+
+    figure {
       @extend .w-100;
+      @extend .overflow-hidden;
+      @extend .rounded-top;
+      @extend .position-relative;
+
+      picture,
+      img,
+      .iframe-border,
+      video {
+        object-fit: cover;
+        aspect-ratio: 2/1;
+
+        @extend .overflow-hidden;
+        @extend .rounded;
+        @extend .w-100;
+      }
+
     }
-
   }
-}
 
-/// global figcaption design
-figcaption {
+  /// global figcaption design
+  figcaption {
 
-  @extend .text-end;
-  @extend .text-secondary;
-  @extend .fst-italic;
-  @extend .mt-0;
-  font-size: 0.9rem;
-  width: 100%;
-}
+    @extend .text-end;
+    @extend .text-secondary;
+    @extend .fst-italic;
+    @extend .mt-0;
+    font-size: 0.9rem;
+    width: 100%;
+  }
 
-.shortcode--youtube {
-  @extend .mb-3;
+  .shortcode--youtube {
+    @extend .mb-3;
+  }
+
+
+  /// @todo check and add/remove
+  // :is(tbody, table) > tr:nth-child(odd) {
+  //   background: #0001; /* or #fff1 for dark themes */
+  // }
 }

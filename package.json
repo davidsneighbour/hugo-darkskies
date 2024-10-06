@@ -10,17 +10,24 @@
     "@davidsneighbour/release-config": "2024.3.46",
     "@davidsneighbour/remark-config": "2024.3.46",
     "@davidsneighbour/tools": "2024.3.46",
-    "pagefind": "1.1.1",
-    "wireit": "0.14.9"
+    "pagefind": "1.1.1"
   },
   "devDependencies": {
     "@apidevtools/json-schema-ref-parser": ">=11.7.0",
-    "@types/youtube": "^0.1.0"
+    "@types/youtube": "^0.1.0",
+    "sassdoc-extras": "^3.0.0"
   },
   "scripts": {
-    "release": "wireit"
+    "release": "wireit",
+    "sassdoc": "wireit"
   },
   "wireit": {
+    "sassdoc": {
+      "command": "sassdoc assets/scss --dest documentation/sass --verbose --strict --debug",
+      "files": [
+        "assets/scss"
+      ]
+    },
     "release": {
       "command": "commit-and-tag-version --sign -a -t \"v\" --releaseCommitMessageFormat \"chore(release): v{{currentTag}}\" -- --no-verify && ./bin/repo/release/postrelease"
     }

@@ -1,41 +1,39 @@
+////
+/// @group 0-setup
+/// @author Patrick Kollitsch
+////
+
 @charset 'utf-8';
 
-/// BS: Configuration
+// BS: Configuration
 @import "bootstrap/scss/functions";
 
-/// DNB: theme settings
+// DNB: theme settings
 @import "09-hooks/settings-pre";
 @import "01-settings/fonts";
 @import "09-hooks/settings-fonts-post";
-
-/// Theme colors setup
-/// @todo move into configuration
-$arctic-powder: #f1f6f4;
-$mystic-mint: #d9e8e3;
-$forsythia: #ffc801;
-$deep-saffron: #ff9932;
-$nocturnal-expedition: #114c5a;
-$organic-noir: #172b36;
+@import "01-settings/colors";
+@import "09-hooks/settings-colors-post";
 
 @import "01-settings/theme";
 @import "01-settings/utilities";
 @import "09-hooks/settings-post";
 
-/// BS: theme settings
+// BS: theme settings
 @import "bootstrap/scss/variables";
 @import "bootstrap/scss/variables-dark";
 @import "09-hooks/settings-variables-post";
 
-/// DNB: map overrides
+// DNB: map overrides
 @import "01-settings/maps";
 @import "09-hooks/settings-maps-post";
 
-/// BS: other required parts
+// BS: other required parts
 @import "bootstrap/scss/maps";
 @import "bootstrap/scss/mixins";
 @import "bootstrap/scss/utilities";
 
-/// BS: all other components as required
+// BS: all other components as required
 @import "bootstrap/scss/root";
 @import "bootstrap/scss/reboot";
 @import "bootstrap/scss/type";
@@ -74,18 +72,18 @@ $organic-noir: #172b36;
 // @import 'bootstrap/scss/offcanvas';
 // @import 'bootstrap/scss/placeholders';
 
-/// BS: helpers
+// BS: helpers
 @import "bootstrap/scss/helpers";
 
-/// BS: utilities API
+// BS: utilities API
 @import "bootstrap/scss/utilities/api";
 
-/// DNB: Mixins
+// DNB: Mixins
 @import "09-hooks/mixins-pre";
 @import "02-mixins/mixins";
 @import "09-hooks/mixins-post";
 
-/// DNB: Theme
+// DNB: Theme
 @import "09-hooks/theme-pre";
 @import "03-theme/global";
 @import "03-theme/footer";
@@ -96,10 +94,7 @@ $organic-noir: #172b36;
 @import "03-theme/transitions";
 @import "09-hooks/theme-post";
 
-/// adding scrollbars
-@include dnb-scrollbars;
-
-/// DNB: Components
+// DNB: Components
 @import "09-hooks/components-pre";
 @import "04-components/archive";
 @import "04-components/search";
@@ -107,64 +102,7 @@ $organic-noir: #172b36;
 @import "04-components/theme-toggle";
 @import "09-hooks/components-post";
 
-/// DNB: prose - article content formatting
-@include dnb-scrollbars(".prose", 3px);
-
-/// @see https://github.com/clagnut/TODS
-.prose {
-  --flow-space: var($spacer * 2);
-
-  max-inline-size: 55rem;
-  margin: 0 auto;
-
-  font-variant-numeric: oldstyle-nums;
-
-  /// @see https://kilianvalkhof.com/2022/css-html/your-css-reset-needs-text-size-adjust-probably/
-  -moz-text-size-adjust: none;
-  -webkit-text-size-adjust: none;
-  text-size-adjust: none;
-
-  line-height: 1.5;
-  text-decoration-skip-ink: auto;
-  font-optical-sizing: auto;
-  font-variant-ligatures: common-ligatures no-discretionary-ligatures no-historical-ligatures contextual;
-  font-kerning: normal;
-
-  text-wrap: pretty;
-  font-variant-numeric: oldstyle-nums proportional-nums;
-  font-size-adjust: 0.458;
-
-  /// hyphenation
-  /// @see https://clagnut.com/blog/2395/
-  -webkit-hyphens: auto;
-  -webkit-hyphenate-limit-before: 4;
-  -webkit-hyphenate-limit-after: 3;
-  -webkit-hyphenate-limit-lines: 2;
-
-  hyphens: auto;
-  hyphenate-limit-chars: 7 4 3;
-  hyphenate-limit-lines: 2;
-  hyphenate-limit-zone: 8%;
-  hyphenate-limit-last: always;
-
-  @import "09-hooks/prose-pre";
-  @import "05-prose/prose";
-  @import "05-prose/tables";
-
-  .light & {
-    // individual settings for a light theme
-    @import "05-prose/syntax/light";
-  }
-
-  .dark & {
-    // individual settings for a dark theme
-    @import "05-prose/syntax/dark";
-  }
-
-  @import "09-hooks/prose-post";
-}
-
-/// DNB: plugins (imported from node_modules)
+// DNB: plugins (imported from node_modules)
 @import "09-hooks/plugins-pre";
 @import "lite-yt-embed";
 @import "debugprint";
