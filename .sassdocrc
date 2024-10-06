@@ -9,7 +9,15 @@ groups:
 
 display:
   access:
-    - public
-    - private
+  - public
+  - private
   watermark: false
   alias: true
+
+sort:
+  - group
+  - file
+  - access
+  - line<
+
+resolveVariables:

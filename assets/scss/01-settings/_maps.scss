@@ -3,7 +3,7 @@
 /// @author Patrick Kollitsch
 ////
 
-/// layout setup
+/// layout break points and their values
 /// @link https://getbootstrap.com/docs/5.3/layout/breakpoints/#available-breakpoints
 $grid-breakpoints: (
   xs: 0,
@@ -14,7 +14,7 @@ $grid-breakpoints: (
   xxl: 1400px,
 );
 
-/// adding some more negative and positive levels to z-index
+/// extending bootstrap z-index by adding some more negative and positive levels
 /// @link https://getbootstrap.com/docs/5.3/utilities/z-index/
 $zindex-levels: (
   n3: -3,
@@ -45,8 +45,11 @@ $zindex-levels: (
   top: 9999,
 );
 
-/// @link https://getbootstrap.com/docs/5.3/utilities/spacing/#sass-maps
+/// default spacer width for spacing and sizing
 $spacer: 1rem;
+
+/// default spacer setup
+/// @link https://getbootstrap.com/docs/5.3/utilities/spacing/#sass-maps
 $spacers: (
   0: 0,
   1: $spacer * 0.25,
@@ -54,7 +57,7 @@ $spacers: (
   3: $spacer,
   4: $spacer * 1.5,
   5: $spacer * 3,
-  // starting here it's double the previous one
+  /// starting here it's double the previous one in addition to the default ones
   6: $spacer * 6,
   7: $spacer * 12,
   8: $spacer * 24,
@@ -85,7 +88,7 @@ $aspect-ratios: (
   "21x9": calc(9 / 21 * 100%),
 );
 
-///
+/// setup for theme color text
 $theme-colors-text: (
   "primary": $primary-text-emphasis,
   "secondary": $secondary-text-emphasis,

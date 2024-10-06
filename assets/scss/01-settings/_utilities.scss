@@ -20,7 +20,8 @@ $containers: (
   60: 60px,
 );
 
-/// setup utilities
+/// @access private
+/// setup utilities map before it exists
 $utilities: (
 );
 
@@ -95,7 +96,7 @@ $utils-viewport: (
 );
 $utilities: map-merge($utilities, $utils-viewport);
 
-// cursor utilities
+/// cursor utilities
 $values: (
   alias: alias,
   all-scroll: all-scroll,

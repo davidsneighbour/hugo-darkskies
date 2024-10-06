@@ -1,13 +1,35 @@
 ////
 /// Theme colors setup
-/// @group settings
+/// @group 01-settings
 /// @author Patrick Kollitsch
+/// @access public
+/// @since 1.2024.0
 ////
 
+/// default dark background color
+/// @type color
 $dark-1: #172b36 !default;
+
+/// default dark accented background color
+/// @type color
 $dark-2: #114c5a !default;
 
+/// default light background color
+/// @type color
 $light-1: #f1f6f4 !default;
+
+/// default light accented background color
+/// @type color
 $light-2: #d9e8e3 !default;
 
+/// theme primary (accent) color
+/// @type color
 $primary: #dc322f !default;
+
+/// contrast between sections in dark theme
+/// @type percentage
+$dark-contrast: 12% !default;
+
+/// contrast between sections in light theme
+/// @type percentage
+$light-contrast: 7% !default;
