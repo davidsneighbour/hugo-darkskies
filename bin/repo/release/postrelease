@@ -19,18 +19,26 @@ done
 
 VERSION=$(node -pe 'require("./package.json")["version"]')
 
-FILE=.env
-if [ -f "$FILE" ]; then
-  echo "exporting .env"
-  set -a # export all variables created next
-  # this routine ranges through a folder of files that we don't explicitly know (@davidsneighbour)
-  # see https://github.com/koalaman/shellcheck/wiki/SC1090
+# Load ~/.env if it exists
+GLOBAL_ENV="$HOME/.env"
+if [ -f "$GLOBAL_ENV" ]; then
+  echo "Loading global ~/.env"
+  set -a
   # shellcheck source=/dev/null
-  source "${FILE}"
-  set +a # stop exporting
+  source "$GLOBAL_ENV"
+  set +a
+fi
+
+# Override with local .env if it exists
+LOCAL_ENV=".env"
+if [ -f "$LOCAL_ENV" ]; then
+  echo "Loading local .env"
+  set -a
+  # shellcheck source=/dev/null
+  source "$LOCAL_ENV"
+  set +a
 else
-  echo "no .env file found"
-  exit 0
+  echo "No local .env file found"
 fi
 
 # push everything up
