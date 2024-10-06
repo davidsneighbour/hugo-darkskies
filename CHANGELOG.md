@@ -1,4 +1,21 @@
 Changelog
+## [1.2024.24](https://github.com/davidsneighbour/hugo-darksky/compare/v1.2024.18...v1.2024.24) (2024-10-06)
+
+
+### Chore
+
+* **release:** v1.2024.19 ([6b68e6f](https://github.com/davidsneighbour/hugo-darksky/commit/6b68e6ff99e2e37d09a4e5a979a2156eceebbcd9))
+* **release:** v1.2024.20 ([e801c4c](https://github.com/davidsneighbour/hugo-darksky/commit/e801c4c12b778b01cefd1518b98a6dfa19905e1a))
+* **release:** v1.2024.21 ([97befc8](https://github.com/davidsneighbour/hugo-darksky/commit/97befc884daa72350ffc582ee7828cf5156c94ee))
+* **release:** v1.2024.22 ([5049d0e](https://github.com/davidsneighbour/hugo-darksky/commit/5049d0e86987bedcac00c37a678380fd2b90ee3a))
+* **release:** v1.2024.23 ([32bdead](https://github.com/davidsneighbour/hugo-darksky/commit/32bdead26c74f2f209ce41e07196daf2a3cf50e1))
+
+
+### Build System
+
+* **fix:** better .env loading method ([dc10db9](https://github.com/davidsneighbour/hugo-darksky/commit/dc10db9910741f85e57da172428478e0127c6a25))
+* **fix:** more rework of release hooks ([44fde7a](https://github.com/davidsneighbour/hugo-darksky/commit/44fde7a9368a183d87276ef193a7f9739f19d399))
+
 ## [1.2024.23](https://github.com/davidsneighbour/hugo-darksky/compare/v1.2024.22...v1.2024.23) (2024-10-06)
 
 ## [1.2024.22](https://github.com/davidsneighbour/hugo-darksky/compare/v1.2024.18...v1.2024.22) (2024-10-06)
