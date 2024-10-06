@@ -1,4 +1,46 @@
 Changelog
+## [1.2024.18](https://github.com/davidsneighbour/hugo-darksky/compare/v1.2024.17...v1.2024.18) (2024-10-06)
+
+
+### Documentation
+
+* update README.md with a disclaimer ([34930bf](https://github.com/davidsneighbour/hugo-darksky/commit/34930bf7c04073f2b1705a44ff9c512aec6dde46))
+
+
+### Theme
+
+* **fix:** add prose class to post preview ([cb67247](https://github.com/davidsneighbour/hugo-darksky/commit/cb67247884df640819f1b9b3555140478459e944))
+* **fix:** add two colums on medium screen for recent posts ([a870a61](https://github.com/davidsneighbour/hugo-darksky/commit/a870a6131c214104b9aea264f727be8ffb5aa096))
+* **fix:** add type definitions for lite-youtube component ([d4bacac](https://github.com/davidsneighbour/hugo-darksky/commit/d4bacac269da83aef9b82c41b27f173063a9698b))
+* **fix:** figcaption italic ([b014bbf](https://github.com/davidsneighbour/hugo-darksky/commit/b014bbfad259b87a3c7117f27954e60f1bc44aa7))
+* **fix:** font styles cleanup ([9d24187](https://github.com/davidsneighbour/hugo-darksky/commit/9d2418713d255acd83c881cb82fbb0b7ea91d3f4))
+* **fix:** limit summary lines to 3 ([8861bf4](https://github.com/davidsneighbour/hugo-darksky/commit/8861bf4e23f22b748699c4d6b18aa1152ad29b16))
+* **fix:** make font classes force overriding of font ([5a55a34](https://github.com/davidsneighbour/hugo-darksky/commit/5a55a347d6a9520411d197d4bb5150517cf46ac5))
+* **fix:** read more button as real button ([d588d9e](https://github.com/davidsneighbour/hugo-darksky/commit/d588d9e015fef6f4cafa95e7f82a709ce6ce0913))
+
+
+### Refactors
+
+* code beautification ([059761f](https://github.com/davidsneighbour/hugo-darksky/commit/059761fe03e76b10d07339de6c4e312a87b5b0c3))
+* rework sass and add sassdoc generation ([9d8fc1e](https://github.com/davidsneighbour/hugo-darksky/commit/9d8fc1ea2007ba429c04e2b7fa4cac59920db483))
+
+
+### Chore
+
+* **deps:** update dependencies ([5a89a3b](https://github.com/davidsneighbour/hugo-darksky/commit/5a89a3bd2e5f3fbc45e811cbb3c5e05363b419b8))
+* **deps:** update dependencies ([8210a31](https://github.com/davidsneighbour/hugo-darksky/commit/8210a3137b1692c008fd55376edae7477a4e27ef))
+
+
+### Configuration
+
+* **vscode:** workspace configuration ([f81f15a](https://github.com/davidsneighbour/hugo-darksky/commit/f81f15af45fb08516fdbe2edb45a53d34d508db0))
+
+
+### Build System
+
+* **fix:** check for global .env before loading local .env ([8dc58ce](https://github.com/davidsneighbour/hugo-darksky/commit/8dc58ce17e61ee93f2707e89f4d23e9db0ef8601))
+* rework postrelease ([f0940f4](https://github.com/davidsneighbour/hugo-darksky/commit/f0940f4c4da7865f20e744136878e7bf1c603356))
+
 ## [1.2024.17](https://github.com/davidsneighbour/hugo-darksky/compare/v1.2024.16...v1.2024.17) (2024-10-01)
 
 
