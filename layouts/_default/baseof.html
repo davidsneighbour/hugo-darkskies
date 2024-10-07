@@ -252,13 +252,11 @@
     */ -}}
     {{- if compare.Eq true $config.backtotop.enabled -}}
       {{- $icon := $config.backtotop.icon -}}
-      <div x-data="{ showBackToTop: false }"
+      <button x-data="{ showBackToTop: false }"
           x-on:scroll.window="showBackToTop = window.pageYOffset >= 200"
-          class="scroll-to-top px-3 py-2 mb-3 me-2 lh-1
+          class="btn btn-secondary scroll-to-top px-3 py-2 mb-3 me-2 lh-1
                   position-fixed bottom-0 end-0
-                  rounded fw-normal
-                  text-bg-secondary
-                  cursor-pointer" x-show="showBackToTop"
+                  rounded fw-normal ff-body" x-show="showBackToTop"
           x-transition.duration.500ms
           x-on:click.prevent="window.scrollTo({top: 0, behavior: 'smooth'});">
         <span class="me-2">
@@ -267,7 +265,7 @@
         <span class="text">
           {{- lang.Translate "theme.back_to_top" -}}
         </span>
-      </div>
+      </button>
     {{- end -}}
     {{- if templates.Exists "partials/schema.html" -}}
       {{- partials.Include "schema.html" . . -}}
