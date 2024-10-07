@@ -1,4 +1,11 @@
 Changelog
+## [1.2024.27](https://github.com/davidsneighbour/hugo-darksky/compare/v1.2024.26...v1.2024.27) (2024-10-07)
+
+
+### Chore
+
+* rename hugo-darksky to hugo-darkskies ([02e2e6d](https://github.com/davidsneighbour/hugo-darksky/commit/02e2e6d4db42a5ac4e4f6a5acd375bc0ff4ec193))
+
 ## [1.2024.26](https://github.com/davidsneighbour/hugo-darksky/compare/v1.2024.25...v1.2024.26) (2024-10-06)
 
 
