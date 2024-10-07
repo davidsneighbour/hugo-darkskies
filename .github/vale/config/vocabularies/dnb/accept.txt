@@ -13,4 +13,4 @@ GoHugo
 config
 [Cc]acheability
 Kurzschnitte
-DarkSky
+DarkSkies

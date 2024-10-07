@@ -14,7 +14,7 @@ package_path = "dnb/%s.json"
 # theme setup
 ################################################################################
 [dnb.theme]
-slug = "darksky"
+slug = "darkskies"
 mainsection = "blog"
 
 # default color scheme (dark/light)

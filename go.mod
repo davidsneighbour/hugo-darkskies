@@ -1,4 +1,4 @@
-module github.com/davidsneighbour/hugo-darksky
+module github.com/davidsneighbour/hugo-darkskies
 
 go 1.21
 

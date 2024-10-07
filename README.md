@@ -1,9 +1,9 @@
-## Welcome to *DarkSky*
+## Welcome to *Darkskies*
 
-*DarkSky* is a fast and feature-rich theme for GoHugo, the fastest Static Site Generator (SSG) available. This theme is designed to provide an exceptional user experience, while also being highly customizable.
+*Darkskies* is a fast and feature-rich theme for GoHugo, the fastest Static Site Generator (SSG) available. This theme is designed to provide an exceptional user experience, while also being highly customizable.
 
 > [!WARNING]
-> Please be aware that until recently Darksky was my own theme. I am now in the process of cutting it out of my personal website and into a standalone theme. This process will take some time and the theme might not work as expected. Please be patient, use the issue tracker for quite fast help with any issues that might occur, and check back later for updates.
+> Please be aware that until recently Darkskies was my own theme. I am now in the process of cutting it out of my personal website and into a standalone theme. This process will take some time and the theme might not work as expected. Please be patient, use the issue tracker for quite fast help with any issues that might occur, and check back later for updates.
 
 ## Features and benefits
 
@@ -13,24 +13,24 @@
 * **Commenting System**: Integrate either Giscus or Disqus to enable user engagement and feedback on your site.
 * **Search Engine Optimization**: Ensure your content reaches its full potential with the theme's search engine optimization (SEO) features.
 
-## What sets *DarkSky* apart
+## What sets *Darkskies* apart
 
-*DarkSky* is the result of extensive engineering hours and a commitment to quality code. It's crafted to provide a seamless and enjoyable experience for both you, as the site owner, and your visitors.
+*Darkskies* is the result of extensive engineering hours and a commitment to quality code. It's crafted to provide a seamless and enjoyable experience for both you, as the site owner, and your visitors.
 
 ## Theme documentation
 
 > [!WARNING]
-> This documentation is under (re)construction. Check back later for changes and feel free to [open an issue](https://github.com/davidsneighbour/hugo-darksky/issues) if you have questions or suggestions.
+> This documentation is under (re)construction. Check back later for changes and feel free to [open an issue](https://github.com/davidsneighbour/hugo-Darkskies/issues) if you have questions or suggestions.
 
-* [Configuration](/davidsneighbour/hugo-darksky/blob/main/documentation/configuration/index.md)
-* [Content](/davidsneighbour/hugo-darksky/blob/main/documentation/content/index.md)
-* [Developers](/davidsneighbour/hugo-darksky/blob/main/documentation/developers/index.md)
-* [Hooks and Filters](/davidsneighbour/hugo-darksky/blob/main/documentation/hooks-and-filters/index.md)
-* [Quality Insurance](/davidsneighbour/hugo-darksky/blob/main/documentation/quality-insurance/index.md)
-* [Setup](/davidsneighbour/hugo-darksky/blob/main/documentation/setup/index.md)
-* [Shortcodes](/davidsneighbour/hugo-darksky/blob/main/documentation/shortcodes/index.md)
-* [Styles](/davidsneighbour/hugo-darksky/blob/main/documentation/styles/index.md)
-* [Troubleshooting](/davidsneighbour/hugo-darksky/blob/main/documentation/troubleshooting/index.md)
+* [Configuration](/davidsneighbour/hugo-Darkskies/blob/main/documentation/configuration/index.md)
+* [Content](/davidsneighbour/hugo-Darkskies/blob/main/documentation/content/index.md)
+* [Developers](/davidsneighbour/hugo-Darkskies/blob/main/documentation/developers/index.md)
+* [Hooks and Filters](/davidsneighbour/hugo-Darkskies/blob/main/documentation/hooks-and-filters/index.md)
+* [Quality Insurance](/davidsneighbour/hugo-Darkskies/blob/main/documentation/quality-insurance/index.md)
+* [Setup](/davidsneighbour/hugo-Darkskies/blob/main/documentation/setup/index.md)
+* [Shortcodes](/davidsneighbour/hugo-Darkskies/blob/main/documentation/shortcodes/index.md)
+* [Styles](/davidsneighbour/hugo-Darkskies/blob/main/documentation/styles/index.md)
+* [Troubleshooting](/davidsneighbour/hugo-Darkskies/blob/main/documentation/troubleshooting/index.md)
 
 ## General notes
 
@@ -39,4 +39,4 @@
 
 ## License
 
-This theme's source code is licensed under the [MIT License](https://github.com/davidsneighbour/hugo-darksky/blob/main/LICENSE.md).
+This theme's source code is licensed under the [MIT License](https://github.com/davidsneighbour/hugo-Darkskies/blob/main/LICENSE.md).

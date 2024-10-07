@@ -22,7 +22,7 @@ target = "static"
 # local development mounts
 [[mounts]]
 source = "documentation"
-target = "content/hugo-darksky"
+target = "content/hugo-darkskies"
 ################################################################################
 
 [[imports]]
