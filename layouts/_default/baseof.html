@@ -254,7 +254,7 @@
       {{- $icon := $config.backtotop.icon -}}
       <button x-data="{ showBackToTop: false }"
           x-on:scroll.window="showBackToTop = window.pageYOffset >= 200"
-          class="btn btn-secondary scroll-to-top px-3 py-2 mb-3 me-2 lh-1
+          class="btn btn-secondary px-3 py-2 mb-3 me-2 lh-1
                   position-fixed bottom-0 end-0
                   rounded fw-normal ff-body" x-show="showBackToTop"
           x-transition.duration.500ms
