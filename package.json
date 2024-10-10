@@ -6,10 +6,10 @@
   "author": "Patrick Kollitsch <patrick@davids-neighbour.com>",
   "keywords": [],
   "dependencies": {
-    "@davidsneighbour/markdownlint-config": "2024.4.0",
-    "@davidsneighbour/release-config": "2024.4.0",
-    "@davidsneighbour/remark-config": "2024.4.0",
-    "@davidsneighbour/tools": "2024.4.0",
+    "@davidsneighbour/markdownlint-config": "2024.4.2",
+    "@davidsneighbour/release-config": "2024.4.2",
+    "@davidsneighbour/remark-config": "2024.4.2",
+    "@davidsneighbour/tools": "2024.4.2",
     "pagefind": "1.1.1"
   },
   "devDependencies": {
