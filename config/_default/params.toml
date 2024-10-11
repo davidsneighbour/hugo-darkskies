@@ -14,8 +14,8 @@ package_path = "dnb/%s.json"
 # theme setup
 ################################################################################
 [dnb.theme]
-slug = "darkskies"
 mainsection = "blog"
+slug = "darkskies"
 
 # default color scheme (dark/light)
 # this is ignored if `dnb.theme.switcher.enabled` is true. In that case the
@@ -51,8 +51,8 @@ short = "Jan 2 2006"
 timestamp = "2006-01-02T15:04:05-07:00"
 
 [dnb.theme.switcher]
-enabled = true   # boolean
 default = "dark" # `dark`, `light` or any theme of `dnb.theme.switcher.themes`
+enabled = true # boolean
 
 [dnb.theme.backtotop]
 enabled = true
@@ -61,8 +61,8 @@ icon = "chevron-double-up"
 [dnb.theme.jsbuild.options]
 # options for the js.Build method
 # see https://gohugo.io/hugo-pipes/js/
-minify = false
 format = "iife"
+minify = false
 target = "es2020"
 # [dnb.theme.jsbuild.options.externals]
 # - "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
@@ -87,8 +87,8 @@ limit = 3
 # pictures - @see https://dnbhub.xyz/pictures
 ################################################################################
 [dnb.pictures]
-default_image = "images/og_sitewide.png"
-default_format = "jpg"                  # one of webp, png, jpg
+default_format = "jpg" # one of webp, png, jpg
+default_image = "images/og_sitewide.png" 
 # 16:9, 4:3, 1:1 or whatever ratio you want for thumbnails
 # this needs to be a string and needs to be two floats separated by a colon
 # aspect_ratio = "16:9"
@@ -98,17 +98,17 @@ aspect_ratio = "1.618033:1"
 # collection of image sizes for responsive image sizes. this takes the aspect_ratio
 # above into account, so only the long side length is required here.
 [dnb.pictures.responsive.fullwidth]
-image_sizes = ["494", "517", "674", "914"]
 break_points = ["520", "540", "720", "960"]
+image_sizes = ["494", "517", "674", "914"]
 
 [dnb.pictures.responsive.halfwidth]
-image_sizes = ["494", "517"]
 break_points = ["520", "540"]
+image_sizes = ["494", "517"]
 
 # head - @see https://dnbhub.xyz/head
 ################################################################################
 [dnb.head]
-disable = []
+disable = [] 
 notranslate = false # tell Google not to provide a translation for this document
 # https://webmonetization.org/docs/getting-started
 monetization = ""
@@ -117,6 +117,7 @@ monetization = ""
 enable = true # either true or false, or an array of enable options like ["preconnect", "prefetch", "prerender", "preload"]
 # careful what you prefetch... this can lead to issues if you preload too much, but can also speed up your site.
 # IMHO prefetching all woff(2) fonts is a good idea. Those fonts are supported in all modern browsers.
+preconnect = []
 prefetch = [
   '/assets/webfonts/jetbrainsmono/jetbrainsmonoi.woff2',
   '/assets/webfonts/jetbrainsmono/jetbrainsmono.woff2',
@@ -124,62 +125,31 @@ prefetch = [
   '/assets/webfonts/exo/normal.woff2',
   '/assets/webfonts/anton/regular.woff',
 ]
-preconnect = []
 prerender = []
 
 [dnb.head.verification]
-google = ""
-yandex = ""
-bing = ""
 alexa = ""
-pinterest = ""
+bing = ""
+google = ""
 norton = ""
+pinterest = ""
+yandex = ""
 
 [dnb.head.styles.sassOptions]
 # options for the compilation of CSS
 # see https://gohugo.io/hugo-pipes/scss-sass/#options
 # transpiler = "dartsass"
-outputStyle = "compressed"
-targetPath = "theme.css"
 enableSourceMap = true
 includePaths = ["node_modules/", "assets/"]
+outputStyle = "compressed"
+targetPath = "theme.css"
 
 # debug - @see https://dnbhub.xyz/debug
 ################################################################################
 [dnb.debug]
-enable = false
-disablenote = true
 debuglevel = 1
-
-# sitemap - @see https://dnbhub.xyz/sitemap
-################################################################################
-[[dnb.sitemap.htmlmap.item]]
-type = ".Type"
-section = "blog"
-label = "Blog Posts"
-
-[[dnb.sitemap.htmlmap.item]]
-type = ".Type"
-section = "components"
-label = "GoHugo Components by DNB"
-sortvalue = ".Title"
-sortdirection = "ASC"
-
-[[dnb.sitemap.htmlmap.item]]
-type = ".Type"
-section = "tags"
-selection = "in-pages"
-label = "Tags"
-sortvalue = ".Title"
-sortdirection = "ASC"
-
-[[dnb.sitemap.htmlmap.item]]
-type = ".Type"
-selection = "not-in"
-section = ["blog", "tags", "components"]
-label = "Other pages"
-sortvalue = ".Title"
-sortdirection = "ASC"
+disablenote = true
+enable = false
 
 # hooks - @see https://dnbhub.xyz/hooks
 ################################################################################
@@ -187,29 +157,29 @@ sortdirection = "ASC"
 debug = true
 
 [[dnb.hooks.items.theme.body-main-end]]
-file = "body-main-end"
 cached = false
+file = "body-main-end"
 
 [[dnb.hooks.items.theme.head-post-css]]
-file = "head-post-css"
 cached = false
+file = "head-post-css"
 
 [[dnb.hooks.items.theme.head-pre-css]]
-file = "head-pre-css"
 cached = true
+file = "head-pre-css"
 
 [[dnb.hooks.items.theme.head-start]]
-file = "head-start"
 cached = true
+file = "head-start"
 
 [[dnb.hooks.items.theme.header-topnav-pre]]
-file = "header-topnav-pre"
 cached = false
+file = "header-topnav-pre"
 
 [[dnb.hooks.items.theme.post-after]]
-file = "post-after"
 cached = false
+file = "post-after"
 
 [[dnb.hooks.items.theme.head-post-css]]
-file = "head-post-css"
 cached = false
+file = "head-post-css"
