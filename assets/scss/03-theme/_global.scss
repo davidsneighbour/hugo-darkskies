@@ -3,24 +3,9 @@
 /// @author Patrick Kollitsch
 ////
 
-:root {
-  --ff-headline: Changa, sans-serif;
-  --ff-body: Exo2, sans-serif;
-  --ff-mono: JetBrainsMono, monospace;
-}
 
-/// font family classes
-.ff-headline {
-  font-family: var(--ff-headline) !important;
-}
 
-.ff-body {
-  font-family: var(--ff-body) !important;
-}
 
-.ff-jetbrains {
-  font-family: var(--ff-mono) !important;
-}
 
 
 html {
@@ -207,7 +192,7 @@ code,
 kbd,
 pre,
 samp {
-  font-family: var(--ff-mono);
+  font-family: $ff-mono;
   font-variant-ligatures: common-ligatures;
   font-feature-settings: "liga", "clig", "dlig", "calt", "zero", "ss02", "cv18", "cv19", "cv20";
 }
@@ -246,4 +231,33 @@ figcaption {
   }
 
   @import "09-hooks/prose-post";
+}
+
+/// alerts
+.alert-dnb-dark {
+  --bs-alert-bg: rgba(0, 0, 0, 0.1) !important;
+  --bs-alert-border-color: rgba(0, 0, 0, 0.2) !important;
+}
+
+.alert-dnb-light {
+  --bs-alert-bg: rgba(, 0.1) !important;
+  --bs-alert-border-color: rgba(0, 0, 0, 0.2) !important;
+}
+
+/// @todo integrate this into the theme
+.fit-content {
+  width: fit-content;
+}
+
+/// font family classes
+.ff-headline {
+  font-family: $ff-headline !important;
+}
+
+.ff-body {
+  font-family: $ff-body !important;
+}
+
+.ff-jetbrains {
+  font-family: $ff-mono !important;
 }

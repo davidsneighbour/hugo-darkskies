@@ -19,12 +19,10 @@
 
     [data-bs-theme="light"] & .icon--bs {
       @extend .text-dark;
-
     }
 
     [data-bs-theme="dark"] & .icon--bs {
       @extend .text-light;
-
     }
   }
 

@@ -80,3 +80,8 @@ $fontdir: "/assets/webfonts" !default;
   font-display: swap;
   text-rendering: optimizelegibility;
 }
+
+/// font family setup
+$ff-headline: Changa, sans-serif;
+$ff-body: Exo2, sans-serif;
+$ff-mono: JetBrainsMono, monospace;
