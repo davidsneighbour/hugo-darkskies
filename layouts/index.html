@@ -3,7 +3,7 @@
   {{- $config := site.Params.dnb.theme -}}
 
   {{- if compare.Lt (.Scratch.Get "paginator").PageNumber 2 -}}
-    <section class="section--sitetitle">
+    <section class="section--sitetitle" aria-role="banner">
       <div class="container">
         <div class="site-title ff-headline">
           <a href="{{- site.BaseURL -}}">{{- site.Title -}}</a>
