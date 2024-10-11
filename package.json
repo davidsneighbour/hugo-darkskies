@@ -1,19 +1,19 @@
 {
   "name": "@davidsneighbour/hugo-darkskies",
   "description": "A blog theme for GoHugo.",
-  "version": "1.2024.27",
+  "version": "1.2024.28",
   "license": "MIT",
   "author": "Patrick Kollitsch <patrick@davids-neighbour.com>",
   "keywords": [],
   "dependencies": {
-    "@davidsneighbour/markdownlint-config": "2024.4.2",
-    "@davidsneighbour/release-config": "2024.4.2",
-    "@davidsneighbour/remark-config": "2024.4.2",
-    "@davidsneighbour/tools": "2024.4.2",
+    "@davidsneighbour/markdownlint-config": "2024.4.3",
+    "@davidsneighbour/release-config": "2024.4.3",
+    "@davidsneighbour/remark-config": "2024.4.3",
+    "@davidsneighbour/tools": "2024.4.3",
     "pagefind": "1.1.1"
   },
   "devDependencies": {
-    "@apidevtools/json-schema-ref-parser": ">=11.7.0",
+    "@apidevtools/json-schema-ref-parser": ">=11.7.2",
     "@types/youtube": "^0.1.0",
     "sassdoc-extras": "^3.0.0"
   },

@@ -1,4 +1,25 @@
 Changelog
+## [1.2024.28](https://github.com/davidsneighbour/hugo-darksky/compare/v1.2024.27...v1.2024.28) (2024-10-11)
+
+
+### Documentation
+
+* add header image ([24530ee](https://github.com/davidsneighbour/hugo-darksky/commit/24530eed5f8ea0871f75175cf9814f760496ba31))
+
+
+### Theme
+
+* **fix:** add banner role to site title ([003d428](https://github.com/davidsneighbour/hugo-darksky/commit/003d428dc2e25fca12ee226a08227d3951ccac64))
+* **fix:** back to top button as a real button ([fce120c](https://github.com/davidsneighbour/hugo-darksky/commit/fce120c4adf7eab2ddca783c084118165955d234))
+* **fix:** back to top button as a real button ([e212e40](https://github.com/davidsneighbour/hugo-darksky/commit/e212e40702e168784facf5c5502bc5720bac920a))
+* **fix:** move href attribute from button to a tag ([bbb7c07](https://github.com/davidsneighbour/hugo-darksky/commit/bbb7c077e753a1f6e35612e4ea2806eadcd270f1))
+* **fix:** move theme config around, fix font family variables ([e69920e](https://github.com/davidsneighbour/hugo-darksky/commit/e69920e806caf73bac8a54a280d5fc83eb847f58))
+
+
+### Chore
+
+* **deps:** update dependencies ([d414073](https://github.com/davidsneighbour/hugo-darksky/commit/d414073ad77c212b247e36d2f3d6f9ded1b9b7cc))
+
 ## [1.2024.27](https://github.com/davidsneighbour/hugo-darksky/compare/v1.2024.26...v1.2024.27) (2024-10-07)
 
 
