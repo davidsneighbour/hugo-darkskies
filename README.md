@@ -1,3 +1,5 @@
+![Welcome to *Darkskies*](.github/darkskies.webp)
+
 ## Welcome to *Darkskies*
 
 *Darkskies* is a fast and feature-rich theme for GoHugo, the fastest Static Site Generator (SSG) available. This theme is designed to provide an exceptional user experience, while also being highly customizable.
