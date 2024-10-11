@@ -5,13 +5,13 @@
 [goldmark]
 
 [goldmark.extensions]
-definitionList = true
-footnote = true
-linkify = false
-linkifyProtocol = "https"
+definitionList = true 
+footnote = true 
+linkify = false 
+linkifyProtocol = "https" 
 strikethrough = false # needs to be disabled because of extras.subscript and extras.superscript
-table = true
-taskList = true
+table = true 
+taskList = true 
 # https://gohugo.io/getting-started/configuration-markup/#typographer-extension
 typographer = true
 
@@ -28,6 +28,13 @@ enable = true
 [goldmark.extensions.extras.superscript]
 enable = true
 
+# https://gohugo.io/content-management/mathematics/
+[goldmark.extensions.passthrough]
+enable = true
+[goldmark.extensions.passthrough.delimiters]
+block = [['\[', '\]'], ['$$', '$$']]
+inline = [['\(', '\)']]
+
 [goldmark.parser]
 autoHeadingID = true
 autoHeadingIDType = "github"
@@ -42,15 +49,15 @@ unsafe = false
 xhtml = false
 
 [highlight]
+anchorLineNos = true
 lineNos = true
 lineNumbersInTable = false
-anchorLineNos = true
 # no need for this, we do this in layouts/_default/_markup/render-codeblock.html
 # lineAnchors = "code"
-lineNoStart = 1
 codeFences = true
 guessSyntax = true
 hl_Lines = ""
+lineNoStart = 1
 noClasses = false
 noHl = false
 style = "xcode"

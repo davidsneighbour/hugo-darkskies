@@ -172,6 +172,10 @@ file = "head-pre-css"
 cached = true
 file = "head-start"
 
+[[dnb.hooks.items.theme.head-end]]
+cached = false
+file = "head-end"
+
 [[dnb.hooks.items.theme.header-topnav-pre]]
 cached = false
 file = "header-topnav-pre"
