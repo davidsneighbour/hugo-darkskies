@@ -1,4 +1,20 @@
 Changelog
+## [1.2024.29](https://github.com/davidsneighbour/hugo-darkskies/compare/v1.2024.28...v1.2024.29) (2024-10-13)
+
+
+### Theme
+
+* **feat:** add mathjax integration ([8b49e4e](https://github.com/davidsneighbour/hugo-darkskies/commit/8b49e4e2b80ec0d578ae93df168aef41e8f14400))
+* **fix:** add file tags for sassdoc ([3cb790c](https://github.com/davidsneighbour/hugo-darkskies/commit/3cb790cac4ac1e4dc109e6d6ad2c60e4fff633e5))
+* **fix:** fix display of tag badges ([737d815](https://github.com/davidsneighbour/hugo-darkskies/commit/737d8159c61b41e6129d831b25be6989f05410d3))
+* **fix:** optmimize link display setup and badge hover effects ([4c36e70](https://github.com/davidsneighbour/hugo-darkskies/commit/4c36e70caf8473cc09b9a11e0e0e8376d904c0a7))
+
+
+### Chore
+
+* **config:** move sitemap configuration to kollitsch.dev ([46b583b](https://github.com/davidsneighbour/hugo-darkskies/commit/46b583bb5aced4f1eee3a9ddf44f22579f192809))
+* **deps:** update dependencies ([667e33c](https://github.com/davidsneighbour/hugo-darkskies/commit/667e33c51c99add2a65afab7d34e222724feca47))
+
 ## [1.2024.28](https://github.com/davidsneighbour/hugo-darksky/compare/v1.2024.27...v1.2024.28) (2024-10-11)
 
 
