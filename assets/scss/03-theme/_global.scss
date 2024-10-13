@@ -3,11 +3,6 @@
 /// @author Patrick Kollitsch
 ////
 
-
-
-
-
-
 html {
   scroll-behavior: smooth;
 
@@ -27,11 +22,12 @@ body {
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizelegibility;
 
-  /// @todo see if required
+}
 
-  //   max-width: clamp(320px, 90%, 1000px);
-  //   /* additional recommendation */
-  //   margin: auto;
+a {
+
+  text-decoration-skip-ink: all;
+  text-decoration-skip: leading-spaces edges;
 
 }
 
@@ -56,11 +52,10 @@ body {
 /* content area */
 main {
   padding-top: 30px;
-  max-width: 60rem;
   margin: 0 auto;
+  max-width: clamp(320px, 90%, 60rem);
 
   @extend .min-vh-100;
-  @extend .mb-0;
 
   @include media-breakpoint-up(md) {
     padding-top: 90px;

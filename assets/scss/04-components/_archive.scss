@@ -8,18 +8,8 @@
 
 .component--archive-card {
 
-  /* @todo make tags a component */
-  .is--tags {
-    @extend .text-end;
-
-    .badge {
-      @extend .ms-3;
-
-      a {
-        color: inherit;
-      }
-
-    }
+  .is--tags .badge a {
+    color: inherit;
   }
 
   .is--item {

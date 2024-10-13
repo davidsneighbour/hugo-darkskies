@@ -23,6 +23,8 @@
   --bs-primary: $dark-2;
 }
 
+/// [data-bs-theme=dark] instead of media-queries
+/// @see https://getbootstrap.com/docs/5.3/customize/color-modes/#custom-color-modes
 $color-mode-type: data;
 
 /// color settings

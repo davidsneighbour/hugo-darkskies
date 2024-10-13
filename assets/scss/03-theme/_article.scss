@@ -104,7 +104,19 @@ article {
 
 
   /// @todo check and add/remove
-  // :is(tbody, table) > tr:nth-child(odd) {
-  //   background: #0001; /* or #fff1 for dark themes */
+  // @include color-mode(dark) {
+  //   .element {
+  //     :is(tbody, table)>tr:nth-child(odd) {
+  //       background: #0001;
+  //     }
+  //   }
+  // }
+
+  // @include color-mode(light) {
+  //   .element {
+  //     :is(tbody, table)>tr:nth-child(odd) {
+  //       background: #fff1;
+  //     }
+  //   }
   // }
 }
