@@ -46,11 +46,17 @@
     {{ else }}
       text-bg-light
     {{ end }} ms-2">
-    {{ with .Params.icon -}}
-      {{ partials.IncludeCached "icon.html" . . }}
+    <a rel="tag" href="{{- .Permalink -}}" class="{{ with .Params.class -}}
+      text-bg-{{ . }}
     {{ else }}
-      {{ partials.IncludeCached "icon.html" "tag" "tag" }}
-    {{ end }}
-    <a rel="tag" href="{{- .Permalink -}}">#{{- .Title | strings.ToLower -}}</a>
+      text-bg-light
+    {{ end }}">
+      {{ with .Params.icon -}}
+        {{ partials.IncludeCached "icon.html" . . }}
+      {{ else }}
+        {{ partials.IncludeCached "icon.html" "tag" "tag" }}
+      {{ end }}
+      #{{- .Title | strings.ToLower -}}
+    </a>
   </span>
 {{- end -}}

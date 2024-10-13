@@ -14,10 +14,11 @@
 
     .badge {
       @extend .ms-3;
-    }
 
-    a {
-      @extend .text-dark;
+      a {
+        color: inherit;
+      }
+
     }
   }
 
