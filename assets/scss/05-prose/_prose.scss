@@ -73,6 +73,9 @@ h4,
 h5,
 h6 {
 
+  @extend .ff-body;
+  font-weight: 500;
+
   margin-top: 3rem;
 
   .heading-tools {
