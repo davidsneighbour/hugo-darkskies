@@ -4,7 +4,7 @@
 /// @access public
 /// @since 1.2024.0
 ////
-///
+
 table {
   $table-color: $body-color;
 
@@ -32,10 +32,20 @@ table {
     &:nth-of-type(1) {
       white-space: nowrap;
     }
+
+    :has(table) {
+      padding: 0;
+      @extend .px-0;
+      @extend .py-0;
+      @extend .py-0;
+    }
   }
 
   th {
     @extend .px-2;
     @extend .py-1;
   }
+
+  @extend .mb-0;
+
 }
