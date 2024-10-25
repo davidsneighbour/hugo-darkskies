@@ -6,7 +6,7 @@
   "author": "Patrick Kollitsch <patrick@davids-neighbour.com>",
   "keywords": [],
   "dependencies": {
-    "@davidsneighbour/markdownlint-config": "2024.4.5",
+    "@davidsneighbour/markdownlint-config": "2024.4.6",
     "@davidsneighbour/release-config": "2024.4.5",
     "@davidsneighbour/remark-config": "2024.4.5",
     "@davidsneighbour/tools": "2024.4.5",
