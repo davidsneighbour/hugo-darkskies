@@ -183,7 +183,3 @@ file = "header-topnav-pre"
 [[dnb.hooks.items.theme.post-after]]
 cached = false
 file = "post-after"
-
-[[dnb.hooks.items.theme.head-post-css]]
-cached = false
-file = "head-post-css"

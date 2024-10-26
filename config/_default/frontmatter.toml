@@ -1,5 +1,11 @@
-# date = ["myDate", ":default"] :fileModTime :filename :git
-date = ["date", "publishDate", "lastmod"]
+################################################################################
+# see https://gohugo.io/getting-started/configuration/#configure-dates
+################################################################################
+date = ["date", "publishDate", "lastmod", ":git"]
+# date = ['date', 'publishdate', 'pubdate', 'published', 'lastmod', 'modified']
 lastmod = ["lastmod", ":git", "date", "publishDate"]
-publishDate = ["publishDate", "date"]
-expiryDate = ["expiryDate"]
+# lastmod = [':git', 'lastmod', 'modified', 'date', 'publishdate', 'pubdate', 'published']
+publishDate = [":default"]
+# publishDate = ['publishdate', 'pubdate', 'published', 'date']
+expiryDate = [":default"]
+# expiryDate = ['expirydate', 'unpublishdate']

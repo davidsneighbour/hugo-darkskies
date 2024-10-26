@@ -9,13 +9,16 @@
     "@davidsneighbour/markdownlint-config": "2024.4.6",
     "@davidsneighbour/release-config": "2024.4.6",
     "@davidsneighbour/remark-config": "2024.4.6",
-    "@davidsneighbour/tools": "2024.4.6",
-    "pagefind": "1.1.1"
+    "@davidsneighbour/tools": "2024.4.5",
+    "pagefind": "1.1.1",
+    "sass-embedded": "^1.80.4",
+    "sassdoc": "^2.7.4",
+    "sassdoc-theme-herman": "^6.0.1",
+    "sassdoc-extras": "^3.0.0"
   },
   "devDependencies": {
     "@apidevtools/json-schema-ref-parser": ">=11.7.2",
-    "@types/youtube": "^0.1.0",
-    "sassdoc-extras": "^3.0.0"
+    "@types/youtube": "^0.1.0"
   },
   "scripts": {
     "release": "wireit",
@@ -23,7 +26,13 @@
   },
   "wireit": {
     "sassdoc": {
-      "command": "sassdoc assets/scss --dest documentation/sass --verbose --strict --debug",
+      "command": "sassdoc assets/scss --theme herman --dest static/documentation/sass",
+      "files": [
+        "assets/scss"
+      ]
+    },
+    "sassdoc:debug": {
+      "command": "sassdoc assets/scss --theme herman --dest static/documentation/sass --verbose --strict --debug",
       "files": [
         "assets/scss"
       ]
