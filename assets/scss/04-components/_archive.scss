@@ -10,10 +10,6 @@
 
 .component--archive-card {
 
-  .is--tags .badge a {
-    color: inherit;
-  }
-
   .is--item {
     .is--date {
       line-height: 0.85;
@@ -25,7 +21,6 @@
 
       span {
         width: 75px;
-
         display: inline-block;
 
         @include media-breakpoint-up(sm) {

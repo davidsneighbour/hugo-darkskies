@@ -9,14 +9,12 @@
 {{- end -}}
 
 {{- define "partials/tags/taglist.html" -}}
-
   {{- $config := site.Params.dnb.theme -}}
   {{- $page := .context -}}
   {{- $current := dict -}}
   {{ with $page.Name }}
     {{- $current = . -}}
   {{ end }}
-
   <div class="container">
     <div class="row py-6">
       <div class="col text-center">
@@ -40,23 +38,24 @@
 {{- end -}}
 
 {{- define "partials/tags/single-tag.html" -}}
-  <span
-    class="badge {{ with .Params.class -}}
+  <span class="badge {{ with .Params.class -}}
       text-bg-{{ . }}
-    {{ else }}
+    {{- else -}}
       text-bg-light
-    {{ end }} ms-3">
+    {{- end -}}">
     <a rel="tag" href="{{- .Permalink -}}" class="{{ with .Params.class -}}
-      text-bg-{{ . }}
-    {{ else }}
+      text-bg-{{ . -}}
+    {{- else -}}
       text-bg-light
-    {{ end }}">
+    {{- end }} d-flex flex-row  justify-content-between gap-1 align-items-center">
       {{ with .Params.icon -}}
         {{ partials.IncludeCached "icon.html" . . }}
       {{ else }}
         {{ partials.IncludeCached "icon.html" "tag" "tag" }}
       {{ end }}
-      #{{- .Title | strings.ToLower -}}
+      <span>
+        #{{- .Title | strings.ToLower -}}
+      </span>
     </a>
   </span>
 {{- end -}}
