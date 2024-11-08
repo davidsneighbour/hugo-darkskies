@@ -31,6 +31,8 @@ a {
   text-decoration-skip-ink: all;
   text-decoration-skip: leading-spaces edges;
 
+  box-decoration-break: clone;
+
 }
 
 .rainbow-box {
