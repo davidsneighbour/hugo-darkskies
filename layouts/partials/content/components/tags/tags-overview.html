@@ -49,9 +49,9 @@
       text-bg-light
     {{- end }} d-flex flex-row  justify-content-between gap-1 align-items-center">
       {{ with .Params.icon -}}
-        {{ partials.IncludeCached "icon.html" . . }}
+        {{ partials.Include "icon.html" . }}
       {{ else }}
-        {{ partials.IncludeCached "icon.html" "tag" "tag" }}
+        {{ partials.Include "icon.html" "tag" }}
       {{ end }}
       <span>
         #{{- .Title | strings.ToLower -}}
