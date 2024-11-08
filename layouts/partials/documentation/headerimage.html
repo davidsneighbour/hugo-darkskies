@@ -20,12 +20,12 @@
   </text>
   <text x="50" y="{{ math.Sub 600 $subtractor }}">
     <tspan fill="#dc322f">
-      <tspan font-size="90px">
+      <tspan font-size="90px" style="font-family:Changa;">
         {{- if (collections.IsSet . "title") -}}
           {{- .title -}}
         {{- end -}}
         {{- if (collections.IsSet . "subtitle") -}}
-          <tspan font-size="50px">
+          <tspan font-size="50px" style="font-family:Changa;">
             {{- fmt.Printf "  %s" .subtitle -}}
           </tspan>
         {{- end -}}
