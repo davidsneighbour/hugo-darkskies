@@ -44,5 +44,7 @@ _merge = 'deep'
 _merge = 'deep'
 [markup]
 _merge = 'deep'
+[params]
+_merge = 'deep'
 [taxonomies]
 _merge = 'shallow'
