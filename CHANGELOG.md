@@ -1,4 +1,57 @@
 Changelog
+## [1.2024.30](https://github.com/davidsneighbour/hugo-darkskies/compare/v1.2024.29...v1.2024.30) (2024-11-09)
+
+
+### Documentation
+
+* **new:** add sass documentation ([a1d8521](https://github.com/davidsneighbour/hugo-darkskies/commit/a1d8521e28bb1bae62fbfaf32c031ad0bc804197))
+* update documentation ([d5f52e1](https://github.com/davidsneighbour/hugo-darkskies/commit/d5f52e177168a9c0d677d15b49ce70f161d268b3))
+
+
+### Theme
+
+* **fix:** add documentation layouts ([7a01216](https://github.com/davidsneighbour/hugo-darkskies/commit/7a01216c9542c3fa479b2a75286de01f2cb794aa))
+* **fix:** add named colors ([a3f94b3](https://github.com/davidsneighbour/hugo-darkskies/commit/a3f94b34dfd37d121f57d12c0fb018ea940bfdd3))
+* **fix:** archive view changes ([fdb30d1](https://github.com/davidsneighbour/hugo-darkskies/commit/fdb30d103285bb4acac2c2dac3b79451aa483f64))
+* **fix:** better badge layouts ([a3f9c3b](https://github.com/davidsneighbour/hugo-darkskies/commit/a3f9c3b61056ed01efc20d49b2c96292d4c12164))
+* **fix:** better positioning for navigation links and icons ([7c0d1ff](https://github.com/davidsneighbour/hugo-darkskies/commit/7c0d1ff8efc313376546f85489499066fa96de4f))
+* **fix:** do not use headline font for headlines within prose ([6cd18df](https://github.com/davidsneighbour/hugo-darkskies/commit/6cd18df2519abec3ab649d24b712cd86e3c233b8))
+* **fix:** documentation headline font style ([3fad62c](https://github.com/davidsneighbour/hugo-darkskies/commit/3fad62c25a2e6758524883af93f6f0fef383e5d3))
+* **fix:** font weight 400 instead of 500 for badges ([7c7493e](https://github.com/davidsneighbour/hugo-darkskies/commit/7c7493efb1470f927a3dcaac311f188bd90a0f2b))
+* **fix:** link style over line breaks ([dbdf549](https://github.com/davidsneighbour/hugo-darkskies/commit/dbdf549274a13fc40fe12fc969199dbb89bd1ee6))
+* **fix:** proper calls to icon partial ([7162713](https://github.com/davidsneighbour/hugo-darkskies/commit/71627138409a138476dee34f0a8b8c27ca596f4d))
+* **fix:** proper path to theme documentation ([ac5c93c](https://github.com/davidsneighbour/hugo-darkskies/commit/ac5c93ced454e39049cac04e88825737a32886ec))
+* **fix:** prose > tables in tables... less spacing ([fe52bb8](https://github.com/davidsneighbour/hugo-darkskies/commit/fe52bb8c449d15a96f50aa6c3710d995461eeb5e))
+
+
+### Chore
+
+* **config:** require regular gohugo versions ([b385dfb](https://github.com/davidsneighbour/hugo-darkskies/commit/b385dfb8a4733de18b9b8ad13c770f424eba3783))
+* **deps:** update dependenceis ([e8cb806](https://github.com/davidsneighbour/hugo-darkskies/commit/e8cb8068d77b8e2bc530694eaccdaf8eb531e7a0))
+* **deps:** update dependencies ([5304cfb](https://github.com/davidsneighbour/hugo-darkskies/commit/5304cfb02e3f884f2dc9f731270e347e71cfc0b6))
+* **deps:** update dependencies ([7887da7](https://github.com/davidsneighbour/hugo-darkskies/commit/7887da71e275943cec97c79f0fb5d3e413979913))
+* **deps:** update dependencies ([9d9f95c](https://github.com/davidsneighbour/hugo-darkskies/commit/9d9f95c3d124faa0d048f5420a82c5d4475bb5a0))
+
+
+### Configuration
+
+* **fix:** update build config ([3a71589](https://github.com/davidsneighbour/hugo-darkskies/commit/3a715895bab9fbf2ad1f3cae0638e8db7a855223))
+* re-add params merge config ([005eadf](https://github.com/davidsneighbour/hugo-darkskies/commit/005eadfda7c4bea115be09952477547006519a82))
+
+
+### Build System
+
+* **deps-dev:** bump @types/node from 22.8.6 to 22.9.0 ([#21](https://github.com/davidsneighbour/hugo-darkskies/issues/21)) ([387864d](https://github.com/davidsneighbour/hugo-darkskies/commit/387864dfbe570acedec8fb1ad850d05fc5985938))
+* **deps:** bump @davidsneighbour/markdownlint-config from 2024.4.5 to 2024.4.6 ([#19](https://github.com/davidsneighbour/hugo-darkskies/issues/19)) ([4a511fc](https://github.com/davidsneighbour/hugo-darkskies/commit/4a511fc67e61c3d7d47cfa82054c1c4f65cf1ed7))
+* **deps:** bump @davidsneighbour/markdownlint-config from 2024.4.7 to 2024.4.8 ([#22](https://github.com/davidsneighbour/hugo-darkskies/issues/22)) ([e15ebba](https://github.com/davidsneighbour/hugo-darkskies/commit/e15ebbac1c578a5578ed4252fabebe9887664474))
+* **deps:** bump @davidsneighbour/release-config from 2024.4.5 to 2024.4.6 ([#18](https://github.com/davidsneighbour/hugo-darkskies/issues/18)) ([b31ceb7](https://github.com/davidsneighbour/hugo-darkskies/commit/b31ceb73a30c62c8183bfb9ea38ff9fe40401fd5))
+* **deps:** bump @davidsneighbour/release-config from 2024.4.7 to 2024.4.8 ([#26](https://github.com/davidsneighbour/hugo-darkskies/issues/26)) ([4f0e1f8](https://github.com/davidsneighbour/hugo-darkskies/commit/4f0e1f8d4133b6841194edf9d1c25dc24ee44fe5))
+* **deps:** bump @davidsneighbour/remark-config from 2024.4.5 to 2024.4.6 ([#17](https://github.com/davidsneighbour/hugo-darkskies/issues/17)) ([0228854](https://github.com/davidsneighbour/hugo-darkskies/commit/022885433e356c1f047ef29f932474f1ed9d4269))
+* **deps:** bump @davidsneighbour/remark-config from 2024.4.7 to 2024.4.8 ([#24](https://github.com/davidsneighbour/hugo-darkskies/issues/24)) ([2a77d64](https://github.com/davidsneighbour/hugo-darkskies/commit/2a77d647958bfe25e8bf8e3b8a27e6432f6f93f7))
+* **deps:** bump @davidsneighbour/tools from 2024.4.5 to 2024.4.6 ([#20](https://github.com/davidsneighbour/hugo-darkskies/issues/20)) ([5e63faa](https://github.com/davidsneighbour/hugo-darkskies/commit/5e63faa05baca549f7cc60a4a1cb9f9f4a64e4ab))
+* **deps:** bump @davidsneighbour/tools from 2024.4.7 to 2024.4.8 ([#23](https://github.com/davidsneighbour/hugo-darkskies/issues/23)) ([163efe8](https://github.com/davidsneighbour/hugo-darkskies/commit/163efe87f455065e706e2702a57c408389d0e07b))
+* **deps:** bump pagefind from 1.1.1 to 1.2.0 ([#25](https://github.com/davidsneighbour/hugo-darkskies/issues/25)) ([e6b50fc](https://github.com/davidsneighbour/hugo-darkskies/commit/e6b50fc26a856b7d778afede41ed07a401cf93fc))
+
 ## [1.2024.29](https://github.com/davidsneighbour/hugo-darkskies/compare/v1.2024.28...v1.2024.29) (2024-10-13)
 
 
