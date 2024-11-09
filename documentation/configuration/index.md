@@ -19,7 +19,7 @@ to remove this specific page from the search index.
 
 This theme customizes how GoHugo handles date fields in the frontmatter. These changes override GoHugo's default behavior to provide more control over date metadata, including utilizing Git history timestamps (`:git`) when applicable.
 
-### `date` Configuration
+### `date` configuration
 
 ```toml
 date = ["date", "publishDate", "lastmod", ":git"]
@@ -59,13 +59,13 @@ Set the `date` or `publishDate` frontmatter, to override this. `lastmod` will al
 
 If GIT is not enabled the frontmatter is defined by `date`, or `publishDate`, or `lastmod` if they are set in this order of priority.
 
-To change the way posts are ordered in list views set a `publishDate` front matter variable. Else `date` is used. 
+To change the way posts are ordered in list views set a `publishDate` front matter variable. Else `date` is used.
 
-The `lastmod` front matter will override the git date and all other frontmatter variables to show when a page was updated.
+The `lastmod` front matter overrides the git date and all other frontmatter variables to show when a page was updated.
 
 Long story short:
 
-- No date field is required if you use the Git date
-- Although adding a `date` field gives you an opportunity to fine-tune the date (and know the date without having to resort to `git` commands to find out when a page was published).
-- To show a different date than the date that is used to sort pages on list overviews use `date` and `publishDate` frontmatter.
-- To show that a page was substantially changed between publishing and now, use the `lastmod` field.
+* No date field is required if you use the Git date
+* Although adding a `date` field gives you an opportunity to fine-tune the date (and know the date without having to resort to `git` commands to find out when a page was published).
+* To show a different date than the date that is used to sort pages on list overviews use `date` and `publishDate` frontmatter.
+* To show that a page was substantially changed between publishing and now, use the `lastmod` field.
