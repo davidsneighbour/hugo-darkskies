@@ -89,8 +89,10 @@
                     </ul>
                   </li>
                 {{- else -}}
-                  <li class="nav-item {{ $active -}}">
-                    <a class="nav-link {{ $active -}}" href="{{- .URL | urls.AbsLangURL -}}"
+                  <li class="nav-item {{ $active }}
+                  ">
+                    <a class="nav-link {{ $active }} lh-1 d-flex flex-row  justify-content-between gap-1 align-items-center"
+                        href="{{- .URL | urls.AbsLangURL -}}"
                       {{- if $active }} aria-current="page" {{ end -}}
                               {{- with .Params.hotkey }} data-hotkey="{{ . }}"{{ end }}>
                       {{- with .Params.bsicon -}}
