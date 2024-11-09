@@ -9,7 +9,7 @@
     "@davidsneighbour/markdownlint-config": "2024.4.8",
     "@davidsneighbour/release-config": "2024.4.8",
     "@davidsneighbour/remark-config": "2024.4.8",
-    "@davidsneighbour/tools": "2024.4.7",
+    "@davidsneighbour/tools": "2024.4.8",
     "pagefind": "1.2.0",
     "sassdoc": "^2.7.4",
     "sassdoc-theme-herman": "^6.0.1",
