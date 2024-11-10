@@ -1,4 +1,17 @@
 Changelog
+## [1.2024.31](https://github.com/davidsneighbour/hugo-darkskies/compare/v1.2024.30...v1.2024.31) (2024-11-10)
+
+
+### Theme
+
+* **fix:** add postcss setup ([7451c00](https://github.com/davidsneighbour/hugo-darkskies/commit/7451c00668032e0d8684993b3f14525f0017df68))
+* **fix:** remove unused theme parts ([ca1e0b8](https://github.com/davidsneighbour/hugo-darkskies/commit/ca1e0b866b02e537fb95a4af7f4eb22383b9e374))
+
+
+### Chore
+
+* **config:** rename data file ([cab3eb4](https://github.com/davidsneighbour/hugo-darkskies/commit/cab3eb4bf3b7e41af922a561f1eb8db938397dcf))
+
 ## [1.2024.30](https://github.com/davidsneighbour/hugo-darkskies/compare/v1.2024.29...v1.2024.30) (2024-11-09)
 
 
