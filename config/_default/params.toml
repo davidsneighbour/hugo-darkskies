@@ -135,6 +135,11 @@ norton = ""
 pinterest = ""
 yandex = ""
 
+[dnb.head.styles]
+# external, postcss, tailwind
+entrypoint = "scss/style.scss"
+method = "postcss"
+
 [dnb.head.styles.sassOptions]
 # options for the compilation of CSS
 # see https://gohugo.io/hugo-pipes/scss-sass/#options
@@ -143,6 +148,18 @@ enableSourceMap = true
 includePaths = ["node_modules/", "assets/"]
 outputStyle = "compressed"
 targetPath = "theme.css"
+
+[dnb.head.styles.postcssOptions]
+# see https://gohugo.io/functions/css/postcss/#options
+config = "postcss.config.mjs"
+# noMap = false
+# inlineImports = false
+# skipInlineImportsNotFound = false
+# options without config file
+# use = ""
+# parser = ""
+# stringifier = ""
+# syntax = ""
 
 # debug - @see https://dnbhub.xyz/debug
 ################################################################################

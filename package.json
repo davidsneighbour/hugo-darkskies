@@ -6,18 +6,24 @@
   "author": "Patrick Kollitsch <patrick@davids-neighbour.com>",
   "keywords": [],
   "dependencies": {
+    "@davidsneighbour/bootstrap-config": "^2024.4.8",
     "@davidsneighbour/markdownlint-config": "2024.4.8",
+    "@davidsneighbour/postcss-config": "^2024.4.8",
     "@davidsneighbour/release-config": "2024.4.8",
     "@davidsneighbour/remark-config": "2024.4.8",
     "@davidsneighbour/tools": "2024.4.8",
+    "@fullhuman/postcss-purgecss": "^6.0.0",
+    "cssnano-preset-advanced": "^7.0.6",
     "pagefind": "1.2.0",
+    "postcss": "^8.4.47",
+    "postcss-preset-env": "^10.0.9",
     "sassdoc": "^2.7.4",
-    "sassdoc-theme-herman": "^6.0.1",
-    "sassdoc-extras": "^3.0.0"
+    "sassdoc-extras": "^3.0.0",
+    "sassdoc-theme-herman": "^6.0.1"
   },
   "devDependencies": {
-    "@types/youtube": "^0.1.0",
-    "@types/node": "^22.8.6"
+    "@types/node": "^22.8.6",
+    "@types/youtube": "^0.1.0"
   },
   "scripts": {
     "release": "wireit",
