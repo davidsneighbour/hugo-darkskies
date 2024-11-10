@@ -54,7 +54,7 @@
         {{ partials.Include "icon.html" "tag" }}
       {{ end }}
       <span>
-        #{{- .Title | strings.ToLower -}}
+        {{- .Title | strings.ToLower -}}
       </span>
     </a>
   </span>
