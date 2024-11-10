@@ -6,7 +6,7 @@ const localStandardVersion = {
       type: "json",
     },
     {
-      filename: "assets/data/darksky.json",
+      filename: "assets/data/darkskies.json",
       type: "json",
     },
   ],
