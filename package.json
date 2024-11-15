@@ -15,7 +15,7 @@
     "@fullhuman/postcss-purgecss": "6.0.0",
     "cssnano-preset-advanced": "7.0.6",
     "pagefind": "1.2.0",
-    "postcss": "8.4.47",
+    "postcss": "8.4.49",
     "postcss-preset-env": "10.0.9",
     "sassdoc": "2.7.4",
     "sassdoc-extras": "3.0.0",
