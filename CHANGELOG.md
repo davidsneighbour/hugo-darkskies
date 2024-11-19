@@ -1,4 +1,31 @@
 Changelog
+## [1.2024.32](https://github.com/davidsneighbour/hugo-darkskies/compare/v1.2024.31...v1.2024.32) (2024-11-19)
+
+
+### Documentation
+
+* **fix:** setup instructions and note about installing npm package ([cb7fd7f](https://github.com/davidsneighbour/hugo-darkskies/commit/cb7fd7f8e98e9929d8d0d0219a145889ac91370c))
+
+
+### Theme
+
+* **fix:** add template variables ([f05e177](https://github.com/davidsneighbour/hugo-darkskies/commit/f05e17753238e984c52008ba5d8cebe2f5bc3fbd))
+* **fix:** fontsize for code relative to default font size ([4fd5593](https://github.com/davidsneighbour/hugo-darkskies/commit/4fd55935b16ffa809de2730151420e46a5888e25))
+* **fix:** remove hashtag from tag items ([d1cd2df](https://github.com/davidsneighbour/hugo-darkskies/commit/d1cd2df9e935686d2e8bf36c5d2b02a33819f81f))
+* **fix:** remove smallest preview image size in xl-layouts ([1d1a19b](https://github.com/davidsneighbour/hugo-darkskies/commit/1d1a19b751ef450942daa6952c90f06f8806b447))
+* **fix:** showing only 25 instead of 50 posts per archive list page ([cb08741](https://github.com/davidsneighbour/hugo-darkskies/commit/cb08741c97b04ec921b1cb3115560659db14bdca))
+* **fix:** spacing and positioning of tags in flat post preview ([a9defb7](https://github.com/davidsneighbour/hugo-darkskies/commit/a9defb72b7b4110fd71329e8993caf2a2964cfc1))
+
+
+### Refactors
+
+* rewriting template aliases to gohugo methods ([d6655cb](https://github.com/davidsneighbour/hugo-darkskies/commit/d6655cb48b40e0f32fa8e6874dd9d0c4d5ca9955))
+
+
+### Chore
+
+* **config:** update gitignore ([d4941d7](https://github.com/davidsneighbour/hugo-darkskies/commit/d4941d7f2c152641b649e3f7102f22becdbf89db))
+
 ## [1.2024.31](https://github.com/davidsneighbour/hugo-darkskies/compare/v1.2024.30...v1.2024.31) (2024-11-10)
 
 
