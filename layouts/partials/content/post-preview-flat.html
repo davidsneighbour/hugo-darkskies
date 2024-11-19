@@ -5,7 +5,7 @@
 {{- $config := partials.Include "func/getPostSetup.html" $posttype -}}
 <article class="{{- $postClasses }} mb-3 px-3 py-2 component--archive-card">
   <div class="is--item row">
-    <div class="col-12 col-sm-6 col-md-4 col-xl-3">
+    <div class="col-12 col-sm-6 col-md-4">
       {{- /* MARK: Banner
       */ -}}
       {{- if compare.Ne $config.banner false -}}
@@ -24,7 +24,7 @@
         {{- partials.Include "content/components/headline-banner.html" $post -}}
       {{- end -}}
     </div>
-    <div class="col-12 col-sm-6 col-md-8 col-xl-9">
+    <div class="col-12 col-sm-6 col-md-8">
       <h2 class="post-title h3">
         <a href="{{ $post.Permalink }}" rel="bookmark">
           {{- $post.Title | transform.Markdownify -}}
