@@ -85,10 +85,10 @@
           <div class="d-flex column-gap-2 flex-row flex-wrap">
             {{ range . }}
               {{- $linked := compare.Gt (.Pages | len) 1 -}}
-              {{ if eq true $linked -}}<a rel="tag" href="{{- .Permalink -}}">{{ else }}<span>{{- end -}}
+              {{ if compare.Eq true $linked -}}<a rel="tag" href="{{- .Permalink -}}">{{ else }}<span>{{- end -}}
               #{{- .Title | strings.ToLower | urls.URLize }}
               <small>({{- .Pages | len -}})</small>
-              {{- if eq true $linked -}}</a>{{ else }}</span>{{ end }}
+              {{- if compare.Eq true $linked -}}</a>{{ else }}</span>{{ end }}
             {{ end }}
           </div>
         </div>

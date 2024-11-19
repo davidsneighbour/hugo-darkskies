@@ -5,7 +5,7 @@
 {{- $pagefindMarker := "" -}}
 {{- if collections.In (collections.Slice "page") page.Kind }}
   {{- $pagefindMarker = "data-pagefind-body" -}}
-  {{- if eq $post.Params.config.pagefind false | default true -}}
+  {{- if compare.Eq $post.Params.config.pagefind false | compare.Default true -}}
     {{- $pagefindMarker = "" -}}
   {{- end -}}
 {{- end -}}
