@@ -16,7 +16,7 @@
     "cssnano-preset-advanced": "7.0.6",
     "pagefind": "1.2.0",
     "postcss": "8.4.49",
-    "postcss-preset-env": "10.0.9",
+    "postcss-preset-env": "10.1.1",
     "sassdoc": "2.7.4",
     "sassdoc-extras": "3.0.0",
     "sassdoc-theme-herman": "6.0.2"
