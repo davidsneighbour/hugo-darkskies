@@ -22,7 +22,7 @@
     "sassdoc-theme-herman": "6.0.2"
   },
   "devDependencies": {
-    "@types/node": "^22.8.6",
+    "@types/node": "^22.9.1",
     "@types/youtube": "^0.1.0"
   },
   "scripts": {
