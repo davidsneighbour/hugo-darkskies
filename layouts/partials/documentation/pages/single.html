@@ -10,7 +10,7 @@
 <section class="section--content">
   <div class="container-fluid">
     <div class="row">
-      <div class="col-12 mb-5">
+      <div class="mb-5 col-12">
         {{- partials.IncludeCached "content/components/breadcrumbs.html" . . -}}
         {{- $articleclasses := partials.IncludeCached "func/getArticleClasses.html" page page -}}
         <article class="{{- $articleclasses -}}">
@@ -32,7 +32,7 @@
                             "tagline" page.Params.sectiontitle
                             "title" (.LinkTitle | strings.ToUpper) -}}
                     {{- end -}}
-                    {{- partials.Include "documentation/headerimage.html" $options $options -}}
+                    {{- partials.Include "documentation/headerimage.svg" $options $options -}}
                   </picture>
                 </a>
               </figure>

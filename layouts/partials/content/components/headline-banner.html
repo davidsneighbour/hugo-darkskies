@@ -21,7 +21,7 @@
           "tagline" page.Params.sectiontitle
           "title" ($post.LinkTitle | strings.ToUpper) -}}
       {{- end -}}
-      {{- partials.Include "documentation/headerimage.html" $options $options -}}
+      {{- partials.Include "documentation/headerimage.svg" $options $options -}}
       </picture>
     </a>
     <figcaption>{{- $post.LinkTitle -}}</figcaption>

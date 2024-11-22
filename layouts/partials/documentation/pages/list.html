@@ -10,7 +10,7 @@
 <section class="section--content">
   <div class="container-fluid">
     <div class="row">
-      <div class="col-12 mb-5">
+      <div class="mb-5 col-12">
         {{- partials.IncludeCached "content/components/breadcrumbs.html" . . -}}
         {{- if $banner -}}
           <div class="post-slider">
@@ -29,7 +29,7 @@
                         "tagline" page.Params.sectiontitle
                         "title" (.LinkTitle | strings.ToUpper) -}}
                 {{- end -}}
-                {{- partials.Include "documentation/headerimage.html" $options $options -}}
+                {{- partials.Include "documentation/headerimage.svg" $options $options -}}
               </picture>
             </figure>
           </div>
@@ -52,7 +52,7 @@
         <h2>{{- $label -}}</h2>
         <div class="row">
         {{- range $index, $item := collections.Sort page.Pages "Title" "asc" -}}
-          <div class="col-12 col-md-6 mb-5">
+          <div class="mb-5 col-12 col-md-6">
             {{- $post := collections.Dictionary "context" $item "level" "3" "index" (math.Add $index 1) -}}
             {{- partials.Include "content/post-preview.html" $post -}}
           </div>
