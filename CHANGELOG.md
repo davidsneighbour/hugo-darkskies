@@ -1,4 +1,27 @@
 Changelog
+## [1.2024.33](https://github.com/davidsneighbour/hugo-darkskies/compare/v1.2024.32...v1.2024.33) (2024-11-22)
+
+
+### Theme
+
+* **fix:** background color for documentation header ([6c95778](https://github.com/davidsneighbour/hugo-darkskies/commit/6c9577871ae6b93c69064bf10ac9f6c4bc5861ca))
+* **fix:** header image in documentation layout ([a520ebd](https://github.com/davidsneighbour/hugo-darkskies/commit/a520ebd3c2a1242958942f605d89b6a0c457de11))
+* **fix:** header image is svg ([bdf4a32](https://github.com/davidsneighbour/hugo-darkskies/commit/bdf4a32502a75ceccdbc67be016b5e762cfd9d80))
+
+
+### Chore
+
+* **config:** set dependabot to monthly runs ([492c8c4](https://github.com/davidsneighbour/hugo-darkskies/commit/492c8c41dd58cec62ef7a13e9603fabbea80aacc))
+
+
+### Build System
+
+* **deps:** bump cross-spawn from 7.0.3 to 7.0.6 in the npm_and_yarn group across 1 directory ([#32](https://github.com/davidsneighbour/hugo-darkskies/issues/32)) ([a08bb0e](https://github.com/davidsneighbour/hugo-darkskies/commit/a08bb0ee3c485153c0f6e5ed12519da63a70c53e))
+* **deps:** bump postcss from 8.4.47 to 8.4.49 ([#27](https://github.com/davidsneighbour/hugo-darkskies/issues/27)) ([e2ea116](https://github.com/davidsneighbour/hugo-darkskies/commit/e2ea116db6c0004418843907cc584b5e94777512))
+* **deps:** bump postcss-preset-env from 10.0.9 to 10.1.1 ([#31](https://github.com/davidsneighbour/hugo-darkskies/issues/31)) ([19306c3](https://github.com/davidsneighbour/hugo-darkskies/commit/19306c3770516b77ba3cbd56e2be84e539923096))
+* **deps:** bump sassdoc-theme-herman from 6.0.1 to 6.0.2 ([#29](https://github.com/davidsneighbour/hugo-darkskies/issues/29)) ([b5b2f6b](https://github.com/davidsneighbour/hugo-darkskies/commit/b5b2f6b80d0095a9d4d69ed069b56491177ae0c4))
+* **deps:** update dependencies ([4e71bd0](https://github.com/davidsneighbour/hugo-darkskies/commit/4e71bd019b83800700c599f666a944d9f67727a7))
+
 ## [1.2024.32](https://github.com/davidsneighbour/hugo-darkskies/compare/v1.2024.31...v1.2024.32) (2024-11-19)
 
 
