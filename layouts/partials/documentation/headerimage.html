@@ -11,14 +11,14 @@
 <svg version="1.1" viewBox="{{- $viewbox -}}"
   xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
   <rect width="1280" height="{{- $height -}}" fill="#00000044" />
-  <text x="55" y="{{ math.Sub 510 $subtractor }}">
+  <text x="20" y="{{ math.Sub 510 $subtractor }}">
     {{- with page.Params.sectiontitle -}}
       <tspan fill="#dc322f" font-size="42px">
         {{- . -}}
       </tspan>
     {{- end -}}
   </text>
-  <text x="50" y="{{ math.Sub 600 $subtractor }}">
+  <text x="20" y="{{ math.Sub 600 $subtractor }}">
     <tspan fill="#dc322f">
       <tspan font-size="90px" style="font-family:Changa;">
         {{- if (collections.IsSet . "title") -}}
