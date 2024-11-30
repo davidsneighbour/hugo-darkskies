@@ -77,14 +77,10 @@ main {
   }
 }
 
-
 a.text-hover-decoration-none:hover {
   @extend .text-decoration-none;
 }
 
-// $search = '/\b([A-Z][A-Z0-9]{2,})\b/';
-// $replace = '<abbr>$1</abbr>';
-// $text = preg_replace($search,$replace,$text);
 abbr {
   letter-spacing: 0.1em;
 }
@@ -125,14 +121,13 @@ textarea {
 }
 
 .site-title {
-  font-size: 12vw;
 
   @include media-breakpoint-up(sm) {
     font-size: 9vw;
   }
 
   @include media-breakpoint-up(xl) {
-    font-size: 110px;
+    font-size: 800%;
   }
 
   @extend .fw-semibold;
@@ -149,8 +144,6 @@ textarea {
   }
 
 }
-
-
 
 /* highlighting via `mark` tag */
 $mark-lighten-percentage: 20%; // Configurable percentage for lightening
@@ -178,14 +171,6 @@ mark {
   @extend .mark-green;
   @extend .rounded;
 }
-
-// mark::before {
-//   content: " [highlight start] ";
-// }
-
-// mark::after {
-//   content: " [highlight end] ";
-// }
 
 code,
 kbd,
