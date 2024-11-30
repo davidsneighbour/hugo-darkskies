@@ -7,7 +7,7 @@
   <figure>
     <a href="{{- $link -}}">
       {{- /* @todo use image component */ -}}
-      <picture>
+      <picture title="{{- $post.LinkTitle -}}">
       {{- $options := dict -}}
       {{- if collections.IsSet $package "version" }}
         {{- $options = dict
@@ -24,6 +24,5 @@
       {{- partials.Include "documentation/headerimage.svg" $options $options -}}
       </picture>
     </a>
-    <figcaption>{{- $post.LinkTitle -}}</figcaption>
   </figure>
 </div>
