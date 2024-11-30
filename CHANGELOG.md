@@ -1,4 +1,11 @@
 Changelog
+## [1.2024.35](https://github.com/davidsneighbour/hugo-darkskies/compare/v1.2024.34...v1.2024.35) (2024-11-30)
+
+
+### Theme
+
+* **fix:** headline size ([e2a4e30](https://github.com/davidsneighbour/hugo-darkskies/commit/e2a4e303e5e7be7f783c4f0895df914a25bb8c7d))
+
 ## [1.2024.34](https://github.com/davidsneighbour/hugo-darkskies/compare/v1.2024.33...v1.2024.34) (2024-11-30)
 
 
