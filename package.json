@@ -6,13 +6,13 @@
   "author": "Patrick Kollitsch <patrick@davids-neighbour.com>",
   "keywords": [],
   "dependencies": {
-    "@davidsneighbour/bootstrap-config": "2024.4.8",
-    "@davidsneighbour/markdownlint-config": "2024.4.8",
-    "@davidsneighbour/postcss-config": "2024.4.8",
-    "@davidsneighbour/release-config": "2024.4.8",
-    "@davidsneighbour/remark-config": "2024.4.8",
-    "@davidsneighbour/tools": "2024.4.8",
-    "@fullhuman/postcss-purgecss": "6.0.0",
+    "@davidsneighbour/bootstrap-config": "2024.4.9",
+    "@davidsneighbour/markdownlint-config": "2024.4.9",
+    "@davidsneighbour/postcss-config": "2024.4.9",
+    "@davidsneighbour/release-config": "2024.4.9",
+    "@davidsneighbour/remark-config": "2024.4.9",
+    "@davidsneighbour/tools": "2024.4.9",
+    "@fullhuman/postcss-purgecss": "7.0.2",
     "cssnano-preset-advanced": "7.0.6",
     "pagefind": "1.2.0",
     "postcss": "8.4.49",
@@ -22,7 +22,7 @@
     "sassdoc-theme-herman": "6.0.2"
   },
   "devDependencies": {
-    "@types/node": "^22.9.1",
+    "@types/node": "^22.10.1",
     "@types/youtube": "^0.1.0"
   },
   "scripts": {
