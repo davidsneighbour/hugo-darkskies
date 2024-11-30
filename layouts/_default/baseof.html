@@ -64,9 +64,10 @@
                 {{- if .HasChildren -}}
                   <li class="nav-item dropdown">
                     <div
-                      class="nav-link dropdown-toggle d-inline-block {{ if $active -}}active{{- end -}}"
+                      class="nav-link dropdown-toggle {{ $active }} lh-1 d-flex flex-row  justify-content-between gap-1 align-items-center"
                       {{- if $active }} aria-current="page" {{ end -}}
-                      data-toggle="dropdown"
+                      role="button"
+                      data-bs-toggle="dropdown"
                       aria-expanded="false">
                       {{- with .Params.bsicon -}}
                         {{- partials.Include "icon.html" . -}}
@@ -76,7 +77,9 @@
                     <ul class="dropdown-menu">
                       {{- range .Children -}}
                         <li>
-                          <a class="dropdown-item" href="{{- .URL | urls.AbsLangURL -}}"
+                          <a class="dropdown-item"
+                            type="button"
+                            href="{{- .URL | urls.AbsLangURL -}}"
                           {{- if $active }} aria-current="page" {{ end -}}
                               {{- with .Params.hotkey }} data-hotkey="{{ . }}"{{ end }}>
                             {{- with .Params.bsicon -}}
@@ -89,8 +92,7 @@
                     </ul>
                   </li>
                 {{- else -}}
-                  <li class="nav-item {{ $active }}
-                  ">
+                  <li class="nav-item {{ $active }}">
                     <a class="nav-link {{ $active }} lh-1 d-flex flex-row  justify-content-between gap-1 align-items-center"
                         href="{{- .URL | urls.AbsLangURL -}}"
                       {{- if $active }} aria-current="page" {{ end -}}
@@ -256,9 +258,7 @@
       {{- $icon := $config.backtotop.icon -}}
       <button x-data="{ showBackToTop: false }"
           x-on:scroll.window="showBackToTop = window.pageYOffset >= 200"
-          class="btn btn-secondary px-3 py-2 mb-3 me-2 lh-1
-                  position-fixed bottom-0 end-0
-                  rounded fw-normal ff-body" x-show="showBackToTop"
+          class="bottom-0 px-3 py-2 mb-3 rounded btn btn-secondary me-2 lh-1 position-fixed end-0 fw-normal ff-body" x-show="showBackToTop"
           x-transition.duration.500ms
           x-on:click.prevent="window.scrollTo({top: 0, behavior: 'smooth'});">
         <span class="me-2">
