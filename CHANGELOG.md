@@ -1,4 +1,18 @@
 Changelog
+## [1.2024.34](https://github.com/davidsneighbour/hugo-darkskies/compare/v1.2024.33...v1.2024.34) (2024-11-30)
+
+
+### Theme
+
+* **fix:** add dropdowns to top navigation ([2d338de](https://github.com/davidsneighbour/hugo-darkskies/commit/2d338de8ddb154e4a8ddf41e83930ac78f650223))
+* **fix:** remove archive pages ([036e28f](https://github.com/davidsneighbour/hugo-darkskies/commit/036e28f09f58d7132417be481ef2b9915e94b013))
+* **fix:** remove figcaption from headline banner ([9c45ce9](https://github.com/davidsneighbour/hugo-darkskies/commit/9c45ce972fb42c1e955a14a8b09744fd821d9972))
+
+
+### Build System
+
+* **deps:** update dependencies ([4e92b8a](https://github.com/davidsneighbour/hugo-darkskies/commit/4e92b8a1889eb099b5e051814411d1da95041236))
+
 ## [1.2024.33](https://github.com/davidsneighbour/hugo-darkskies/compare/v1.2024.32...v1.2024.33) (2024-11-22)
 
 
