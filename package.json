@@ -6,7 +6,7 @@
   "author": "Patrick Kollitsch <patrick@davids-neighbour.com>",
   "keywords": [],
   "dependencies": {
-    "@davidsneighbour/bootstrap-config": "2024.4.9",
+    "@davidsneighbour/bootstrap-config": "2024.4.10",
     "@davidsneighbour/markdownlint-config": "2024.4.9",
     "@davidsneighbour/postcss-config": "2024.4.9",
     "@davidsneighbour/release-config": "2024.4.9",
