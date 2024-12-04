@@ -9,7 +9,7 @@ html {
   scroll-behavior: smooth;
 
   /* https://unsplash.com/photos/the-night-sky-with-stars-and-the-milky-dUezo60XCZE */
-  background: url("/assets/images/bg.jpg") no-repeat center center fixed;
+  background: var(--dnb-bg-image) no-repeat center center fixed;
   background-size: cover;
 
   &:has(.kind-404) {

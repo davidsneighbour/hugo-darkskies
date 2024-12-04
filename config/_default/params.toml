@@ -32,6 +32,16 @@ logo_height = "40"
 logo_width = "40"
 show_title = true
 
+# stylesheet modifications
+################################################################################
+[dnb.theme.styles]
+[dnb.theme.styles.bgimage]
+url = 'images/background.jpg' # relative to /assets
+resize = '1200x'
+quality = 'q40'
+format = 'jpg'
+################################################################################
+
 [dnb.theme.tags]
 threshold_for_overview = 2
 
