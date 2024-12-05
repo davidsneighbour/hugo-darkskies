@@ -35,11 +35,13 @@ show_title = true
 # stylesheet modifications
 ################################################################################
 [dnb.theme.styles]
+# bgimage = 'images/background.jpg' # relative to /assets
 [dnb.theme.styles.bgimage]
 url = 'images/background.jpg' # relative to /assets
 resize = '1200x'
 quality = 'q40'
 format = 'jpg'
+enabled = true
 ################################################################################
 
 [dnb.theme.tags]
