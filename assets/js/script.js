@@ -6,7 +6,6 @@ import ClickSpark from "./components/click-effect.js";
 import ProgressBar from "./components/progress-bar.js";
 
 import "./scripts/keyboard-layout.js";
-import "./scripts/theme-changes.js";
 import { initializeAndSwitchClassOnScroll } from "./scripts/navbar-opacity.js";
 import "./plugins/clipboard.js";
 
@@ -75,8 +74,8 @@ document.addEventListener("alpine:init", () => {
 		},
 		changeGiscusTheme() {
 			const giscusTheme = this.theme === "dark" ? "dark" : "light";
-			let iframe = document.querySelector("iframe.giscus-frame");
-			if (iframe && iframe.contentWindow) {
+			const iframe = document.querySelector("iframe.giscus-frame");
+			if (iframe instanceof HTMLIFrameElement && iframe.contentWindow) {
 				iframe.contentWindow.postMessage(
 					{ giscus: { setConfig: { theme: giscusTheme } } },
 					this._giscusPath,
@@ -85,6 +84,13 @@ document.addEventListener("alpine:init", () => {
 		},
 	}));
 });
+
+// Extend the Window interface to include the Alpine property
+// declare global {
+// 	interface Window {
+// 		Alpine: typeof Alpine;
+// 	}
+// }
 
 document.onreadystatechange = () => {
 	if (document.readyState === "complete") {
@@ -122,13 +128,19 @@ document.onreadystatechange = () => {
 	}
 };
 
-document.addEventListener("scroll", function () {
+document.addEventListener("scroll", () => {
 	const scroll =
-		((document.documentElement.scrollTop || document.body.scrollTop) /
-			((document.documentElement.scrollHeight || document.body.scrollHeight) -
-				document.documentElement.clientHeight)) *
-		100;
+		(
+      (document.documentElement.scrollTop || document.body.scrollTop) /
+			(
+        (document.documentElement.scrollHeight || document.body.scrollHeight) -
+				document.documentElement.clientHeight
+      )
+    ) * 100;
 	const progress = document.querySelector(".progress");
-	progress.style.setProperty("--scroll", scroll + "%");
-	progress.setAttribute("aria-valuenow", scroll);
+	// Check if the progress element is not null before accessing its properties
+		if (progress) {
+			progress.style.setProperty("--scroll", scroll + "%");
+			progress.setAttribute("aria-valuenow", scroll);
+		}
 });

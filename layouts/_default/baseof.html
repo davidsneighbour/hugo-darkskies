@@ -283,7 +283,8 @@
     {{- $scripts := resources.Get "js/script.js" |
           js.Build (
             collections.Merge $options (collections.Dictionary "targetPath" "assets/js/script.js")
-          ) | resources.Fingerprint "sha512" -}}
+          ) | resources.Fingerprint "sha512"
+    -}}
     <script src="{{- $scripts.Permalink -}}" async fetchpriority="high" defer integrity="{{- $scripts.Data.Integrity -}}"></script>
     {{- with resources.Get "js/main.js" -}}
       {{- $script := . | resources.ExecuteAsTemplate "plugins.js" . -}}
