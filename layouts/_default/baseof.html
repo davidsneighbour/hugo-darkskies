@@ -257,10 +257,11 @@
     {{- if compare.Eq true $config.backtotop.enabled -}}
       {{- $icon := $config.backtotop.icon -}}
       <button x-data="{ showBackToTop: false }"
-          x-on:scroll.window="showBackToTop = window.pageYOffset >= 200"
-          class="bottom-0 px-3 py-2 mb-3 rounded btn btn-secondary me-2 lh-1 position-fixed end-0 fw-normal ff-body" x-show="showBackToTop"
-          x-transition.duration.500ms
-          x-on:click.prevent="window.scrollTo({top: 0, behavior: 'smooth'});">
+        class="bottom-0 flex-row px-3 py-2 mb-3 rounded align-items-center d-inline-flex btn btn-secondary me-2 lh-1 position-fixed end-0 fw-normal ff-body"
+        x-show="showBackToTop"
+        x-on:scroll.window="showBackToTop = window.pageYOffset >= 200"
+        x-transition.duration.500ms
+        x-on:click.prevent="window.scrollTo({top: 0, behavior: 'smooth'});">
         <span class="me-2">
           {{- partials.Include "icon.html" $icon -}}
         </span>
