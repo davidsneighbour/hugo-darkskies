@@ -8,6 +8,7 @@
       <li class="breadcrumb-item active" aria-current="page">{{ .Title | transform.Markdownify }}</li>
     </ol>
   </nav>
+  {{/* @todo make this a partial */}}
   <script type='application/ld+json'>
   {
     "@context": "https://schema.org",
@@ -34,16 +35,6 @@
     ]
   }
   </script>
-  {{- if hugo.IsServer -}}
-  <div>
-    {{- $copy := lang.Translate "meta.edit" -}}
-    <a href="vscode://file/{{- .File.Filename -}}"
-    aria-label="{{- $copy -}}"
-    title="{{- $copy -}}"
-    style="font-size:75%">
-      EDIT
-    </a>
-  </div>
-  {{- end -}}
+  {{ partial "func/vscode-link.html" . }}
 </div>
 {{- end -}}
