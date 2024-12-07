@@ -2,18 +2,6 @@
 
   {{- $config := site.Params.dnb.theme -}}
 
-  {{- if compare.Lt (.Scratch.Get "paginator").PageNumber 2 -}}
-    <section class="section--sitetitle" aria-role="banner">
-      <div class="container">
-        <div class="site-title ff-headline">
-          <a href="{{- site.BaseURL -}}">{{- site.Title -}}</a>
-        </div>
-        {{- partials.Include "func/hook.html" ( collections.Dictionary "hook" "post-sitetitle" "context" . ) -}}
-        <div class="rainbow-box"></div>
-			</div>
-    </section>
-  {{- end -}}
-
   {{- $mainsectionlink := fmt.Printf "%s%s/" "/" $config.mainsection -}}
   <section class="section--content">
     <div class="container-fluid">
@@ -25,7 +13,7 @@
       {{- $homePosts := collections.Complement $home $first (collections.First 8 $paginator.Pages) -}}
 
       <div class="row">
-        <div class="col-12 snap-align-start snap-y mb-5">
+        <div class="mb-5 col-12 snap-align-start snap-y">
           {{- with (collections.Index $first 0) -}}
             {{- partials.Include "content/post.html" . -}}
           {{- end -}}
@@ -44,7 +32,7 @@
 
       <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3">
         {{- range $index, $item := $homePosts -}}
-          <div class="col mb-5">
+          <div class="mb-5 col">
             {{- $post := collections.Dictionary "context" $item "level" "3" "index" $counter -}}
             {{- partials.Include "content/post-preview.html" $post -}}
           </div>
@@ -53,7 +41,7 @@
       </div>
 
       <div class="row">
-        <div class="col text-center">
+        <div class="text-center col">
           <a href="{{- $mainsectionlink -}}" class="btn btn-outline-primary btn-lg">
             {{- lang.Translate "theme.readall" -}}
           </a>

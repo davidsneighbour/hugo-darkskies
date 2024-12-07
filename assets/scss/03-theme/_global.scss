@@ -34,24 +34,6 @@ a {
 
 }
 
-.rainbow-box {
-  border-radius: 5px;
-  margin: 0 auto 1rem;
-  height: 1px;
-  background: linear-gradient(90deg,
-      rgba(255, 0, 0, 1) 0%,
-      rgba(255, 154, 0, 1) 10%,
-      rgba(208, 222, 33, 1) 20%,
-      rgba(79, 220, 74, 1) 30%,
-      rgba(63, 218, 216, 1) 40%,
-      rgba(47, 201, 226, 1) 50%,
-      rgba(28, 127, 238, 1) 60%,
-      rgba(95, 21, 242, 1) 70%,
-      rgba(186, 12, 248, 1) 80%,
-      rgba(251, 7, 217, 1) 90%,
-      rgba(255, 0, 0, 1) 100%);
-}
-
 /* content area */
 main {
   padding-top: 30px;
@@ -85,6 +67,13 @@ abbr {
 }
 
 .alert {
+
+  // @todo make this look good
+  // @include media-breakpoint-up(md) {
+  // display: block;
+  // margin: 0 -60px;
+  // }
+
   a {
     /// adds colors to all links inside alerts
     @extend .alert-link;
@@ -94,6 +83,20 @@ abbr {
   p:last-of-type {
     @extend .mb-0;
   }
+
+  .icon--bootstrap {
+    @extend .shadow-lg;
+    background-color: var(--bs-dark-bg-subtle);
+    border: 2px solid var(--bs-dark-border-subtle);
+    padding: 8px;
+    border-radius: 999px;
+    line-height: 1;
+    display: inline-block;
+    position: absolute;
+    top: -15px;
+    left: -25px;
+  }
+
 }
 
 .scroll-container {

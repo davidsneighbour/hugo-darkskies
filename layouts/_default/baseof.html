@@ -7,7 +7,7 @@
   {{- /* MARK: Head
   */ -}}
   <head>
-    {{- /* loading head module, see https://kollitsch.dev/gohugo/head/ */ -}}
+    {{- /* loading head module, see https://dnbhub.xyz/head/ */ -}}
     {{- partials.Include "head.html" . -}}
   </head>
   {{- /* MARK: Body
@@ -16,6 +16,14 @@
     <a class="visually-hidden-focusable skip-to-main-link" href="#maincontent">
       {{- lang.Translate "theme.skip_to_content" -}}
     </a>
+    <section class="section--sitetitle" aria-role="banner">
+      <div class="container">
+        <div class="site-title ff-headline">
+          <a href="{{- site.BaseURL -}}">{{- site.Title -}}</a>
+        </div>
+        {{- partials.Include "func/hook.html" ( collections.Dictionary "hook" "post-sitetitle" "context" . ) -}}
+			</div>
+    </section>
     {{- partials.Include "func/hook.html" ( collections.Dictionary "hook" "body-start" "context" . ) -}}
     {{- /* MARK: Topnavigation
     */ -}}
@@ -169,26 +177,6 @@
           </div>
         {{- end -}}
         {{- with site.Params.dnb.social -}}
-          {{- /*
-
-            ```toml
-            [dnb.social.sharebuttons]
-            networks = ["slug1", "slug2", ...]
-            icons = true
-            sharetext = false
-
-            [dnb.social.network.slug1]
-            url = ""
-            icon = "bootstrap icon"
-            label = ""
-
-            [dnb.social.network.slug2]
-            url = ""
-            icon = "bootstrap icon"
-            label = ""
-            ```
-
-          */ -}}
           {{- $order := collections.Slice -}}
           {{- $networks := .network | compare.Default collections.Dictionary -}}
           {{- $sharebuttons := .sharebuttons | compare.Default collections.Slice -}}
@@ -245,7 +233,7 @@
           </div>
         </div>
         {{- if hugo.IsServer -}}
-          {{- /* debugging area */ -}}
+          {{- partials.Include "func/hook.html" ( collections.Dictionary "hook" "footer-debugging" "context" . ) -}}
         {{- end -}}
         {{- partials.Include "func/hook.html" ( collections.Dictionary "hook" "footer-widgets-end" "context" . ) -}}
       </div>
