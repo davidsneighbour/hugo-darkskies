@@ -141,34 +141,41 @@ document.addEventListener("scroll", () => {
 });
 
 document.addEventListener("DOMContentLoaded", () => {
-  const placeholderSelector = ".section--sitetitle";
-  const navbarSelector = ".sticky-top";
-  const brandSelector = ".sticky-top .navbar-brand";
+  const placeholder = document.querySelector(".section--sitetitle"); // Matches the first element with class 'navbar-placeholder'
+  const stickyBrand = document.querySelector(".sticky-top .navbar-brand"); // Matches the first element with class 'navbar-brand'
 
-  const body = document.body;
-  const placeholder = document.querySelector(placeholderSelector);
-  const navbar = document.querySelector(navbarSelector);
-  const stickyBrand = document.querySelector(brandSelector);
-
-  if (!placeholder || !navbar || !stickyBrand) {
-    console.error("Required elements not found!");
+  if (!placeholder || !stickyBrand) {
+    console.error("Placeholder or sticky brand not found!");
     return;
   }
 
   const observer = new IntersectionObserver(
     ([entry]) => {
-      const isVisible = entry.isIntersecting;
-
-      // Toggle `sticky-visible` class on the navbar brand
-      if (isVisible) {
-        stickyBrand.classList.remove("sticky-visible");
-      } else {
+      if (!entry.isIntersecting) {
         stickyBrand.classList.add("sticky-visible");
+      } else {
+        stickyBrand.classList.remove("sticky-visible");
       }
+    },
+    { threshold: 0 } // Trigger as soon as the placeholder is not visible
+  );
+  observer.observe(placeholder);
+});
 
-      // Update body class for nav state
-      const currentState = isVisible ? "nav-state1" : "nav-state2";
-      const oppositeState = currentState === "nav-state1" ? "nav-state2" : "nav-state1";
+document.addEventListener("DOMContentLoaded", () => {
+  const body = document.body;
+  const placeholder = document.querySelector('.section--sitetitle');
+  const navbar = document.querySelector('.sticky-top');
+
+  if (!placeholder || !navbar) {
+    console.error('Placeholder or navbar not found!');
+    return;
+  }
+
+  const observer = new IntersectionObserver(
+    ([entry]) => {
+      const currentState = entry.isIntersecting ? 'nav-state1' : 'nav-state2';
+      const oppositeState = currentState === 'nav-state1' ? 'nav-state2' : 'nav-state1';
 
       if (!body.classList.contains(currentState)) {
         body.classList.remove(oppositeState);
