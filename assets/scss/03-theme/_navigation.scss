@@ -24,6 +24,20 @@
     width: 1.5rem;
   }
 
+  // animating the navbar-brand when the navbar is sticky
+  .navbar-brand {
+    transition: opacity 1.5s ease, transform 0.3s ease;
+    opacity: 0;
+    transform: translateY(-10px); // Start slightly above
+    display: block; // Ensure the element is always in the document flow
+    visibility: hidden; // Ensure it's hidden from screen readers when invisible
+    &.sticky-visible {
+      opacity: 1;
+      transform: translateY(0); // Move back to its normal position
+      visibility: visible; // Make it accessible to screen readers
+    }
+  }
+
   body.dark & {
     background-color: rgba(0, 0, 0, 0.2);
   }

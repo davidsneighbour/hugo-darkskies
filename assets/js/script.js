@@ -144,3 +144,19 @@ document.addEventListener("scroll", () => {
 			progress.setAttribute("aria-valuenow", scroll);
 		}
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+  const placeholder = document.querySelector(".section--sitetitle"); // Matches the first element with class 'navbar-placeholder'
+  const stickyBrand = document.querySelector(".sticky-top .navbar-brand"); // Matches the first element with class 'navbar-brand'
+  const observer = new IntersectionObserver(
+    ([entry]) => {
+      if (!entry.isIntersecting) {
+        stickyBrand.classList.add("sticky-visible");
+      } else {
+        stickyBrand.classList.remove("sticky-visible");
+      }
+    },
+    { threshold: 0 } // Trigger as soon as the placeholder is not visible
+  );
+  observer.observe(placeholder);
+});
