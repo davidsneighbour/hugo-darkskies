@@ -6,7 +6,6 @@ import ClickSpark from "./components/click-effect.js";
 import ProgressBar from "./components/progress-bar.js";
 
 import "./scripts/keyboard-layout.js";
-import { initializeAndSwitchClassOnScroll } from "./scripts/navbar-opacity.js";
 import "./plugins/clipboard.js";
 
 // Import bootstrap scripts
@@ -24,10 +23,6 @@ import LiteYTEmbed from "./lite-yt-embed.js";
 customElements.define("lite-youtube", LiteYTEmbed);
 customElements.define("click-effect", ClickSpark);
 customElements.define("progress-bar", ProgressBar);
-
-// Initialize navbar opacity
-window.onload = initializeAndSwitchClassOnScroll;
-document.addEventListener("DOMContentLoaded", initializeAndSwitchClassOnScroll);
 
 // Initialize theme switcher
 document.addEventListener("alpine:init", () => {
@@ -146,17 +141,45 @@ document.addEventListener("scroll", () => {
 });
 
 document.addEventListener("DOMContentLoaded", () => {
-  const placeholder = document.querySelector(".section--sitetitle"); // Matches the first element with class 'navbar-placeholder'
-  const stickyBrand = document.querySelector(".sticky-top .navbar-brand"); // Matches the first element with class 'navbar-brand'
+  const placeholderSelector = ".section--sitetitle";
+  const navbarSelector = ".sticky-top";
+  const brandSelector = ".sticky-top .navbar-brand";
+
+  const body = document.body;
+  const placeholder = document.querySelector(placeholderSelector);
+  const navbar = document.querySelector(navbarSelector);
+  const stickyBrand = document.querySelector(brandSelector);
+
+  if (!placeholder || !navbar || !stickyBrand) {
+    console.error("Required elements not found!");
+    return;
+  }
+
   const observer = new IntersectionObserver(
     ([entry]) => {
-      if (!entry.isIntersecting) {
-        stickyBrand.classList.add("sticky-visible");
-      } else {
+      const isVisible = entry.isIntersecting;
+
+      // Toggle `sticky-visible` class on the navbar brand
+      if (isVisible) {
         stickyBrand.classList.remove("sticky-visible");
+      } else {
+        stickyBrand.classList.add("sticky-visible");
+      }
+
+      // Update body class for nav state
+      const currentState = isVisible ? "nav-state1" : "nav-state2";
+      const oppositeState = currentState === "nav-state1" ? "nav-state2" : "nav-state1";
+
+      if (!body.classList.contains(currentState)) {
+        body.classList.remove(oppositeState);
+        body.classList.add(currentState);
       }
     },
-    { threshold: 0 } // Trigger as soon as the placeholder is not visible
+    {
+      root: null, // Observe within the viewport
+      threshold: 0, // Trigger as soon as the placeholder is out of sight
+    }
   );
+
   observer.observe(placeholder);
 });

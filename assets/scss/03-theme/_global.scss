@@ -122,6 +122,10 @@ textarea {
   min-height: 10rem;
 }
 
+.section--sitetitle {
+  background-color: rgba(0, 0, 0, .2);
+}
+
 .site-title {
 
   @include media-breakpoint-up(sm) {
