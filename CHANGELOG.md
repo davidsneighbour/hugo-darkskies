@@ -1,4 +1,26 @@
 Changelog
+## [1.2024.36](https://github.com/davidsneighbour/hugo-darkskies/compare/v1.2024.35...v1.2024.36) (2024-12-07)
+
+
+### Theme
+
+* **feat:** add edit link to breadcrumb block ([d1b76f6](https://github.com/davidsneighbour/hugo-darkskies/commit/d1b76f6840799f2cfc63d290bf4d0a4fc38ddd13))
+* **feat:** background image via configuration ([1883359](https://github.com/davidsneighbour/hugo-darkskies/commit/188335988c85aa09e202dd55df31abe890462857))
+* **feat:** show/hide site title on sticky navbar ([e19eff9](https://github.com/davidsneighbour/hugo-darkskies/commit/e19eff9228ae9cc454d94efbf32dd717ca3fb951))
+* **fix:** add edit link to breadcrumbs line ([0d5c79b](https://github.com/davidsneighbour/hugo-darkskies/commit/0d5c79bc5015148b5382c050c71b417f9f303838))
+* **fix:** add more config parameters ([0ae725d](https://github.com/davidsneighbour/hugo-darkskies/commit/0ae725d437b46909f108f9a65341dac769affeb0))
+* **fix:** cleanup and move title on top/add rainbow to progress ([a51fe16](https://github.com/davidsneighbour/hugo-darkskies/commit/a51fe1680fae17ebc2b00005e7c03bf58b86fbed))
+* **fix:** header design fixes, morphing when navbar gets sticky ([120715e](https://github.com/davidsneighbour/hugo-darkskies/commit/120715ef8366b81c9a6c86323359ddd347a77d7b))
+* **fix:** layout fixes back to top button ([90a31e9](https://github.com/davidsneighbour/hugo-darkskies/commit/90a31e9be0365b433f36d93af70402a6b9381ce1))
+* **fix:** make container fluid ([801a385](https://github.com/davidsneighbour/hugo-darkskies/commit/801a38540c2142d0fe5205dd137429ea5a63206f))
+* **fix:** refactor some scripts ([2fd0f64](https://github.com/davidsneighbour/hugo-darkskies/commit/2fd0f642cd502b564ad7c48db7d15e584233da78))
+* **fix:** update navbar logic ([acbe187](https://github.com/davidsneighbour/hugo-darkskies/commit/acbe187387f70703dddd81c900a13ab96fb5635d))
+
+
+### Configuration
+
+* **fix:** cleanup configuration ([4ac4842](https://github.com/davidsneighbour/hugo-darkskies/commit/4ac484200493ee6c3bc2c581ccdd695a75a9c1fb))
+
 ## [1.2024.35](https://github.com/davidsneighbour/hugo-darkskies/compare/v1.2024.34...v1.2024.35) (2024-11-30)
 
 
