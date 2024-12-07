@@ -30,7 +30,7 @@
     {{- partials.Include "func/hook.html" ( collections.Dictionary "hook" "header-topnav-pre" "context" . ) -}}
     <div class="sticky-top">
       <nav class="navbar navbar-expand-md" aria-label="Top Navigation Bar">
-        <div class="container">
+        <div class="container-fluid">
           {{- partials.Include "func/hook.html" ( collections.Dictionary "hook" "header-topnav-start" "context" . ) -}}
           {{- /* Logo/Brand name */ -}}
           <div class="navbar-brand fsize-12 ff-headline">
