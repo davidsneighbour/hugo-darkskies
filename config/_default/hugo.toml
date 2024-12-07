@@ -38,13 +38,13 @@ timeout = "600s"
 _merge = 'deep'
 [caches]
 _merge = 'deep'
-[module]
-_merge = 'deep'
 [build]
 _merge = 'deep'
 [markup]
 _merge = 'deep'
-[params]
+[module]
+_merge = 'deep'
+[frontmatter]
 _merge = 'deep'
 [taxonomies]
 _merge = 'shallow'
