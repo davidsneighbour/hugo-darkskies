@@ -1,4 +1,16 @@
 Changelog
+## [1.2024.39](https://github.com/davidsneighbour/hugo-darkskies/compare/v1.2024.38...v1.2024.39) (2024-12-08)
+
+
+### Theme
+
+* **fix:** better font size for title on small screens ([108da93](https://github.com/davidsneighbour/hugo-darkskies/commit/108da939b0140ebe384c609b9b3fec59ba8ccf83))
+* **fix:** better observer fixes ([24df429](https://github.com/davidsneighbour/hugo-darkskies/commit/24df42959932bc0a8887608101ed10e0296d293f))
+* **fix:** css evolves and a former hack now has a property ([e4840f5](https://github.com/davidsneighbour/hugo-darkskies/commit/e4840f5365176dbfb64336307ca331f1c282d34e))
+* **fix:** proper observer handling ([8cb8af7](https://github.com/davidsneighbour/hugo-darkskies/commit/8cb8af70451d716f3c34055ca681781527360252))
+* **fix:** some refactoring and site-title fixes to bg color ([af9263b](https://github.com/davidsneighbour/hugo-darkskies/commit/af9263b8b16f915e9da5b140d90930848265bd48))
+* **fix:** type casting for progress element ([cf4b880](https://github.com/davidsneighbour/hugo-darkskies/commit/cf4b880703f0578eb6012b7be0019bd01e99db11))
+
 ## [1.2024.38](https://github.com/davidsneighbour/hugo-darkskies/compare/v1.2024.37...v1.2024.38) (2024-12-08)
 
 
