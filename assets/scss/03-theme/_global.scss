@@ -99,14 +99,6 @@ abbr {
 
 }
 
-.scroll-container {
-  scroll-snap-type: y mandatory; // proximity
-}
-
-.scroll-child {
-  scroll-snap-align: start;
-}
-
 .is--clickable {
   cursor: pointer;
 }
@@ -128,8 +120,13 @@ textarea {
 
 .site-title {
 
+
+  @include media-breakpoint-down(sm) {
+    font-size: 6vw;
+  }
+
   @include media-breakpoint-up(sm) {
-    font-size: 9vw;
+    font-size: 12vw;
   }
 
   @include media-breakpoint-up(xl) {
