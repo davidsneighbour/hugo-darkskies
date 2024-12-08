@@ -1,4 +1,21 @@
 Changelog
+## [1.2024.37](https://github.com/davidsneighbour/hugo-darkskies/compare/v1.2024.36...v1.2024.37) (2024-12-08)
+
+
+### Theme
+
+* **feat:** add js build options and enable typescript ([4ecbbd1](https://github.com/davidsneighbour/hugo-darkskies/commit/4ecbbd17d9c1064ac75241142960d599ccc089e0))
+
+
+### Chore
+
+* **config:** update package content and move deps around ([1d43bab](https://github.com/davidsneighbour/hugo-darkskies/commit/1d43bab2a1604719b8c051ad747c94a8e109e3fa))
+
+
+### Build System
+
+* **deps:** update dependencies ([0cb2341](https://github.com/davidsneighbour/hugo-darkskies/commit/0cb2341e5bae09cbdb09e1018a339a9f34bff067))
+
 ## [1.2024.36](https://github.com/davidsneighbour/hugo-darkskies/compare/v1.2024.35...v1.2024.36) (2024-12-07)
 
 
