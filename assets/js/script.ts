@@ -1,14 +1,11 @@
 import Alpine from "alpinejs";
 import collapse from "@alpinejs/collapse";
 import intersect from "@alpinejs/intersect";
-
 import ClickSpark from "./components/click-effect.js";
 import ProgressBar from "./components/progress-bar.js";
-
 import "./scripts/keyboard-layout.js";
 import "./plugins/clipboard.js";
 
-// Import bootstrap scripts
 import "./scripts/bs-tooltips.js";
 
 // Import parameters from GoHugo
@@ -81,11 +78,11 @@ document.addEventListener("alpine:init", () => {
 });
 
 // Extend the Window interface to include the Alpine property
-// declare global {
-// 	interface Window {
-// 		Alpine: typeof Alpine;
-// 	}
-// }
+declare global {
+	interface Window {
+		Alpine: typeof Alpine;
+	}
+}
 
 document.onreadystatechange = () => {
 	if (document.readyState === "complete") {
@@ -134,11 +131,17 @@ document.addEventListener("scroll", () => {
     ) * 100;
 	const progress = document.querySelector(".progress");
 	// Check if the progress element is not null before accessing its properties
-		if (progress) {
-			progress.style.setProperty("--scroll", scroll + "%");
-			progress.setAttribute("aria-valuenow", scroll);
-		}
+  if (progress) {
+    progress.style.setProperty("--scroll", scroll + "%");
+    progress.setAttribute("aria-valuenow", scroll);
+  }
+  determineAndSetClass()
 });
+
+// Trigger the scroll event after 500ms
+setTimeout(() => {
+  document.dispatchEvent(new Event('scroll'));
+}, 500);
 
 document.addEventListener("DOMContentLoaded", () => {
   const placeholder = document.querySelector(".section--sitetitle"); // Matches the first element with class 'navbar-placeholder'
@@ -162,31 +165,18 @@ document.addEventListener("DOMContentLoaded", () => {
   observer.observe(placeholder);
 });
 
-document.addEventListener("DOMContentLoaded", () => {
+// set the initial class based on scroll position
+const determineAndSetClass = () => {
   const body = document.body;
-  const placeholder = document.querySelector('.section--sitetitle');
-  const navbar = document.querySelector('.sticky-top');
-
-  if (!placeholder || !navbar) {
-    console.error('Placeholder or navbar not found!');
-    return;
+  const scrollThreshold = 50;
+  const currentState = window.scrollY > scrollThreshold ? 'nav-state2' : 'nav-state1';
+  const oppositeState = currentState === 'nav-state1' ? 'nav-state2' : 'nav-state1';
+  if (!body.classList.contains(currentState)) {
+    body.classList.remove(oppositeState);
+    body.classList.add(currentState);
   }
+};
 
-  const observer = new IntersectionObserver(
-    ([entry]) => {
-      const currentState = entry.isIntersecting ? 'nav-state1' : 'nav-state2';
-      const oppositeState = currentState === 'nav-state1' ? 'nav-state2' : 'nav-state1';
-
-      if (!body.classList.contains(currentState)) {
-        body.classList.remove(oppositeState);
-        body.classList.add(currentState);
-      }
-    },
-    {
-      root: null, // Observe within the viewport
-      threshold: 0, // Trigger as soon as the placeholder is out of sight
-    }
-  );
-
-  observer.observe(placeholder);
-});
+setTimeout(() => {
+  determineAndSetClass();
+}, 500);

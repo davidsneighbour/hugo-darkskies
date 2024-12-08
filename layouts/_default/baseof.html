@@ -166,8 +166,8 @@
                 <li class="px-2 list-inline-item">
                   <a href="{{- .URL | urls.AbsLangURL -}}">
                     {{- with .Params.bsicon }}
-                      {{ $options := dict "icon" . "size" "1.5em" "class" "me-2" }}
-                      {{ partials.Include "icon.html" $options }}
+                      {{ $iconoptions := dict "icon" . "size" "1.5em" "class" "me-2" }}
+                      {{ partials.Include "icon.html" $iconoptions }}
                     {{ end -}}
                     {{- .Name -}}
                   </a>
@@ -203,8 +203,8 @@
                       target="_blank">
                       {{- with ($config.icons | compare.Default true) -}}
                         {{- if compare.Eq . true -}}
-                          {{- $options := dict "icon" $network.icon "class" "c-20" "width" "32" "height" "32" -}}
-                          {{- partials.Include "icon.html" $options -}}
+                          {{- $iconoptions := dict "icon" $network.icon "class" "c-20" "width" "32" "height" "32" -}}
+                          {{- partials.Include "icon.html" $iconoptions -}}
                         {{- end -}}
                       {{- end -}}
                       <span class="visually-hidden">
@@ -263,15 +263,15 @@
     {{- end -}}
     {{- partials.Include "func/hook.html" ( collections.Dictionary "hook" "footer-post" "context" . ) -}}
     {{- partials.Include "func/hook.html" ( collections.Dictionary "hook" "body-end-pre-script" "context" . ) -}}
-    {{- $options := site.Params.dnb.theme.jsbuild.options -}}
+    {{- $buildoptions := site.Params.dnb.theme.jsbuild.options -}}
     {{- $params := dict }}
     {{- with resources.Get "data/build.json" -}}
       {{- $params = dict "params" (transform.Unmarshal .Content) -}}
     {{- end -}}
-    {{- $options = collections.Merge $options $params -}}
-    {{- $scripts := resources.Get "js/script.js" |
+    {{- $buildoptions = collections.Merge $buildoptions $params -}}
+    {{- $scripts := resources.Get (site.Params.dnb.theme.js.entrypoint | default "js/script.js") |
           js.Build (
-            collections.Merge $options (collections.Dictionary "targetPath" "assets/js/script.js")
+            collections.Merge $buildoptions (collections.Dictionary "targetPath" "assets/js/script.js")
           ) | resources.Fingerprint "sha512"
     -}}
     <script src="{{- $scripts.Permalink -}}" async fetchpriority="high" defer integrity="{{- $scripts.Data.Integrity -}}"></script>
@@ -279,7 +279,7 @@
       {{- $script := . | resources.ExecuteAsTemplate "plugins.js" . -}}
       {{- $script = $script |
             js.Build (
-              collections.Merge $options (collections.Dictionary "targetPath" "assets/js/main.js")
+              collections.Merge $buildoptions (collections.Dictionary "targetPath" "assets/js/main.js")
             ) | resources.Fingerprint "sha512" -}}
       <script src="{{- $script.Permalink -}}" async fetchpriority="high" defer integrity="{{- $script.Data.Integrity -}}"></script>
     {{- else -}}

@@ -70,6 +70,11 @@ enabled = true # boolean
 enabled = true
 icon = "chevron-double-up"
 
+[dnb.theme.js]
+# script generation settings
+script_type = "typescript" # one of "javascript", "typescript"
+entrypoint = "js/script.ts" # relative to /assets
+
 [dnb.theme.jsbuild.options]
 # options for the js.Build method
 # see https://gohugo.io/hugo-pipes/js/
