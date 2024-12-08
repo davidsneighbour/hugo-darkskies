@@ -19,11 +19,10 @@
     "postcss-preset-env": "10.1.1",
     "sassdoc": "2.7.4",
     "sassdoc-extras": "3.0.0",
-    "sassdoc-theme-herman": "6.0.2"
-  },
-  "devDependencies": {
-    "@types/node": "^22.10.1",
-    "@types/youtube": "^0.1.0"
+    "sassdoc-theme-herman": "6.0.2",
+    "@types/alpinejs": "3.13.11",
+    "@types/node": "22.10.1",
+    "@types/youtube": "0.1.0"
   },
   "scripts": {
     "release": "wireit",
@@ -46,5 +45,8 @@
       "command": "commit-and-tag-version --sign -a -t \"v\" --releaseCommitMessageFormat \"chore(release): v{{currentTag}}\" -- --no-verify && ./bin/repo/release/postrelease"
     }
   },
-  "main": "index.js"
+  "main": "index.js",
+  "files": [
+    "README.md"
+  ]
 }
