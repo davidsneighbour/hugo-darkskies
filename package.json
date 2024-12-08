@@ -6,6 +6,8 @@
   "author": "Patrick Kollitsch <patrick@davids-neighbour.com>",
   "keywords": [],
   "dependencies": {
+    "@alpinejs/collapse": "3.14.7",
+    "@alpinejs/intersect": "3.14.7",
     "@davidsneighbour/bootstrap-config": "2024.4.12",
     "@davidsneighbour/markdownlint-config": "2024.4.12",
     "@davidsneighbour/postcss-config": "2024.4.12",
@@ -13,16 +15,19 @@
     "@davidsneighbour/remark-config": "2024.4.12",
     "@davidsneighbour/tools": "2024.4.12",
     "@fullhuman/postcss-purgecss": "7.0.2",
+    "@types/alpinejs": "3.13.11",
+    "@types/alpinejs__collapse": "3.13.4",
+    "@types/alpinejs__intersect": "3.13.4",
+    "@types/node": "22.10.1",
+    "@types/youtube": "0.1.0",
+    "alpinejs": "3.14.7",
     "cssnano-preset-advanced": "7.0.6",
     "pagefind": "1.2.0",
     "postcss": "8.4.49",
     "postcss-preset-env": "10.1.1",
     "sassdoc": "2.7.4",
     "sassdoc-extras": "3.0.0",
-    "sassdoc-theme-herman": "6.0.2",
-    "@types/alpinejs": "3.13.11",
-    "@types/node": "22.10.1",
-    "@types/youtube": "0.1.0"
+    "sassdoc-theme-herman": "6.0.2"
   },
   "scripts": {
     "release": "wireit",
