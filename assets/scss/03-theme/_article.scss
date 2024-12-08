@@ -50,21 +50,6 @@ article {
 
   }
 
-  // @todo make this configurable by navbar
-  // [id] {
-  //   scroll-margin-top: var(--scroll-margin, 2rem);
-  // }
-
-  // @todo testing this out
-  // a:not([class]) {
-  //   text-underline-offset: 0.25em;
-  // }
-  // text-decoration-color to change the underline color
-  // text-decoration-thickness to change the underline stroke thickness.
-
-
-
-
   /// A container for the article image
   .post-slider {
 
@@ -104,21 +89,4 @@ article {
     @extend .mb-3;
   }
 
-
-  /// @todo check and add/remove
-  // @include color-mode(dark) {
-  //   .element {
-  //     :is(tbody, table)>tr:nth-child(odd) {
-  //       background: #0001;
-  //     }
-  //   }
-  // }
-
-  // @include color-mode(light) {
-  //   .element {
-  //     :is(tbody, table)>tr:nth-child(odd) {
-  //       background: #fff1;
-  //     }
-  //   }
-  // }
 }
