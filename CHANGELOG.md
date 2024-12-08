@@ -1,4 +1,11 @@
 Changelog
+## [1.2024.38](https://github.com/davidsneighbour/hugo-darkskies/compare/v1.2024.37...v1.2024.38) (2024-12-08)
+
+
+### Build System
+
+* **fix:** add proper alpinejs packages ([06bf202](https://github.com/davidsneighbour/hugo-darkskies/commit/06bf2027e9614580be2eed80ae9f5fb6023269da))
+
 ## [1.2024.37](https://github.com/davidsneighbour/hugo-darkskies/compare/v1.2024.36...v1.2024.37) (2024-12-08)
 
 
