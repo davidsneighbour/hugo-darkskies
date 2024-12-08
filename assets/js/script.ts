@@ -117,52 +117,64 @@ document.onreadystatechange = () => {
 			};
 		});
 		Alpine.start();
+
+
+    console.log('Script loaded');
+
+    const placeholder = document.querySelector('.section--sitetitle');
+    const stickyBrand = document.querySelector('.sticky-top .navbar-brand');
+
+    console.log('Elements found:', { placeholder, stickyBrand });
+
+    if (!placeholder || !stickyBrand) {
+      console.error('Placeholder or sticky brand not found!');
+      return;
+    }
+
+    console.log('Placeholder position on DOMContentLoaded:', placeholder.getBoundingClientRect());
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        console.log('Observer triggered. Is intersecting:', entry.isIntersecting);
+        if (!entry.isIntersecting) {
+          stickyBrand.classList.add('sticky-visible');
+        } else {
+          stickyBrand.classList.remove('sticky-visible');
+        }
+      },
+      { threshold: 0 }
+    );
+
+    observer.observe(placeholder);
+    console.log('Observer set up for:', placeholder);
+
+    // Force initial state check
+    const isIntersecting = placeholder.getBoundingClientRect().top >= 0 &&
+      placeholder.getBoundingClientRect().bottom > 0;
+
+    console.log('Initial intersection state:', isIntersecting);
+    if (!isIntersecting) {
+      stickyBrand.classList.add('sticky-visible');
+    } else {
+      stickyBrand.classList.remove('sticky-visible');
+    }
 	}
 };
 
 document.addEventListener('scroll', () => {
+  // update the progress bar... progress... state... thing
   const scroll = (
-      (document.documentElement.scrollTop || document.body.scrollTop) /
-      ((document.documentElement.scrollHeight || document.body.scrollHeight) -
-        document.documentElement.clientHeight)
-    ) * 100;
+    (document.documentElement.scrollTop || document.body.scrollTop) /
+    ((document.documentElement.scrollHeight || document.body.scrollHeight) -
+      document.documentElement.clientHeight)
+  ) * 100;
   const progress = document.querySelector('.progress') as HTMLElement | null;
   if (progress) {
     progress.style.setProperty('--scroll', `${scroll}%`);
     progress.setAttribute('aria-valuenow', scroll.toFixed(2));
   }
-  determineAndSetClass();
-});
 
-// Trigger the scroll event after 500ms
-setTimeout(() => {
-  document.dispatchEvent(new Event('scroll'));
-}, 500);
-
-document.addEventListener("DOMContentLoaded", () => {
-  const placeholder = document.querySelector(".section--sitetitle"); // Matches the first element with class 'navbar-placeholder'
-  const stickyBrand = document.querySelector(".sticky-top .navbar-brand"); // Matches the first element with class 'navbar-brand'
-
-  if (!placeholder || !stickyBrand) {
-    console.error("Placeholder or sticky brand not found!");
-    return;
-  }
-
-  const observer = new IntersectionObserver(
-    ([entry]) => {
-      if (!entry.isIntersecting) {
-        stickyBrand.classList.add("sticky-visible");
-      } else {
-        stickyBrand.classList.remove("sticky-visible");
-      }
-    },
-    { threshold: 0 } // Trigger as soon as the placeholder is not visible
-  );
-  observer.observe(placeholder);
-});
-
-// set the initial class based on scroll position
-const determineAndSetClass = () => {
+  // update the nav bar state
   const body = document.body;
   const scrollThreshold = 50;
   const currentState = window.scrollY > scrollThreshold ? 'nav-state2' : 'nav-state1';
@@ -171,8 +183,9 @@ const determineAndSetClass = () => {
     body.classList.remove(oppositeState);
     body.classList.add(currentState);
   }
-};
+});
 
+// trigger the scroll event after 500ms for some intial set-up
 setTimeout(() => {
-  determineAndSetClass();
+  document.dispatchEvent(new Event('scroll'));
 }, 500);
