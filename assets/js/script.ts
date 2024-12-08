@@ -118,7 +118,6 @@ document.onreadystatechange = () => {
 		});
 		Alpine.start();
 
-
     console.log('Script loaded');
 
     const placeholder = document.querySelector('.section--sitetitle');
