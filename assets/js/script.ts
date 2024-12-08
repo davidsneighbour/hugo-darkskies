@@ -120,22 +120,18 @@ document.onreadystatechange = () => {
 	}
 };
 
-document.addEventListener("scroll", () => {
-	const scroll =
-		(
+document.addEventListener('scroll', () => {
+  const scroll = (
       (document.documentElement.scrollTop || document.body.scrollTop) /
-			(
-        (document.documentElement.scrollHeight || document.body.scrollHeight) -
-				document.documentElement.clientHeight
-      )
+      ((document.documentElement.scrollHeight || document.body.scrollHeight) -
+        document.documentElement.clientHeight)
     ) * 100;
-	const progress = document.querySelector(".progress");
-	// Check if the progress element is not null before accessing its properties
+  const progress = document.querySelector('.progress') as HTMLElement | null;
   if (progress) {
-    progress.style.setProperty("--scroll", scroll + "%");
-    progress.setAttribute("aria-valuenow", scroll);
+    progress.style.setProperty('--scroll', `${scroll}%`);
+    progress.setAttribute('aria-valuenow', scroll.toFixed(2));
   }
-  determineAndSetClass()
+  determineAndSetClass();
 });
 
 // Trigger the scroll event after 500ms
