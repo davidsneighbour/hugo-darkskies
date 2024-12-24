@@ -21,6 +21,13 @@ customElements.define("lite-youtube", LiteYTEmbed);
 customElements.define("click-effect", ClickSpark);
 customElements.define("progress-bar", ProgressBar);
 
+// Extend the Window interface to include the Alpine property
+declare global {
+	interface Window {
+		Alpine: typeof Alpine;
+	}
+}
+
 // Initialize theme switcher
 document.addEventListener("alpine:init", () => {
 	Alpine.data("themeSwitcher", () => ({
@@ -76,13 +83,6 @@ document.addEventListener("alpine:init", () => {
 		},
 	}));
 });
-
-// Extend the Window interface to include the Alpine property
-declare global {
-	interface Window {
-		Alpine: typeof Alpine;
-	}
-}
 
 document.onreadystatechange = () => {
 	if (document.readyState === "complete") {
@@ -172,7 +172,6 @@ document.addEventListener('scroll', () => {
     progress.style.setProperty('--scroll', `${scroll}%`);
     progress.setAttribute('aria-valuenow', scroll.toFixed(2));
   }
-
   // update the nav bar state
   const body = document.body;
   const scrollThreshold = 50;
@@ -183,8 +182,6 @@ document.addEventListener('scroll', () => {
     body.classList.add(currentState);
   }
 });
-
-// trigger the scroll event after 500ms for some intial set-up
-setTimeout(() => {
+setTimeout(() => { // trigger the scroll event after 500ms for some intial set-up
   document.dispatchEvent(new Event('scroll'));
 }, 500);

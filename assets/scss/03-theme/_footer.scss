@@ -20,38 +20,6 @@
   }
 }
 
-.widget--web-vitals {
-  strong {
-    @extend .d-inline;
-    @extend .me-3;
-  }
-
-  .is-good {
-    @extend .text-success;
-  }
-
-  .is-bad {
-    @extend .text-danger;
-  }
-
-  dl {
-    >div {
-      @extend .d-inline;
-    }
-
-    dt,
-    dd {
-      @extend .d-inline;
-      @extend .me-3;
-    }
-
-    @extend .text-warning;
-    @extend .d-inline;
-  }
-
-  @extend .text-center;
-}
-
 #footer {
   .light & {
     color: $dark-1;
