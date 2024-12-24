@@ -290,3 +290,50 @@ h6 {
   -webkit-hyphens: manual;
   hyphens: manual;
 }
+
+
+    code {
+
+      &::before,
+      &::after {
+        content: "`";
+      }
+
+      background-color: rgba($primary, 0.05);
+    }
+
+    pre code {
+      /* fix: disable the backticks in highlighted code */
+
+      &::before,
+      &::after {
+        content: "";
+      }
+    }
+
+    h1,
+    h2,
+    h3 {
+      &.post-title {
+        border-bottom: $border-width solid $primary;
+      }
+    }
+
+
+
+
+
+    /// global figcaption design
+    figcaption {
+
+      @extend .text-end;
+      @extend .text-secondary;
+      @extend .fst-italic;
+      @extend .mt-0;
+      font-size: 0.9rem;
+      width: 100%;
+    }
+
+    .shortcode--youtube {
+      @extend .mb-3;
+    }

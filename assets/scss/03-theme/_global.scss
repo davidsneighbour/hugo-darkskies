@@ -27,6 +27,8 @@ body {
 
 a {
 
+  transition: color 0.5s linear;
+
   text-decoration-skip-ink: all;
   text-decoration-skip: leading-spaces edges;
 
@@ -45,6 +47,51 @@ main {
   @include media-breakpoint-up(md) {
     padding-top: 90px;
   }
+}
+
+article {
+  width: 100%;
+
+
+
+}
+
+/// A container for the article image
+.post-slider {
+
+  figure {
+    @extend .w-100;
+    @extend .overflow-hidden;
+    @extend .rounded-top;
+    @extend .position-relative;
+
+    picture,
+    img,
+    .iframe-border,
+    video {
+      object-fit: cover;
+      aspect-ratio: 2/1;
+
+      @extend .overflow-hidden;
+      @extend .rounded;
+      @extend .w-100;
+    }
+
+  }
+}
+
+.section--content article {
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  background-color: rgba(0, 0, 0, 0.05);
+  transition: background 2s;
+
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+  }
+
+
+  @extend .rounded;
+
 }
 
 .breadcrumb {
@@ -251,4 +298,17 @@ figcaption {
 
 .ff-jetbrains {
   font-family: $ff-mono !important;
+}
+
+/// fix navigation overflow for anchor links
+// :target::before {
+//   @extend .d-block;
+
+//   height: $heading-height;
+//   margin: -$heading-height 0 0;
+//   content: "";
+// }
+/// or maybe not, because CSS evolves ;)
+:target {
+  scroll-margin-top: $heading-height;
 }

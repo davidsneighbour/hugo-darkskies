@@ -5,22 +5,23 @@
 /// @since 1.2024.0
 ////
 
-.widget.social-media {
-
-  a:link,
-  a:hover {
-    svg {
-      @extend .cx-36;
-      @extend .cy-36;
-      @extend .p-0;
-      @extend .m-0;
-    }
-
-    @extend .px-3;
-  }
-}
-
 #footer {
+
+  .widget.social-media {
+
+    a:link,
+    a:hover {
+      svg {
+        @extend .cx-36;
+        @extend .cy-36;
+        @extend .p-0;
+        @extend .m-0;
+      }
+
+      @extend .px-3;
+    }
+  }
+
   .light & {
     color: $dark-1;
   }
