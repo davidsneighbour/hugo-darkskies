@@ -8,14 +8,14 @@
 
 /* Background */
 .bg {
-  color: #f8f8f2;
-  background-color: #272822;
+  color: map-get($colors, "whitesmoke");
+  background-color: map-get($colors, "black");
 }
 
 /* PreWrapper */
 .chroma {
-  color: #f8f8f2;
-  background-color: #272822;
+  color: map-get($colors, "whitesmoke");
+  background-color: map-get($colors, "black");
 }
 
 /* Other */
@@ -24,8 +24,7 @@
 
 /* Error */
 .chroma .err {
-  color: #960050;
-  /* background-color: #1e0010; */
+  color: map-get($colors, "purple");
 }
 
 /* CodeLine */
@@ -58,7 +57,7 @@
 
 /* LineHighlight */
 .chroma .hl {
-  background-color: rgba(255,255,255,0.1);
+  background-color: rgba(map-get($colors, "veryblack"), 0.1);
 }
 
 /* LineNumbersTable */
@@ -68,7 +67,7 @@
   user-select: none;
   margin-right: 0.4em;
   padding: 0 0.4em;
-  color: #919191;
+  color: map-get($colors, "lightslategray");
 }
 
 /* LineNumbers */
@@ -78,7 +77,7 @@
   user-select: none;
   margin-right: 0.4em;
   padding: 0 0.4em;
-  color: #919191;
+  color: map-get($colors, "lightslategray");
 }
 
 /* Line */
@@ -88,37 +87,37 @@
 
 /* Keyword */
 .chroma .k {
-  color: #66d9ef;
+  color: map-get($colors, "aqua");
 }
 
 /* KeywordConstant */
 .chroma .kc {
-  color: #66d9ef;
+  color: map-get($colors, "aqua");
 }
 
 /* KeywordDeclaration */
 .chroma .kd {
-  color: #66d9ef;
+  color: map-get($colors, "aqua");
 }
 
 /* KeywordNamespace */
 .chroma .kn {
-  color: #ff36ab;
+  color: map-get($colors, "deeppink");
 }
 
 /* KeywordPseudo */
 .chroma .kp {
-  color: #66d9ef;
+  color: map-get($colors, "aqua");
 }
 
 /* KeywordReserved */
 .chroma .kr {
-  color: #66d9ef;
+  color: map-get($colors, "aqua");
 }
 
 /* KeywordType */
 .chroma .kt {
-  color: #66d9ef;
+  color: map-get($colors, "aqua");
 }
 
 /* Name */
@@ -127,7 +126,7 @@
 
 /* NameAttribute */
 .chroma .na {
-  color: #a6e22e;
+  color: map-get($colors, "chartreuse");
 }
 
 /* NameBuiltin */
@@ -140,17 +139,17 @@
 
 /* NameClass */
 .chroma .nc {
-  color: #a6e22e;
+  color: map-get($colors, "chartreuse");
 }
 
 /* NameConstant */
 .chroma .no {
-  color: #66d9ef;
+  color: map-get($colors, "aqua");
 }
 
 /* NameDecorator */
 .chroma .nd {
-  color: #a6e22e;
+  color: map-get($colors, "chartreuse");
 }
 
 /* NameEntity */
@@ -159,12 +158,12 @@
 
 /* NameException */
 .chroma .ne {
-  color: #a6e22e;
+  color: map-get($colors, "chartreuse");
 }
 
 /* NameFunction */
 .chroma .nf {
-  color: #a6e22e;
+  color: map-get($colors, "chartreuse");
 }
 
 /* NameFunctionMagic */
@@ -181,7 +180,7 @@
 
 /* NameOther */
 .chroma .nx {
-  color: #a6e22e;
+  color: map-get($colors, "chartreuse");
 }
 
 /* NameProperty */
@@ -190,7 +189,7 @@
 
 /* NameTag */
 .chroma .nt {
-  color: #ff36ab;
+  color: map-get($colors, "deeppink");
 }
 
 /* NameVariable */
@@ -215,127 +214,127 @@
 
 /* Literal */
 .chroma .l {
-  color: #ae81ff;
+  color: map-get($colors, "plum");
 }
 
 /* LiteralDate */
 .chroma .ld {
-  color: #e6db74;
+  color: map-get($colors, "khaki");
 }
 
 /* LiteralString */
 .chroma .s {
-  color: #e6db74;
+  color: map-get($colors, "khaki");
 }
 
 /* LiteralStringAffix */
 .chroma .sa {
-  color: #e6db74;
+  color: map-get($colors, "khaki");
 }
 
 /* LiteralStringBacktick */
 .chroma .sb {
-  color: #e6db74;
+  color: map-get($colors, "khaki");
 }
 
 /* LiteralStringChar */
 .chroma .sc {
-  color: #e6db74;
+  color: map-get($colors, "khaki");
 }
 
 /* LiteralStringDelimiter */
 .chroma .dl {
-  color: #e6db74;
+  color: map-get($colors, "khaki");
 }
 
 /* LiteralStringDoc */
 .chroma .sd {
-  color: #e6db74;
+  color: map-get($colors, "khaki");
 }
 
 /* LiteralStringDouble */
 .chroma .s2 {
-  color: #e6db74;
+  color: map-get($colors, "khaki");
 }
 
 /* LiteralStringEscape */
 .chroma .se {
-  color: #ae81ff;
+  color: map-get($colors, "plum");
 }
 
 /* LiteralStringHeredoc */
 .chroma .sh {
-  color: #e6db74;
+  color: map-get($colors, "khaki");
 }
 
 /* LiteralStringInterpol */
 .chroma .si {
-  color: #e6db74;
+  color: map-get($colors, "khaki");
 }
 
 /* LiteralStringOther */
 .chroma .sx {
-  color: #e6db74;
+  color: map-get($colors, "khaki");
 }
 
 /* LiteralStringRegex */
 .chroma .sr {
-  color: #e6db74;
+  color: map-get($colors, "khaki");
 }
 
 /* LiteralStringSingle */
 .chroma .s1 {
-  color: #e6db74;
+  color: map-get($colors, "khaki");
 }
 
 /* LiteralStringSymbol */
 .chroma .ss {
-  color: #e6db74;
+  color: map-get($colors, "khaki");
 }
 
 /* LiteralNumber */
 .chroma .m {
-  color: #ae81ff;
+  color: map-get($colors, "plum");
 }
 
 /* LiteralNumberBin */
 .chroma .mb {
-  color: #ae81ff;
+  color: map-get($colors, "plum");
 }
 
 /* LiteralNumberFloat */
 .chroma .mf {
-  color: #ae81ff;
+  color: map-get($colors, "plum");
 }
 
 /* LiteralNumberHex */
 .chroma .mh {
-  color: #ae81ff;
+  color: map-get($colors, "plum");
 }
 
 /* LiteralNumberInteger */
 .chroma .mi {
-  color: #ae81ff;
+  color: map-get($colors, "plum");
 }
 
 /* LiteralNumberIntegerLong */
 .chroma .il {
-  color: #ae81ff;
+  color: map-get($colors, "plum");
 }
 
 /* LiteralNumberOct */
 .chroma .mo {
-  color: #ae81ff;
+  color: map-get($colors, "plum");
 }
 
 /* Operator */
 .chroma .o {
-  color: #ff36ab;
+  color: map-get($colors, "deeppink");
 }
 
 /* OperatorWord */
 .chroma .ow {
-  color: #ff36ab;
+  color: map-get($colors, "deeppink");
 }
 
 /* Punctuation */
@@ -344,37 +343,37 @@
 
 /* Comment */
 .chroma .c {
-  color: #9a947a;
+  color: map-get($colors, "gray");
 }
 
 /* CommentHashbang */
 .chroma .ch {
-  color: #9a947a;
+  color: map-get($colors, "gray");
 }
 
 /* CommentMultiline */
 .chroma .cm {
-  color: #9a947a;
+  color: map-get($colors, "gray");
 }
 
 /* CommentSingle */
 .chroma .c1 {
-  color: #9a947a;
+  color: map-get($colors, "gray");
 }
 
 /* CommentSpecial */
 .chroma .cs {
-  color: #9a947a;
+  color: map-get($colors, "gray");
 }
 
 /* CommentPreproc */
 .chroma .cp {
-  color: #9a947a;
+  color: map-get($colors, "gray");
 }
 
 /* CommentPreprocFile */
 .chroma .cpf {
-  color: #9a947a;
+  color: map-get($colors, "gray");
 }
 
 /* Generic */
@@ -383,7 +382,7 @@
 
 /* GenericDeleted */
 .chroma .gd {
-  color: #ff36ab;
+  color: map-get($colors, "deeppink");
 }
 
 /* GenericEmph */
@@ -401,7 +400,7 @@
 
 /* GenericInserted */
 .chroma .gi {
-  color: #a6e22e;
+  color: map-get($colors, "chartreuse");
 }
 
 /* GenericOutput */
@@ -419,7 +418,7 @@
 
 /* GenericSubheading */
 .chroma .gu {
-  color: #9a947a;
+  color: map-get($colors, "gray");
 }
 
 /* GenericTraceback */
