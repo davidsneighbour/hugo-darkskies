@@ -3,15 +3,14 @@
 /// @author Patrick Kollitsch
 /// @access public
 /// @since 1.2024.0
+///
+///  navbar setup
+///
+/// see
+/// - https://getbootstrap.com/docs/5.2/components/navbar/
+///- https://getbootstrap.com/docs/5.2/components/navs-tabs/
 ////
 
-/*******************************************************************************
- * navbar setup
- *
- * see
- * - https://getbootstrap.com/docs/5.2/components/navbar/
- * - https://getbootstrap.com/docs/5.2/components/navs-tabs/
- ******************************************************************************/
 .navbar {
   transition: background-color 2s;
 
@@ -24,13 +23,13 @@
     width: 1.5rem;
   }
 
-  // animating the navbar-brand when the navbar is sticky
   .navbar-brand {
     transition: opacity 1.5s ease, transform 0.3s ease;
     opacity: 0;
     transform: translateY(-10px); // Start slightly above
     display: block; // Ensure the element is always in the document flow
     visibility: hidden; // Ensure it's hidden from screen readers when invisible
+
     &.sticky-visible {
       opacity: 1;
       transform: translateY(0); // Move back to its normal position
@@ -39,20 +38,20 @@
   }
 
   body.dark & {
-    background-color: rgba(0, 0, 0, 0.2);
+    background-color:fade-out(map-get($colors, "veryblack"), 0.2);
   }
 
   body.light & {
-    background-color: rgba(255, 255, 255, 0.2);
+    background-color: fade-out(map-get($colors, "white"), 0.2);
   }
 
   body.dark.nav-state2 & {
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: fade-out(map-get($colors, "veryblack"), 0.8);
     backdrop-filter: saturate(180%) blur(20px);
   }
 
   body.light.nav-state2 & {
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: fade-out(map-get($colors, "white"), 0.8);
     backdrop-filter: saturate(180%) blur(20px);
   }
 
@@ -64,16 +63,13 @@
 
 .progress {
   background: linear-gradient(90deg,
-    rgba(255, 0, 0, 1) 0%,
-    rgba(255, 154, 0, 1) 10%,
-    rgba(208, 222, 33, 1) 20%,
-    rgba(79, 220, 74, 1) 30%,
-    rgba(63, 218, 216, 1) 40%,
-    rgba(47, 201, 226, 1) 50%,
-    rgba(28, 127, 238, 1) 60%,
-    rgba(95, 21, 242, 1) 70%,
-    rgba(186, 12, 248, 1) 80%,
-    rgba(251, 7, 217, 1) 90%,
-    rgba(255, 0, 0, 1) 100%);
+    map-get($colors, "red") 0%,
+    map-get($colors, "orange") 12%,
+    map-get($colors, "yellow") 25%,
+    map-get($colors, "springgreen") 37%,
+    map-get($colors, "deepskyblue") 50%,
+    map-get($colors, "blueviolet") 62%,
+    map-get($colors, "mediumvioletred") 75%,
+    map-get($colors, "deeppink") 87%,
+    map-get($colors, "red") 100%);
 }
-

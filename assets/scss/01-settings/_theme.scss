@@ -15,7 +15,7 @@
   color-scheme: dark;
 
   --bs-body-bg: $dark-2;
-  --bs-primary: #dc322f;
+  --bs-primary: $primary;
 }
 
 [data-bs-theme="light"] {
