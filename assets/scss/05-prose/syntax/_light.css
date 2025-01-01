@@ -8,14 +8,14 @@
 
 /* Background */
 .bg {
-  color: map-get($colors, "black");;
-  background-color: map-get($colors, "ghostwhite");;
+  color: map-get($colors, "black");
+  background-color: map-get($colors, "ghostwhite");
 }
 
 /* PreWrapper */
 .chroma {
-  color: map-get($colors, "black");;
-  background-color: map-get($colors, "ghostwhite");;
+  color: map-get($colors, "black");
+  background-color: map-get($colors, "ghostwhite");
 }
 
 /* Other */
@@ -24,8 +24,8 @@
 
 /* Error */
 .chroma .err {
-  color: map-get($colors, "purple");;
-  background-color: map-get($colors, "black");;
+  color: map-get($colors, "purple");
+  background-color: map-get($colors, "black");
 }
 
 /* CodeLine */
@@ -68,7 +68,7 @@
   user-select: none;
   margin-right: 0.4em;
   padding: 0 0.4em;
-  color: map-get($colors, "gray");;
+  color: map-get($colors, "gray");
 }
 
 /* LineNumbers */
@@ -78,7 +78,7 @@
   user-select: none;
   margin-right: 0.4em;
   padding: 0 0.4em;
-  color: map-get($colors, "gray");;
+  color: map-get($colors, "gray");
 }
 
 /* Line */
@@ -363,32 +363,32 @@
 
 /* CommentHashbang */
 .chroma .ch {
-  color: map-get($colors, "dimgray");;
+  color: map-get($colors, "dimgray");
 }
 
 /* CommentMultiline */
 .chroma .cm {
-  color: map-get($colors, "dimgray");;
+  color: map-get($colors, "dimgray");
 }
 
 /* CommentSingle */
 .chroma .c1 {
-  color: map-get($colors, "dimgray");;
+  color: map-get($colors, "dimgray");
 }
 
 /* CommentSpecial */
 .chroma .cs {
-  color: map-get($colors, "dimgray");;
+  color: map-get($colors, "dimgray");
 }
 
 /* CommentPreproc */
 .chroma .cp {
-  color: map-get($colors, "dimgray");;
+  color: map-get($colors, "dimgray");
 }
 
 /* CommentPreprocFile */
 .chroma .cpf {
-  color: map-get($colors, "dimgray");;
+  color: map-get($colors, "dimgray");
 }
 
 /* Generic */
