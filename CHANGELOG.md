@@ -1,4 +1,23 @@
 Changelog
+## [1.2024.40](https://github.com/davidsneighbour/hugo-darkskies/compare/v1.2024.39...v1.2024.40) (2025-01-01)
+
+
+### Theme
+
+* **fix:** code color values for syntax scss ([603367b](https://github.com/davidsneighbour/hugo-darkskies/commit/603367b65eebdbf5bb7ae4fe832294b462bdf437))
+* **fix:** disable auditor stylesheet ([625077a](https://github.com/davidsneighbour/hugo-darkskies/commit/625077ab4c767d2e574952279a6f3031dba2443b))
+* **fix:** remove optionstable shortcode ([7fcc5d3](https://github.com/davidsneighbour/hugo-darkskies/commit/7fcc5d31139a787e6108da68e01ca8210970f9bf))
+* **fix:** remove webvitals traces ([05a7402](https://github.com/davidsneighbour/hugo-darkskies/commit/05a7402eb0c38df17acc7038cc0275f062f1cd56))
+* **fix:** typos ([f099faf](https://github.com/davidsneighbour/hugo-darkskies/commit/f099faf6c492cded62ba621e90bc12a803d9be8b))
+* **fix:** update color setup ([1825263](https://github.com/davidsneighbour/hugo-darkskies/commit/1825263a58391d5ec703762eb33358e0d66a1abf))
+* **fix:** update stylesheet structure ([fc607a0](https://github.com/davidsneighbour/hugo-darkskies/commit/fc607a021925499f67f90507e13d2492fe4bb90e))
+* **fix:** width constraint to 100% in content images ([91d4cdb](https://github.com/davidsneighbour/hugo-darkskies/commit/91d4cdb327f4081ba84e57643f6383176702450e))
+
+
+### Build System
+
+* **deps:** update dependencies ([6eda8fc](https://github.com/davidsneighbour/hugo-darkskies/commit/6eda8fc55869f0b66031f5f566d745b8c09ba559))
+
 ## [1.2024.39](https://github.com/davidsneighbour/hugo-darkskies/compare/v1.2024.38...v1.2024.39) (2024-12-08)
 
 
