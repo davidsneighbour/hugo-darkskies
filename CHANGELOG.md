@@ -1,4 +1,6 @@
 Changelog
+## [1.2025.0](https://github.com/davidsneighbour/hugo-darkskies/compare/v1.2024.40...v1.2025.0) (2025-01-01)
+
 ## [1.2024.40](https://github.com/davidsneighbour/hugo-darkskies/compare/v1.2024.39...v1.2024.40) (2025-01-01)
 
 
