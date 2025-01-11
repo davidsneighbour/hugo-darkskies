@@ -3,17 +3,23 @@ import collapse from "@alpinejs/collapse";
 import intersect from "@alpinejs/intersect";
 import ClickSpark from "./components/click-effect.js";
 import ProgressBar from "./components/progress-bar.js";
+import DebugLogger from "./scripts/DebugLogger.js";
 import "./scripts/keyboard-layout.js";
 import "./plugins/clipboard.js";
 
 import "./scripts/bs-tooltips.js";
 
 // Import parameters from GoHugo
-// @ts-ignore - this is loaded at runtime by GoHugo
+// @ts-ignore - injected at runtime by GoHugo
 import * as params from "@params";
+console.log(params);
+
+// enable logger for local debugging
+const logger = new DebugLogger(params.debug);
+logger.log(params.version);
 
 // YouTube element
-// @ts-ignore - this is loaded at runtime by GoHugo
+// @ts-ignore - mounted at runtime by GoHugo
 import LiteYTEmbed from "./lite-yt-embed.js";
 
 // Initiate custom elements
@@ -100,7 +106,8 @@ document.onreadystatechange = () => {
 				},
 				async fetchVersionData() {
 					const apiUrl = `https://api.github.com/repos/davidsneighbour/kollitsch.dev/releases/tags/v${params.version}`;
-					try {
+					logger.log(apiUrl);
+          try {
 						const response = await fetch(apiUrl);
 						if (!response.ok) {
 							throw new Error(`HTTP error! status: ${response.status}`);
@@ -109,7 +116,7 @@ document.onreadystatechange = () => {
 						this.version = data.tag_name;
 						this.url = data.html_url;
 					} catch (error) {
-						console.error("Failed to fetch version data:", error);
+						logger.error("Failed to fetch version data:", error);
 						this.version = "Error";
 						this.url = "#";
 					}
@@ -118,23 +125,23 @@ document.onreadystatechange = () => {
 		});
 		Alpine.start();
 
-    console.log('Script loaded');
+    logger.log('Script loaded');
 
     const placeholder = document.querySelector('.section--sitetitle');
     const stickyBrand = document.querySelector('.sticky-top .navbar-brand');
 
-    console.log('Elements found:', { placeholder, stickyBrand });
+    logger.log('Elements found:', { placeholder, stickyBrand });
 
     if (!placeholder || !stickyBrand) {
-      console.error('Placeholder or sticky brand not found!');
+      logger.error('Placeholder or sticky brand not found!');
       return;
     }
 
-    console.log('Placeholder position on DOMContentLoaded:', placeholder.getBoundingClientRect());
+    logger.log('Placeholder position on DOMContentLoaded:', placeholder.getBoundingClientRect());
 
     const observer = new IntersectionObserver(
       ([entry]) => {
-        console.log('Observer triggered. Is intersecting:', entry.isIntersecting);
+        logger.log('Observer triggered. Is intersecting:', entry.isIntersecting);
         if (!entry.isIntersecting) {
           stickyBrand.classList.add('sticky-visible');
         } else {
@@ -145,13 +152,13 @@ document.onreadystatechange = () => {
     );
 
     observer.observe(placeholder);
-    console.log('Observer set up for:', placeholder);
+    logger.log('Observer set up for:', placeholder);
 
     // Force initial state check
     const isIntersecting = placeholder.getBoundingClientRect().top >= 0 &&
       placeholder.getBoundingClientRect().bottom > 0;
 
-    console.log('Initial intersection state:', isIntersecting);
+    logger.log('Initial intersection state:', isIntersecting);
     if (!isIntersecting) {
       stickyBrand.classList.add('sticky-visible');
     } else {

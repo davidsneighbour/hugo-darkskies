@@ -264,9 +264,13 @@
     {{- partials.Include "func/hook.html" ( collections.Dictionary "hook" "footer-post" "context" . ) -}}
     {{- partials.Include "func/hook.html" ( collections.Dictionary "hook" "body-end-pre-script" "context" . ) -}}
     {{- $buildoptions := site.Params.dnb.theme.jsbuild.options -}}
-    {{- $params := dict }}
+    {{- $params := (dict "debug" hugo.IsServer) }}
     {{- with resources.Get "data/build.json" -}}
-      {{- $params = dict "params" (transform.Unmarshal .Content) -}}
+      {{- $params = dict
+            "params" (collections.Merge
+                (transform.Unmarshal .Content)
+                (dict "debug" hugo.IsServer)
+            ) -}}
     {{- end -}}
     {{- $buildoptions = collections.Merge $buildoptions $params -}}
     {{- $scripts := resources.Get (site.Params.dnb.theme.js.entrypoint | default "js/script.js") |
