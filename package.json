@@ -9,6 +9,7 @@
     "@alpinejs/collapse": "3.14.8",
     "@alpinejs/intersect": "3.14.8",
     "@davidsneighbour/bootstrap-config": "2024.4.12",
+    "@davidsneighbour/debuglogger": "^0.1.0",
     "@davidsneighbour/markdownlint-config": "2024.4.12",
     "@davidsneighbour/postcss-config": "2024.4.12",
     "@davidsneighbour/release-config": "2024.4.12",

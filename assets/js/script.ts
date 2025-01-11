@@ -3,7 +3,7 @@ import collapse from "@alpinejs/collapse";
 import intersect from "@alpinejs/intersect";
 import ClickSpark from "./components/click-effect.js";
 import ProgressBar from "./components/progress-bar.js";
-import DebugLogger from "./scripts/DebugLogger.js";
+import DebugLogger from "@davidsneighbour/debuglogger";
 import "./scripts/keyboard-layout.js";
 import "./plugins/clipboard.js";
 
