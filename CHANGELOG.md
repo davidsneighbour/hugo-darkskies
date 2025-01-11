@@ -1,16 +1,4 @@
 Changelog
-## [1.2026.0](https://github.com/davidsneighbour/hugo-darkskies/compare/v1.2025.0...v1.2026.0) (2025-01-11)
-
-
-### Features
-
-* add debug parameter and hide debugging on production ([68ed145](https://github.com/davidsneighbour/hugo-darkskies/commit/68ed145406d68ef9657befdf8d6ee7b0e27b34ba))
-
-
-### Build System
-
-* **dev-deps:** update dependencies ([1f1fcc6](https://github.com/davidsneighbour/hugo-darkskies/commit/1f1fcc64bf6dce1507206a6cb3d7fb1d7e2f0825))
-
 ## [1.2025.0](https://github.com/davidsneighbour/hugo-darkskies/compare/v1.2024.40...v1.2025.0) (2025-01-01)
 
 ## [1.2024.40](https://github.com/davidsneighbour/hugo-darkskies/compare/v1.2024.39...v1.2024.40) (2025-01-01)
