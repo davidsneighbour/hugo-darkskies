@@ -1,4 +1,11 @@
 Changelog
+## [1.2025.2](https://github.com/davidsneighbour/hugo-darkskies/compare/v1.2025.1...v1.2025.2) (2025-01-11)
+
+
+### Build System
+
+* **fix:** create release notes as patch ([347b144](https://github.com/davidsneighbour/hugo-darkskies/commit/347b1443828b046c9ff3ca37231c95bf06a5e2bc))
+
 ## [1.2025.1](https://github.com/davidsneighbour/hugo-darkskies/compare/v1.2025.0...v1.2025.1) (2025-01-11)
 
 
