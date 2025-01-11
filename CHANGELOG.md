@@ -1,4 +1,16 @@
 Changelog
+## [1.2025.3](https://github.com/davidsneighbour/hugo-darkskies/compare/v1.2025.2...v1.2025.3) (2025-01-11)
+
+
+### Documentation
+
+* **fix:** update LICENSE.md ([350d8ad](https://github.com/davidsneighbour/hugo-darkskies/commit/350d8ad5b91610ab45ed7389c73843c60622d9c9))
+
+
+### Build System
+
+* **deps:** move to @davidsneighbour/debuglogger ([17828b8](https://github.com/davidsneighbour/hugo-darkskies/commit/17828b849865f4470162e6253e9209e2ddcaf47f))
+
 ## [1.2025.2](https://github.com/davidsneighbour/hugo-darkskies/compare/v1.2025.1...v1.2025.2) (2025-01-11)
 
 
