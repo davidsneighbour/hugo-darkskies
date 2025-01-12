@@ -38,7 +38,7 @@ description = ""
 other = "Tags"
 
 [theme.posts_tagged_with]
-other = "Posts tagged with"
+other = "{{ . }} Posts tagged with"
 description = ""
 
 [theme.social]

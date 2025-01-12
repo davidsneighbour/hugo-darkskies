@@ -1,15 +1,18 @@
 {{- define "main" -}}
   {{- partials.Include "func/hook.html" ( collections.Dictionary "hook" "container-start" "context" . ) -}}
+
+  {{- $paginator := .Scratch.Get "paginator" -}}
+
   <section class="section--title">
     <div class="container">
       <div class="row">
-        <div class="col-12 mb-5 text-center">
+        <div class="mb-5 text-center col-12">
           <h1 class="post-title text-primary">
-            {{- lang.Translate "theme.posts_tagged_with" -}}
+            {{- lang.Translate "theme.posts_tagged_with" $paginator.TotalNumberOfElements -}}
             {{ with .Params.icon }}
               {{ partials.Include "icon.html" . }}
             {{ end }}
-            #{{ .Title | urls.URLize | strings.ToLower }}
+            #{{ .Data.Term | urls.URLize | strings.ToLower }}
           </h1>
           {{- with .Content -}}
             <p class="post-subtitle">{{ . }}</p>
@@ -18,6 +21,7 @@
       </div>
     </div>
   </section>
+
   {{- partials.Include "content/sections/posts.html" . -}}
   {{- $options := dict "type" "list" "context" . -}}
   {{- partials.Include "content/components/tags/tags-overview.html" $options -}}
