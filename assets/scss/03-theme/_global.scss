@@ -51,11 +51,10 @@ main {
 
 article {
   width: 100%;
+
   img {
-    max-width:100%;
+    max-width: 100%;
   }
-
-
 }
 
 /// A container for the article image
@@ -167,6 +166,7 @@ textarea {
   background-color: rgba(0, 0, 0, .2);
   transition: background-color 2s;
 }
+
 @include color-mode(light) {
   .section--sitetitle {
     background-color: rgba(255, 255, 255, .2);
@@ -253,7 +253,6 @@ figcaption {
 @include dnb-scrollbars;
 @include dnb-scrollbars(".prose", 3px);
 
-// @see https://github.com/clagnut/TODS
 .prose {
 
   @import "09-hooks/prose-pre";
