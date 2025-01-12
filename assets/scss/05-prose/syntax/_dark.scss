@@ -6,32 +6,16 @@
 /// @since 1.2024.0
 ////
 
-/* Background */
-.bg {
-  color: map-get($colors, "whitesmoke");
-  background-color: map-get($colors, "black");
-}
-
-/* PreWrapper */
+.bg,
 .chroma {
   color: map-get($colors, "whitesmoke");
-  background-color: map-get($colors, "black");
+  background-color: rgba(map-get($colors, "black"), 0.5);
 }
 
-/* Other */
-.chroma .x {
-}
-
-/* Error */
 .chroma .err {
   color: map-get($colors, "purple");
 }
 
-/* CodeLine */
-.chroma .cl {
-}
-
-/* LineLink */
 .chroma .lnlinks {
   /* stylelint-disable-next-line plugin/no-unsupported-browser-features -- Opera Mini, muahahaha */
   outline: none;
@@ -39,28 +23,22 @@
   color: inherit;
 }
 
-/* LineTableTD */
-.chroma .lntd {
-  vertical-align: top;
+.chroma .lntd,
+.chroma .lntable {
   padding: 0;
   margin: 0;
   border: 0;
 }
 
-/* LineTable */
 .chroma .lntable {
   border-spacing: 0;
-  padding: 0;
-  margin: 0;
-  border: 0;
 }
 
-/* LineHighlight */
 .chroma .hl {
   background-color: rgba(map-get($colors, "veryblack"), 0.1);
 }
 
-/* LineNumbersTable */
+.chroma .ln,
 .chroma .lnt {
   white-space: pre;
   /* stylelint-disable-next-line plugin/no-unsupported-browser-features -- Opera Mini, muahahaha */
@@ -70,365 +48,88 @@
   color: map-get($colors, "lightslategray");
 }
 
-/* LineNumbers */
-.chroma .ln {
-  white-space: pre;
-  /* stylelint-disable-next-line plugin/no-unsupported-browser-features -- Opera Mini, muahahaha */
-  user-select: none;
-  margin-right: 0.4em;
-  padding: 0 0.4em;
-  color: map-get($colors, "lightslategray");
-}
-
-/* Line */
 .chroma .line {
   display: flex;
 }
 
-/* Keyword */
-.chroma .k {
-  color: map-get($colors, "aqua");
-}
-
-/* KeywordConstant */
-.chroma .kc {
-  color: map-get($colors, "aqua");
-}
-
-/* KeywordDeclaration */
-.chroma .kd {
-  color: map-get($colors, "aqua");
-}
-
-/* KeywordNamespace */
-.chroma .kn {
-  color: map-get($colors, "deeppink");
-}
-
-/* KeywordPseudo */
-.chroma .kp {
-  color: map-get($colors, "aqua");
-}
-
-/* KeywordReserved */
-.chroma .kr {
-  color: map-get($colors, "aqua");
-}
-
-/* KeywordType */
+.chroma .k,
+.chroma .kc,
+.chroma .kd,
+.chroma .kp,
+.chroma .kr,
 .chroma .kt {
   color: map-get($colors, "aqua");
 }
 
-/* Name */
-.chroma .n {
-}
-
-/* NameAttribute */
-.chroma .na {
-  color: map-get($colors, "chartreuse");
-}
-
-/* NameBuiltin */
-.chroma .nb {
-}
-
-/* NameBuiltinPseudo */
-.chroma .bp {
-}
-
-/* NameClass */
-.chroma .nc {
-  color: map-get($colors, "chartreuse");
-}
-
-/* NameConstant */
-.chroma .no {
-  color: map-get($colors, "aqua");
-}
-
-/* NameDecorator */
-.chroma .nd {
-  color: map-get($colors, "chartreuse");
-}
-
-/* NameEntity */
-.chroma .ni {
-}
-
-/* NameException */
-.chroma .ne {
-  color: map-get($colors, "chartreuse");
-}
-
-/* NameFunction */
-.chroma .nf {
-  color: map-get($colors, "chartreuse");
-}
-
-/* NameFunctionMagic */
-.chroma .fm {
-}
-
-/* NameLabel */
-.chroma .nl {
-}
-
-/* NameNamespace */
-.chroma .nn {
-}
-
-/* NameOther */
-.chroma .nx {
-  color: map-get($colors, "chartreuse");
-}
-
-/* NameProperty */
-.chroma .py {
-}
-
-/* NameTag */
-.chroma .nt {
-  color: map-get($colors, "deeppink");
-}
-
-/* NameVariable */
-.chroma .nv {
-}
-
-/* NameVariableClass */
-.chroma .vc {
-}
-
-/* NameVariableGlobal */
-.chroma .vg {
-}
-
-/* NameVariableInstance */
-.chroma .vi {
-}
-
-/* NameVariableMagic */
-.chroma .vm {
-}
-
-/* Literal */
-.chroma .l {
-  color: map-get($colors, "plum");
-}
-
-/* LiteralDate */
-.chroma .ld {
-  color: map-get($colors, "khaki");
-}
-
-/* LiteralString */
-.chroma .s {
-  color: map-get($colors, "khaki");
-}
-
-/* LiteralStringAffix */
-.chroma .sa {
-  color: map-get($colors, "khaki");
-}
-
-/* LiteralStringBacktick */
-.chroma .sb {
-  color: map-get($colors, "khaki");
-}
-
-/* LiteralStringChar */
-.chroma .sc {
-  color: map-get($colors, "khaki");
-}
-
-/* LiteralStringDelimiter */
-.chroma .dl {
-  color: map-get($colors, "khaki");
-}
-
-/* LiteralStringDoc */
-.chroma .sd {
-  color: map-get($colors, "khaki");
-}
-
-/* LiteralStringDouble */
-.chroma .s2 {
-  color: map-get($colors, "khaki");
-}
-
-/* LiteralStringEscape */
-.chroma .se {
-  color: map-get($colors, "plum");
-}
-
-/* LiteralStringHeredoc */
-.chroma .sh {
-  color: map-get($colors, "khaki");
-}
-
-/* LiteralStringInterpol */
-.chroma .si {
-  color: map-get($colors, "khaki");
-}
-
-/* LiteralStringOther */
-.chroma .sx {
-  color: map-get($colors, "khaki");
-}
-
-/* LiteralStringRegex */
-.chroma .sr {
-  color: map-get($colors, "khaki");
-}
-
-/* LiteralStringSingle */
-.chroma .s1 {
-  color: map-get($colors, "khaki");
-}
-
-/* LiteralStringSymbol */
-.chroma .ss {
-  color: map-get($colors, "khaki");
-}
-
-/* LiteralNumber */
-.chroma .m {
-  color: map-get($colors, "plum");
-}
-
-/* LiteralNumberBin */
-.chroma .mb {
-  color: map-get($colors, "plum");
-}
-
-/* LiteralNumberFloat */
-.chroma .mf {
-  color: map-get($colors, "plum");
-}
-
-/* LiteralNumberHex */
-.chroma .mh {
-  color: map-get($colors, "plum");
-}
-
-/* LiteralNumberInteger */
-.chroma .mi {
-  color: map-get($colors, "plum");
-}
-
-/* LiteralNumberIntegerLong */
-.chroma .il {
-  color: map-get($colors, "plum");
-}
-
-/* LiteralNumberOct */
-.chroma .mo {
-  color: map-get($colors, "plum");
-}
-
-/* Operator */
-.chroma .o {
-  color: map-get($colors, "deeppink");
-}
-
-/* OperatorWord */
-.chroma .ow {
-  color: map-get($colors, "deeppink");
-}
-
-/* Punctuation */
-.chroma .p {
-}
-
-/* Comment */
-.chroma .c {
-  color: map-get($colors, "gray");
-}
-
-/* CommentHashbang */
-.chroma .ch {
-  color: map-get($colors, "gray");
-}
-
-/* CommentMultiline */
-.chroma .cm {
-  color: map-get($colors, "gray");
-}
-
-/* CommentSingle */
-.chroma .c1 {
-  color: map-get($colors, "gray");
-}
-
-/* CommentSpecial */
-.chroma .cs {
-  color: map-get($colors, "gray");
-}
-
-/* CommentPreproc */
-.chroma .cp {
-  color: map-get($colors, "gray");
-}
-
-/* CommentPreprocFile */
-.chroma .cpf {
-  color: map-get($colors, "gray");
-}
-
-/* Generic */
-.chroma .g {
-}
-
-/* GenericDeleted */
+.chroma .kn,
+.chroma .nt,
+.chroma .o,
+.chroma .ow,
 .chroma .gd {
   color: map-get($colors, "deeppink");
 }
 
-/* GenericEmph */
-.chroma .ge {
-  font-style: italic;
-}
-
-/* GenericError */
-.chroma .gr {
-}
-
-/* GenericHeading */
-.chroma .gh {
-}
-
-/* GenericInserted */
+.chroma .na,
+.chroma .nc,
+.chroma .nd,
+.chroma .ne,
+.chroma .nf,
+.chroma .nx,
 .chroma .gi {
   color: map-get($colors, "chartreuse");
 }
 
-/* GenericOutput */
-.chroma .go {
+.chroma .no {
+  color: map-get($colors, "aqua");
 }
 
-/* GenericPrompt */
-.chroma .gp {
+.chroma .l,
+.chroma .m,
+.chroma .mb,
+.chroma .mf,
+.chroma .mh,
+.chroma .mi,
+.chroma .il,
+.chroma .mo {
+  color: map-get($colors, "plum");
 }
 
-/* GenericStrong */
-.chroma .gs {
-  font-weight: 700;
+.chroma .ld,
+.chroma .s,
+.chroma .sa,
+.chroma .sb,
+.chroma .sc,
+.chroma .dl,
+.chroma .sd,
+.chroma .s2,
+.chroma .sh,
+.chroma .si,
+.chroma .sx,
+.chroma .sr,
+.chroma .s1,
+.chroma .ss {
+  color: map-get($colors, "khaki");
 }
 
-/* GenericSubheading */
+.chroma .se {
+  color: map-get($colors, "plum");
+}
+
+.chroma .c,
+.chroma .ch,
+.chroma .cm,
+.chroma .c1,
+.chroma .cs,
+.chroma .cp,
+.chroma .cpf,
 .chroma .gu {
   color: map-get($colors, "gray");
 }
 
-/* GenericTraceback */
-.chroma .gt {
+.chroma .ge {
+  font-style: italic;
 }
 
-/* GenericUnderline */
-.chroma .gl {
-}
-
-/* TextWhitespace */
-.chroma .w {
+.chroma .gs {
+  font-weight: 700;
 }
