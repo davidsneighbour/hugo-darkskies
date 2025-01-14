@@ -7,15 +7,16 @@
 ////
 
 @use "sass:map";
+@use "modules/colors" as dnb-colors;
 
 .bg,
 .chroma {
-  color: map.get($colors, "whitesmoke");
-  background-color: rgba(map.get($colors, "black"), 0.5);
+  color: map.get(dnb-colors.$colors, "whitesmoke");
+  background-color: rgba(map.get(dnb-colors.$colors, "black"), 0.5);
 }
 
 .chroma .err {
-  color: map.get($colors, "purple");
+  color: map.get(dnb-colors.$colors, "purple");
 }
 
 .chroma .lnlinks {
@@ -37,7 +38,7 @@
 }
 
 .chroma .hl {
-  background-color: rgba(map.get($colors, "veryblack"), 0.1);
+  background-color: rgba(map.get(dnb-colors.$colors, "veryblack"), 0.1);
 }
 
 .chroma .ln,
@@ -47,7 +48,7 @@
   user-select: none;
   margin-right: 0.4em;
   padding: 0 0.4em;
-  color: map.get($colors, "lightslategray");
+  color: map.get(dnb-colors.$colors, "lightslategray");
 }
 
 .chroma .line {
@@ -60,7 +61,7 @@
 .chroma .kp,
 .chroma .kr,
 .chroma .kt {
-  color: map.get($colors, "aqua");
+  color: map.get(dnb-colors.$colors, "aqua");
 }
 
 .chroma .kn,
@@ -68,7 +69,7 @@
 .chroma .o,
 .chroma .ow,
 .chroma .gd {
-  color: map.get($colors, "deeppink");
+  color: map.get(dnb-colors.$colors, "deeppink");
 }
 
 .chroma .na,
@@ -78,11 +79,11 @@
 .chroma .nf,
 .chroma .nx,
 .chroma .gi {
-  color: map.get($colors, "chartreuse");
+  color: map.get(dnb-colors.$colors, "chartreuse");
 }
 
 .chroma .no {
-  color: map.get($colors, "aqua");
+  color: map.get(dnb-colors.$colors, "aqua");
 }
 
 .chroma .l,
@@ -93,7 +94,7 @@
 .chroma .mi,
 .chroma .il,
 .chroma .mo {
-  color: map.get($colors, "plum");
+  color: map.get(dnb-colors.$colors, "plum");
 }
 
 .chroma .ld,
@@ -110,11 +111,11 @@
 .chroma .sr,
 .chroma .s1,
 .chroma .ss {
-  color: map.get($colors, "khaki");
+  color: map.get(dnb-colors.$colors, "khaki");
 }
 
 .chroma .se {
-  color: map.get($colors, "plum");
+  color: map.get(dnb-colors.$colors, "plum");
 }
 
 .chroma .c,
@@ -125,7 +126,7 @@
 .chroma .cp,
 .chroma .cpf,
 .chroma .gu {
-  color: map.get($colors, "gray");
+  color: map.get(dnb-colors.$colors, "gray");
 }
 
 .chroma .ge {

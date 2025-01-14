@@ -13,6 +13,7 @@
 
 @use "sass:map";
 @use "sass:color";
+@use "modules/colors" as dnb-colors;
 
 .navbar {
   transition: background-color 2s;
@@ -41,22 +42,22 @@
   }
 
   body.dark & {
-    background-color:color.scale(map.get($colors, "veryblack"), $alpha: -80%);
+    background-color:color.scale(map.get(dnb-colors.$colors, "veryblack"), $alpha: -80%);
   }
 
   body.light & {
-    background-color: color.scale(map.get($colors, "white"),
+    background-color: color.scale(map.get(dnb-colors.$colors, "white"),
       $alpha: -80%);
   }
 
   body.dark.nav-state2 & {
-    background-color: color.scale(map.get($colors, "veryblack"),
+    background-color: color.scale(map.get(dnb-colors.$colors, "veryblack"),
       $alpha: -20%);
     backdrop-filter: saturate(180%) blur(20px);
   }
 
   body.light.nav-state2 & {
-    background-color: color.scale(map.get($colors, "white"),
+    background-color: color.scale(map.get(dnb-colors.$colors, "white"),
       $alpha: -20%);
     backdrop-filter: saturate(180%) blur(20px);
   }
@@ -69,13 +70,13 @@
 
 .progress {
   background: linear-gradient(90deg,
-    map.get($colors, "red") 0%,
-    map.get($colors, "orange") 12%,
-    map.get($colors, "yellow") 25%,
-    map.get($colors, "springgreen") 37%,
-    map.get($colors, "deepskyblue") 50%,
-    map.get($colors, "blueviolet") 62%,
-    map.get($colors, "mediumvioletred") 75%,
-    map.get($colors, "deeppink") 87%,
-    map.get($colors, "red") 100%);
+    map.get(dnb-colors.$colors, "red") 0%,
+    map.get(dnb-colors.$colors, "orange") 12%,
+    map.get(dnb-colors.$colors, "yellow") 25%,
+    map.get(dnb-colors.$colors, "springgreen") 37%,
+    map.get(dnb-colors.$colors, "deepskyblue") 50%,
+    map.get(dnb-colors.$colors, "blueviolet") 62%,
+    map.get(dnb-colors.$colors, "mediumvioletred") 75%,
+    map.get(dnb-colors.$colors, "deeppink") 87%,
+    map.get(dnb-colors.$colors, "red") 100%);
 }
