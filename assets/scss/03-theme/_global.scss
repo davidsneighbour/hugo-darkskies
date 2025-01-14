@@ -237,7 +237,7 @@ samp {
   font-feature-settings: "liga", "clig", "dlig", "calt", "zero", "ss02", "cv18", "cv19", "cv20";
 }
 
-/// @see https://clagnut.com/blog/2424
+/// @link https://clagnut.com/blog/2424
 h1,
 h2,
 h3,
@@ -256,6 +256,42 @@ figcaption {
 .prose {
 
   @import "09-hooks/prose-pre";
+
+/* max-inline-size: 55rem; */
+  margin-inline: auto;
+
+  margin-bottom: 1rem;
+
+  font-variant-numeric: oldstyle-nums;
+
+  /* @link https://kilianvalkhof.com/2022/css-html/your-css-reset-needs-text-size-adjust-probably/ */
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+
+  line-height: 1.5;
+  text-decoration-skip-ink: auto;
+  font-optical-sizing: auto;
+  font-variant-ligatures: common-ligatures no-discretionary-ligatures no-historical-ligatures contextual;
+  font-kerning: normal;
+
+  /* @todo balance for headings, pretty for floating text */
+  text-wrap: pretty;
+  font-variant-numeric: oldstyle-nums proportional-nums;
+  font-size-adjust: 0.458;
+
+  /* hyphenation
+   @link https://clagnut.com/blog/2395/ */
+  -webkit-hyphens: auto;
+  -webkit-hyphenate-limit-before: 4;
+  -webkit-hyphenate-limit-after: 3;
+  -webkit-hyphenate-limit-lines: 2;
+  hyphens: auto;
+  hyphenate-limit-chars: 7 4 3;
+  hyphenate-limit-lines: 2;
+  hyphenate-limit-zone: 8%;
+  hyphenate-limit-last: always;
+
   @import "05-prose/prose";
   @import "05-prose/tables";
 
@@ -302,14 +338,6 @@ figcaption {
 }
 
 /// fix navigation overflow for anchor links
-// :target::before {
-//   @extend .d-block;
-
-//   height: $heading-height;
-//   margin: -$heading-height 0 0;
-//   content: "";
-// }
-/// or maybe not, because CSS evolves ;)
 :target {
   scroll-margin-top: $heading-height;
 }

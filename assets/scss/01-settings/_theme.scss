@@ -6,7 +6,7 @@
 ////
 
 :root {
-  /// @see https://developer.chrome.com/docs/css-ui/animate-to-height-auto/
+  /// @link https://developer.chrome.com/docs/css-ui/animate-to-height-auto/
   interpolate-size: allow-keywords;
 }
 
@@ -26,7 +26,7 @@
 }
 
 /// [data-bs-theme=dark] instead of media-queries
-/// @see https://getbootstrap.com/docs/5.3/customize/color-modes/#custom-color-modes
+/// @link https://getbootstrap.com/docs/5.3/customize/color-modes/#custom-color-modes
 $color-mode-type: data;
 
 /// color settings
