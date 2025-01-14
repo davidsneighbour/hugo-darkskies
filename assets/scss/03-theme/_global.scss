@@ -255,8 +255,6 @@ figcaption {
 
 .prose {
 
-  @import "../09-hooks/prose-pre";
-
 /* max-inline-size: 55rem; */
   margin-inline: auto;
 
@@ -295,6 +293,7 @@ figcaption {
   @import "../05-prose/prose";
   @import "../05-prose/tables";
 
+  // @TODO perfect candidate for a module to @use with color settings.
   .light & {
     // light theme syntax highlighting
     @import "../05-prose/syntax/light";
@@ -305,7 +304,6 @@ figcaption {
     @import "../05-prose/syntax/dark";
   }
 
-  @import "../09-hooks/prose-post";
 }
 
 /// alerts

@@ -4,7 +4,6 @@ groups:
   03-theme: Theme
   04-components: Component
   05-prose: Prose
-  09-hooks: Hooks
   0-setup: Setup
 
 display:

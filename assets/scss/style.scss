@@ -5,30 +5,23 @@
 /// @since 1.2024.0
 ////
 
-@charset 'utf-8'; 
+@charset 'utf-8';
 
 // BS: Configuration
 @import "bootstrap/scss/functions";
 
 // DNB: theme settings
-@import "09-hooks/settings-pre";
 @import "01-settings/fonts";
-@import "09-hooks/settings-fonts-post";
 @import "01-settings/colors";
-@import "09-hooks/settings-colors-post";
-
 @import "01-settings/theme";
 @import "01-settings/utilities";
-@import "09-hooks/settings-post";
 
 // BS: theme settings
 @import "bootstrap/scss/variables";
 @import "bootstrap/scss/variables-dark";
-@import "09-hooks/settings-variables-post";
 
 // DNB: map overrides
 @import "01-settings/maps";
-@import "09-hooks/settings-maps-post";
 
 // BS: other required parts
 @import "bootstrap/scss/maps";
@@ -81,28 +74,20 @@
 @import "bootstrap/scss/utilities/api";
 
 // DNB: Mixins
-@import "09-hooks/mixins-pre";
 @import "02-mixins/mixins";
-@import "09-hooks/mixins-post";
 
 // DNB: Theme
-@import "09-hooks/theme-pre";
 @import "03-theme/global";
 @import "03-theme/footer";
 @import "03-theme/navigation";
 @import "03-theme/utilities";
-@import "09-hooks/theme-post";
 
 // DNB: Components
-@import "09-hooks/components-pre";
 @import "04-components/search";
 @import "04-components/theme-toggle";
-@import "09-hooks/components-post";
 
 // DNB: plugins (imported from node_modules)
-@import "09-hooks/plugins-pre";
 // @import "lite-yt-embed";
 // @import "debugprint";
 // @import "plugins/clipboard";
 // @import "auditor";
-@import "09-hooks/plugins-post";
