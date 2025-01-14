@@ -17,7 +17,7 @@ class ClickSpark extends HTMLElement {
     this.svg.style.top = "0px";
 
     this.root.addEventListener("click", (e) => {
-      if (!e.target.closest('a')) return;
+      if (!e.target.closest("a")) return;
 
       this.setSparkPosition(e);
       this.animateSpark();
@@ -56,8 +56,10 @@ class ClickSpark extends HTMLElement {
   setSparkPosition(e) {
     let rect = this.root.getBoundingClientRect();
 
-    this.svg.style.left = e.clientX - rect.left - this.svg.clientWidth / 2 + "px";
-    this.svg.style.top = e.clientY - rect.top - this.svg.clientHeight / 2 + "px";
+    this.svg.style.left =
+      e.clientX - rect.left - this.svg.clientWidth / 2 + "px";
+    this.svg.style.top =
+      e.clientY - rect.top - this.svg.clientHeight / 2 + "px";
   }
 
   setupSpark() {
@@ -87,6 +89,10 @@ class ClickSpark extends HTMLElement {
 
     this.shadowRoot.innerHTML = template;
     this.svg = this.shadowRoot.querySelector("svg");
+  }
+
+  static {
+    console.log("Spark loaded");
   }
 }
 

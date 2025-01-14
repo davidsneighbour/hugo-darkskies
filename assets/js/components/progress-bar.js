@@ -12,6 +12,9 @@ class ProgressBar extends HTMLElement {
       </div>
     `;
   }
+  static {
+    console.log('ProgressBar loaded');
+  }
 }
 
 export default ProgressBar;
