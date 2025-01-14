@@ -6,15 +6,17 @@
 /// @since 1.2024.0
 ////
 
+@use "sass:map";
+
 .bg,
 .chroma {
-  color: map-get($colors, "black");
-  background-color: rgba(map-get($colors, "ghostwhite"), 0.5);
+  color: map.get($colors, "black");
+  background-color: rgba(map.get($colors, "ghostwhite"), 0.5);
 }
 
 .chroma .err {
-  color: map-get($colors, "purple");
-  background-color: map-get($colors, "black");
+  color: map.get($colors, "purple");
+  background-color: map.get($colors, "black");
 }
 
 .chroma .lnlinks {
@@ -40,7 +42,7 @@
 }
 
 .chroma .hl {
-  background-color: rgba(map-get($colors, "veryblack"), 0.1);
+  background-color: rgba(map.get($colors, "veryblack"), 0.1);
 }
 
 .chroma .ln,
@@ -50,7 +52,7 @@
   user-select: none;
   margin-right: 0.4em;
   padding: 0 0.4em;
-  color: map-get($colors, "gray");
+  color: map.get($colors, "gray");
 }
 
 .chroma .line {
@@ -63,14 +65,14 @@
 .chroma .kp,
 .chroma .kr,
 .chroma .kt {
-  color: map-get($colors, "darkcyan");
+  color: map.get($colors, "darkcyan");
 }
 
 .chroma .kn,
 .chroma .nt,
 .chroma .o,
 .chroma .ow {
-  color: map-get($colors, "deeppink");
+  color: map.get($colors, "deeppink");
 }
 
 .chroma .n,
@@ -86,7 +88,7 @@
 .chroma .vm,
 .chroma .py,
 .chroma .p {
-  color: map-get($colors, "black");
+  color: map.get($colors, "black");
 }
 
 .chroma .na,
@@ -95,11 +97,11 @@
 .chroma .ne,
 .chroma .nf,
 .chroma .nx {
-  color: map-get($colors, "lawngreen");
+  color: map.get($colors, "lawngreen");
 }
 
 .chroma .no {
-  color: map-get($colors, "darkcyan");
+  color: map.get($colors, "darkcyan");
 }
 
 .chroma .l,
@@ -111,7 +113,7 @@
 .chroma .il,
 .chroma .mo,
 .chroma .se {
-  color: map-get($colors, "plum");
+  color: map.get($colors, "plum");
 }
 
 .chroma .ld,
@@ -128,7 +130,7 @@
 .chroma .sr,
 .chroma .s1,
 .chroma .ss {
-  color: map-get($colors, "dark-orange");
+  color: map.get($colors, "dark-orange");
 }
 
 .chroma .c,
@@ -138,7 +140,7 @@
 .chroma .cs,
 .chroma .cp,
 .chroma .cpf {
-  color: map-get($colors, "dimgray");
+  color: map.get($colors, "dimgray");
 }
 
 .chroma .ge {

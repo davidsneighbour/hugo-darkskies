@@ -6,14 +6,16 @@
 /// @since 1.2024.0
 ////
 
+@use "sass:map";
+
 .bg,
 .chroma {
-  color: map-get($colors, "whitesmoke");
-  background-color: rgba(map-get($colors, "black"), 0.5);
+  color: map.get($colors, "whitesmoke");
+  background-color: rgba(map.get($colors, "black"), 0.5);
 }
 
 .chroma .err {
-  color: map-get($colors, "purple");
+  color: map.get($colors, "purple");
 }
 
 .chroma .lnlinks {
@@ -35,7 +37,7 @@
 }
 
 .chroma .hl {
-  background-color: rgba(map-get($colors, "veryblack"), 0.1);
+  background-color: rgba(map.get($colors, "veryblack"), 0.1);
 }
 
 .chroma .ln,
@@ -45,7 +47,7 @@
   user-select: none;
   margin-right: 0.4em;
   padding: 0 0.4em;
-  color: map-get($colors, "lightslategray");
+  color: map.get($colors, "lightslategray");
 }
 
 .chroma .line {
@@ -58,7 +60,7 @@
 .chroma .kp,
 .chroma .kr,
 .chroma .kt {
-  color: map-get($colors, "aqua");
+  color: map.get($colors, "aqua");
 }
 
 .chroma .kn,
@@ -66,7 +68,7 @@
 .chroma .o,
 .chroma .ow,
 .chroma .gd {
-  color: map-get($colors, "deeppink");
+  color: map.get($colors, "deeppink");
 }
 
 .chroma .na,
@@ -76,11 +78,11 @@
 .chroma .nf,
 .chroma .nx,
 .chroma .gi {
-  color: map-get($colors, "chartreuse");
+  color: map.get($colors, "chartreuse");
 }
 
 .chroma .no {
-  color: map-get($colors, "aqua");
+  color: map.get($colors, "aqua");
 }
 
 .chroma .l,
@@ -91,7 +93,7 @@
 .chroma .mi,
 .chroma .il,
 .chroma .mo {
-  color: map-get($colors, "plum");
+  color: map.get($colors, "plum");
 }
 
 .chroma .ld,
@@ -108,11 +110,11 @@
 .chroma .sr,
 .chroma .s1,
 .chroma .ss {
-  color: map-get($colors, "khaki");
+  color: map.get($colors, "khaki");
 }
 
 .chroma .se {
-  color: map-get($colors, "plum");
+  color: map.get($colors, "plum");
 }
 
 .chroma .c,
@@ -123,7 +125,7 @@
 .chroma .cp,
 .chroma .cpf,
 .chroma .gu {
-  color: map-get($colors, "gray");
+  color: map.get($colors, "gray");
 }
 
 .chroma .ge {

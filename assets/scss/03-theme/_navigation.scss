@@ -11,6 +11,9 @@
 ///- https://getbootstrap.com/docs/5.2/components/navs-tabs/
 ////
 
+@use "sass:map";
+@use "sass:color";
+
 .navbar {
   transition: background-color 2s;
 
@@ -38,20 +41,23 @@
   }
 
   body.dark & {
-    background-color:fade-out(map-get($colors, "veryblack"), 0.2);
+    background-color:color.scale(map.get($colors, "veryblack"), $alpha: -80%);
   }
 
   body.light & {
-    background-color: fade-out(map-get($colors, "white"), 0.2);
+    background-color: color.scale(map.get($colors, "white"),
+      $alpha: -80%);
   }
 
   body.dark.nav-state2 & {
-    background-color: fade-out(map-get($colors, "veryblack"), 0.8);
+    background-color: color.scale(map.get($colors, "veryblack"),
+      $alpha: -20%);
     backdrop-filter: saturate(180%) blur(20px);
   }
 
   body.light.nav-state2 & {
-    background-color: fade-out(map-get($colors, "white"), 0.8);
+    background-color: color.scale(map.get($colors, "white"),
+      $alpha: -20%);
     backdrop-filter: saturate(180%) blur(20px);
   }
 
@@ -63,13 +69,13 @@
 
 .progress {
   background: linear-gradient(90deg,
-    map-get($colors, "red") 0%,
-    map-get($colors, "orange") 12%,
-    map-get($colors, "yellow") 25%,
-    map-get($colors, "springgreen") 37%,
-    map-get($colors, "deepskyblue") 50%,
-    map-get($colors, "blueviolet") 62%,
-    map-get($colors, "mediumvioletred") 75%,
-    map-get($colors, "deeppink") 87%,
-    map-get($colors, "red") 100%);
+    map.get($colors, "red") 0%,
+    map.get($colors, "orange") 12%,
+    map.get($colors, "yellow") 25%,
+    map.get($colors, "springgreen") 37%,
+    map.get($colors, "deepskyblue") 50%,
+    map.get($colors, "blueviolet") 62%,
+    map.get($colors, "mediumvioletred") 75%,
+    map.get($colors, "deeppink") 87%,
+    map.get($colors, "red") 100%);
 }

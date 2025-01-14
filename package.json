@@ -31,7 +31,8 @@
   },
   "scripts": {
     "release": "wireit",
-    "sassdoc": "wireit"
+    "sassdoc": "wireit",
+    "sass": "wireit"
   },
   "wireit": {
     "sassdoc": {
@@ -42,6 +43,13 @@
     },
     "sassdoc:debug": {
       "command": "sassdoc assets/scss --theme herman --dest static/documentation/sass --verbose --strict --debug",
+      "files": [
+        "assets/scss"
+      ]
+    },
+    "sass": {
+      "_comment": "--quiet-deps needs to be removed and the deprecations fixed",
+      "command": "sass --verbose --pkg-importer=node --quiet-deps --load-path node_modules assets/scss/style.scss static/assets/theme.css",
       "files": [
         "assets/scss"
       ]

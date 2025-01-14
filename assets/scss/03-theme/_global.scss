@@ -255,7 +255,7 @@ figcaption {
 
 .prose {
 
-  @import "09-hooks/prose-pre";
+  @import "../09-hooks/prose-pre";
 
 /* max-inline-size: 55rem; */
   margin-inline: auto;
@@ -292,20 +292,20 @@ figcaption {
   hyphenate-limit-zone: 8%;
   hyphenate-limit-last: always;
 
-  @import "05-prose/prose";
-  @import "05-prose/tables";
+  @import "../05-prose/prose";
+  @import "../05-prose/tables";
 
   .light & {
     // light theme syntax highlighting
-    @import "05-prose/syntax/light";
+    @import "../05-prose/syntax/light";
   }
 
   .dark & {
     // dark theme syntax highlighting
-    @import "05-prose/syntax/dark";
+    @import "../05-prose/syntax/dark";
   }
 
-  @import "09-hooks/prose-post";
+  @import "../09-hooks/prose-post";
 }
 
 /// alerts

@@ -6,6 +6,8 @@
 /// @since 1.2024.0
 ////
 
+@use "sass:map";
+
 $colors: (
   /* Whites and Light Colors */
   "aliceblue": #f2f8fd,
@@ -158,23 +160,23 @@ $colors: (
 
 /// default dark background color
 /// @type color
-$dark-1: map-get($colors, "black") !default;
+$dark-1: map.get($colors, "black") !default;
 
 /// default dark accented background color
 /// @type color
-$dark-2: map-get($colors, "midnightblue") !default;
+$dark-2: map.get($colors, "midnightblue") !default;
 
 /// default light background color
 /// @type color
-$light-1: map-get($colors, "whitesmoke") !default;
+$light-1: map.get($colors, "whitesmoke") !default;
 
 /// default light accented background color
 /// @type color
-$light-2: map-get($colors, "gainsboro") !default;
+$light-2: map.get($colors, "gainsboro") !default;
 
 /// theme primary (accent) color
 /// @type color
-$primary: map-get($colors, "red") !default;
+$primary: map.get($colors, "red") !default;
 
 /// contrast between sections in dark theme
 /// @type percentage
