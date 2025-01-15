@@ -6,17 +6,14 @@ import ProgressBar from "./components/progress-bar.js";
 import DebugLogger from "@davidsneighbour/debuglogger";
 import "./scripts/keyboard-layout.js";
 import "./plugins/clipboard.js";
-
 import "./scripts/bs-tooltips.js";
 
 // Import parameters from GoHugo
 // @ts-ignore - injected at runtime by GoHugo
 import * as params from "@params";
-console.log(params);
 
 // enable logger for local debugging
 const logger = new DebugLogger(params.debug);
-logger.log(params.version);
 
 // YouTube element
 // @ts-ignore - mounted at runtime by GoHugo
