@@ -49,8 +49,9 @@
     },
     "sass": {
       "_comment": "hack: --quiet-deps needs to be removed and the deprecations fixed",
+      "_comment": "hack: --silence-deprecation needs to be removed and the deprecations fixed",
       "_comment2": "hack: load path assets/scss needs to be removed, this is a work around for import vs. use",
-      "command": "sass --verbose --pkg-importer=node --quiet-deps --load-path node_modules --load-path assets/scss assets/scss/style.scss static/assets/theme.css",
+      "command": "sass --verbose --silence-deprecation import --pkg-importer=node --quiet-deps --load-path node_modules --load-path assets/scss assets/scss/style.scss static/assets/theme.css",
       "files": [
         "assets/scss"
       ]

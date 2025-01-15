@@ -5,6 +5,8 @@
 /// @since 1.2024.0
 ////
 
+@use "modules/mixins/wordwrap" as dnb;
+
 /// universal block formatting reset
 >*+* {
   margin-block-start: var(--flow-space, 1em);
@@ -20,7 +22,7 @@ a {
   @extend .link-underline-primary;
   @extend .link-offset-2;
 
-  @include word-wrap;
+  @include dnb.word-wrap;
 }
 
 abbr {
@@ -72,7 +74,7 @@ td {
 
   @extend .hyphenate;
 
-  @include word-wrap;
+  @include dnb.word-wrap;
 }
 
 blockquote {

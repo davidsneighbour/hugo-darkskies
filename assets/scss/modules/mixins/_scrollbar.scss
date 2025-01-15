@@ -1,9 +1,12 @@
-////
-/// @group 02-mixins
-/// @author Patrick Kollitsch
-/// @access public
-/// @since 1.2024.0
-////
+$border-radius:  5px !default;
+
+@mixin configure( $border-radius: null) {
+
+  @if $border-radius {
+    $border-radius: $border-radius !global;
+  }
+
+}
 
 /// Creates scrollbar styles for Firefox, Chrome, Edge, and Safari.
 ///
@@ -17,7 +20,7 @@
 /// The color of the scrollbar.
 /// @param {color} $track [var(--bs-body-bg)]
 /// The color of the scrollbar track.
-@mixin dnb-scrollbars($outertag: "*",
+@mixin scrollbar($outertag: "*",
   $width: 8px,
   $radius: $border-radius,
   $color: var(--bs-primary),
@@ -55,21 +58,3 @@
 /// ::-webkit-scrollbar:vertical{} — the vertical scrollbar.
 /// ::-webkit-scrollbar-corner — the bottom corner of the scrollbar, where both horizontal and vertical scrollbars meet. This is often the bottom-right corner of the browser window.
 /// ::-webkit-resizer — the draggable resizing handle that appears at the bottom corner of some elements.
-
-@mixin word-wrap() {
-  overflow-wrap: break-word;
-  word-wrap: break-word;
-  -ms-word-break: break-all;
-  word-break: break-all;
-  word-break: break-word;
-  -ms-hyphens: auto;
-  -moz-hyphens: auto;
-  -webkit-hyphens: auto;
-  hyphens: auto;
-}
-
-@mixin ellipsis() {
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-}

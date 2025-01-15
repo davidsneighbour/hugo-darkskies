@@ -10,6 +10,7 @@
 ////
 
 @use "sass:color";
+@use "sass:map";
 
 /// Setup container sizes
 $containers: (
@@ -44,7 +45,7 @@ $utils-fsize: (
     ),
   )
 );
-$utilities: map-merge($utilities, $utils-fsize);
+$utilities: map.merge($utilities, $utils-fsize);
 
 /// container utilities
 $utils-containery: (
@@ -53,7 +54,7 @@ $utils-containery: (
     class: cy,
   ),
 );
-$utilities: map-merge($utilities, $utils-containery);
+$utilities: map.merge($utilities, $utils-containery);
 
 /// container utilities
 $utils-containerx: (
@@ -62,7 +63,7 @@ $utils-containerx: (
     class: cx,
   ),
 );
-$utilities: map-merge($utilities, $utils-containerx);
+$utilities: map.merge($utilities, $utils-containerx);
 
 /// container utilities
 $utils-container: (
@@ -71,7 +72,7 @@ $utils-container: (
     class: c,
   ),
 );
-$utilities: map-merge($utilities, $utils-container);
+$utilities: map.merge($utilities, $utils-container);
 
 /// font-size utilities
 $utils-fontsize2: (
@@ -82,7 +83,7 @@ $utils-fontsize2: (
     ),
   ),
 );
-$utilities: map-merge($utilities, $utils-fontsize2);
+$utilities: map.merge($utilities, $utils-fontsize2);
 
 /// viewport utilities
 $utils-viewport: (
@@ -96,7 +97,7 @@ $utils-viewport: (
     ),
   ),
 );
-$utilities: map-merge($utilities, $utils-viewport);
+$utilities: map.merge($utilities, $utils-viewport);
 
 /// cursor utilities
 $values: (
@@ -142,4 +143,4 @@ $utils-cursor: (
     values: $values,
   ),
 );
-$utilities: map-merge($utilities, $utils-cursor);
+$utilities: map.merge($utilities, $utils-cursor);
