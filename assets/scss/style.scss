@@ -868,7 +868,7 @@ figcaption {
 @import "04-components/theme-toggle";
 
 // DNB: plugins (imported from node_modules)
-// @import "lite-yt-embed";
-// @import "debugprint";
-// @import "plugins/clipboard";
-// @import "auditor";
+@import "lite-yt-embed";
+@import "debugprint";
+@import "plugins/clipboard";
+@import "auditor";
