@@ -222,7 +222,7 @@
     document.getElementById("findColor").addEventListener("click", () => {
       const colorInput = document.getElementById("colorInput").value;
       const resultDiv = document.getElementById("result");
-      resultDiv.innerHTML = "";
+      resultDiv.textContent = "";
 
       const nearestColor = findNearestColorFromGroups(colorInput);
       if (nearestColor) {
@@ -230,21 +230,29 @@
           <div class="comparison">
             <div>
               <p>Original color:</p>
-              <div class="color-box" style="background-color: ${colorInput};"></div>
-              <p>${colorInput}</p>
+              <div class="color-box" style="background-color: ${escapeHtml(colorInput)};"></div>
+              <p>${escapeHtml(colorInput)}</p>
             </div>
             <div>
               <p>Nearest color:</p>
-              <div class="color-box" style="background-color: ${nearestColor.value};"></div>
-              <p>${nearestColor.name} (${nearestColor.value})</p>
-              <p>Group: ${nearestColor.group}</p>
+              <div class="color-box" style="background-color: ${escapeHtml(nearestColor.value)};"></div>
+              <p>${escapeHtml(nearestColor.name)} (${escapeHtml(nearestColor.value)})</p>
+              <p>Group: ${escapeHtml(nearestColor.group)}</p>
             </div>
           </div>
         `;
       } else {
-        resultDiv.innerHTML = `<p>Invalid color input. Please enter a valid hex color code.</p>`;
+        resultDiv.textContent = "Invalid color input. Please enter a valid hex color code.";
       }
     });
+    function escapeHtml(unsafe) {
+      return unsafe
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#039;");
+    }
   </script>
 </body>
 </html>
