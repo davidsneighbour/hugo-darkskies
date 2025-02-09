@@ -1,0 +1,56 @@
+////
+/// @group 04-components
+/// @author Patrick Kollitsch
+/// @access public
+/// @since 1.2024.0
+////
+
+@use 'bootstrap/scss/bootstrap' as *;
+
+/* stylelint-disable selector-class-pattern --- can't be changed due to its being a plugin */
+#pagefind {
+  .pagefind-ui__form {
+    @extend .input-group;
+    @extend .mb-3;
+
+    .pagefind-ui__search-input {
+      @extend .form-control;
+      @extend .mb-3;
+    }
+
+    .pagefind-ui__search-clear {
+      @extend .btn;
+      @extend .btn-outline-secondary;
+      @extend .mb-3;
+    }
+
+    .pagefind-ui__drawer {
+      @extend .container;
+    }
+
+  }
+
+  .pagefind-ui__button {
+    @extend .btn;
+    @extend .btn-primary;
+  }
+
+  .pagefind-ui__results {
+    @extend .row;
+    @extend .list-unstyled;
+
+    .pagefind-ui__result {
+      @extend .card;
+      @extend .col-md-4;
+      @extend .col-12;
+      @extend .border;
+      @extend .border-0;
+    }
+
+    .pagefind-ui__result-thumb {
+      img {
+        @extend .mw-100;
+      }
+    }
+  }
+}
