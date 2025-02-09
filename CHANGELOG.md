@@ -1,4 +1,41 @@
 Changelog
+## [1.2025.4](https://github.com/davidsneighbour/hugo-darkskies/compare/v1.2025.3...v1.2025.4) (2025-02-09)
+
+
+### Theme
+
+* **fix:** add counts to term template ([1b70e87](https://github.com/davidsneighbour/hugo-darkskies/commit/1b70e87abcaad87c895627ff823753d65acb5f4b))
+* **fix:** add static function to webcomponents ([4b6b6da](https://github.com/davidsneighbour/hugo-darkskies/commit/4b6b6da498e5b8f543234fe2aa220f186e36fe39))
+* **fix:** add style modules ([fc058a8](https://github.com/davidsneighbour/hugo-darkskies/commit/fc058a8c6b569e594936b902149f8927d8e7ef79))
+* **fix:** background color for article cards ([9f7ae61](https://github.com/davidsneighbour/hugo-darkskies/commit/9f7ae6169245c417e7be8324463081375d704441))
+* **fix:** deprecated dart sass methods and running via npm (WIP) ([39def1f](https://github.com/davidsneighbour/hugo-darkskies/commit/39def1feb0362036d65c3048dfe4f55386e4de70)), closes [davidsneighbour/kollitsch.dev#1321](https://github.com/davidsneighbour/kollitsch.dev/issues/1321)
+* **fix:** enable dart-sass ([ee33498](https://github.com/davidsneighbour/hugo-darkskies/commit/ee334988d5e64aef27960a7160d5628319970bca))
+* **fix:** more fixes for deprecated sass internals ([acea756](https://github.com/davidsneighbour/hugo-darkskies/commit/acea7565e2c9b9a269f306aabf33b729eaa9fb75)), closes [davidsneighbour/kollitsch.dev#1321](https://github.com/davidsneighbour/kollitsch.dev/issues/1321)
+* **fix:** moving colors into module (WIP) ([6e6eebb](https://github.com/davidsneighbour/hugo-darkskies/commit/6e6eebbd34969e76090c8153214e1cae699526f2))
+* **fix:** optimize code highlighting styles ([5103dd4](https://github.com/davidsneighbour/hugo-darkskies/commit/5103dd48d1c759c46f3d60ed923a29c988d3e7ce))
+* **fix:** proper call to sass:color ([7b92033](https://github.com/davidsneighbour/hugo-darkskies/commit/7b920339e0c74937c75c267fce12fdcbbf18ccf6))
+* **fix:** proper spacing for blocklevel elements in blockquotes ([0b54de8](https://github.com/davidsneighbour/hugo-darkskies/commit/0b54de8b7c0b623cd9cf54845aa39467d0c02933)), closes [davidsneighbour/kollitsch.dev#1249](https://github.com/davidsneighbour/kollitsch.dev/issues/1249)
+* **fix:** re-enable module imports ([3c5ef3f](https://github.com/davidsneighbour/hugo-darkskies/commit/3c5ef3fab9670c7d9f89a9f0eead3ecc2dc70d9f))
+* **fix:** refactoring and cleanup styles ([ba1e85a](https://github.com/davidsneighbour/hugo-darkskies/commit/ba1e85a866aa50bc35d4d715e9eba1cae31f3c86))
+* **fix:** remove empty style ([7fbf24d](https://github.com/davidsneighbour/hugo-darkskies/commit/7fbf24d42af5b6b3927211dcbc04c17ac19b4974))
+* **fix:** remove logging ([bfbbd9e](https://github.com/davidsneighbour/hugo-darkskies/commit/bfbbd9e05bf82bc483e2785cdad18d54319eb60c))
+* **fix:** remove style hooks (WIP) ([677c82e](https://github.com/davidsneighbour/hugo-darkskies/commit/677c82ee2cde5791796fec77b54bd8ac72055a23))
+* **refactor:** some refactoring in the stylesheets ([d2e4113](https://github.com/davidsneighbour/hugo-darkskies/commit/d2e4113ae501a7c1081587f913c057d48b8010d9))
+
+
+### Chore
+
+* **git:** merge branch 'feat/dartsass' ([a5ef012](https://github.com/davidsneighbour/hugo-darkskies/commit/a5ef012173d42a9e153e6d64b66a3e7da0bff42a))
+
+
+### Build System
+
+* **deps:** bump @types/node from 22.10.5 to 22.13.0 ([#43](https://github.com/davidsneighbour/hugo-darkskies/issues/43)) ([b7fa5d5](https://github.com/davidsneighbour/hugo-darkskies/commit/b7fa5d592b264b382fae945f00fa4bf2ca309d99))
+* **deps:** bump katex from 0.16.19 to 0.16.21 in the npm_and_yarn group across 1 directory ([#41](https://github.com/davidsneighbour/hugo-darkskies/issues/41)) ([d11a37f](https://github.com/davidsneighbour/hugo-darkskies/commit/d11a37f495cbf4e73c13ed13eed38fcee4247a7f))
+* **deps:** bump postcss from 8.4.49 to 8.5.1 ([#44](https://github.com/davidsneighbour/hugo-darkskies/issues/44)) ([6edfbc3](https://github.com/davidsneighbour/hugo-darkskies/commit/6edfbc3582c487de7eb527b224c1c806381fde2b))
+* **deps:** bump undici from 6.21.0 to 6.21.1 in the npm_and_yarn group across 1 directory ([#42](https://github.com/davidsneighbour/hugo-darkskies/issues/42)) ([66edc6f](https://github.com/davidsneighbour/hugo-darkskies/commit/66edc6ff9292bfd0ccdf7966ef1efd30ed3699b3))
+* **deps:** update dependencies ([e60839a](https://github.com/davidsneighbour/hugo-darkskies/commit/e60839a8c212c5325999f1ef1c73afde881414d7))
+
 ## [1.2025.3](https://github.com/davidsneighbour/hugo-darkskies/compare/v1.2025.2...v1.2025.3) (2025-01-11)
 
 
