@@ -12,7 +12,7 @@
     "@davidsneighbour/debuglogger": "^0.1.0",
     "@davidsneighbour/markdownlint-config": "2025.0.1",
     "@davidsneighbour/postcss-config": "2025.0.1",
-    "@davidsneighbour/release-config": "2025.0.1",
+    "@davidsneighbour/release-config": "2025.0.2",
     "@davidsneighbour/remark-config": "2025.0.1",
     "@davidsneighbour/tools": "2025.0.1",
     "@fullhuman/postcss-purgecss": "7.0.2",
