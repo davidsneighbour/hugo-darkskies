@@ -14,7 +14,7 @@
     "@davidsneighbour/postcss-config": "2025.0.1",
     "@davidsneighbour/release-config": "2025.0.1",
     "@davidsneighbour/remark-config": "2025.0.1",
-    "@davidsneighbour/tools": "2025.0.1",
+    "@davidsneighbour/tools": "2025.0.2",
     "@fullhuman/postcss-purgecss": "7.0.2",
     "@types/alpinejs": "3.13.11",
     "@types/alpinejs__collapse": "3.13.4",
