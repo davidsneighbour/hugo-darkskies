@@ -8,31 +8,36 @@
   "dependencies": {
     "@alpinejs/collapse": "3.14.8",
     "@alpinejs/intersect": "3.14.8",
-    "@davidsneighbour/bootstrap-config": "2025.0.1",
+    "@davidsneighbour/bootstrap-config": "2025.0.2",
     "@davidsneighbour/debuglogger": "^0.1.0",
-    "@davidsneighbour/markdownlint-config": "2025.0.1",
-    "@davidsneighbour/postcss-config": "2025.0.1",
-    "@davidsneighbour/release-config": "2025.0.1",
-    "@davidsneighbour/remark-config": "2025.0.1",
-    "@davidsneighbour/tools": "2025.0.1",
+    "@davidsneighbour/markdownlint-config": "2025.0.2",
+    "@davidsneighbour/postcss-config": "2025.0.2",
+    "@davidsneighbour/release-config": "2025.0.2",
+    "@davidsneighbour/remark-config": "2025.0.2",
+    "@davidsneighbour/stylelint-config": "^2025.0.2",
+    "@davidsneighbour/tools": "2025.0.2",
     "@fullhuman/postcss-purgecss": "7.0.2",
     "@types/alpinejs": "3.13.11",
     "@types/alpinejs__collapse": "3.13.4",
     "@types/alpinejs__intersect": "3.13.4",
-    "@types/node": "22.13.0",
+    "@types/node": "22.13.9",
     "alpinejs": "3.14.8",
     "cssnano-preset-advanced": "7.0.6",
     "pagefind": "1.3.0",
-    "postcss": "8.5.1",
-    "postcss-preset-env": "10.1.3",
+    "postcss": "8.5.3",
+    "postcss-preset-env": "10.1.5",
     "sassdoc": "2.7.4",
     "sassdoc-extras": "3.0.0",
-    "sassdoc-theme-herman": "6.0.2"
+    "sassdoc-theme-herman": "6.0.2",
+    "stylelint": "^16.15.0"
   },
   "scripts": {
     "release": "wireit",
     "sassdoc": "wireit",
-    "sass": "wireit"
+    "sass": "wireit",
+    "lint:styles": "stylelint assets/scss/",
+    "lint:styles:fix": "stylelint assets/scss/ --fix",
+    "lint:styles:config": "stylelint --print-config index.js"
   },
   "wireit": {
     "sassdoc": {
