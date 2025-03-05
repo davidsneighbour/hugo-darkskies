@@ -251,7 +251,8 @@ $enable-important-utilities: false;
 
 /// theme settings
 $heading-height: 70px;
-$aspect-ratio: math.div(2, 1); /* 2:1. 2 would be enough, but then we would
+$aspect-ratio: math.div(2, 1);
+/* 2:1. 2 would be enough, but then we would
                                         forget how to set other aspect ratios
                                         until next time ;] */
 
@@ -302,16 +303,13 @@ $border-radius: 5px;
 $code-font-size: 90%;
 // $code-color: $pink !default;
 
-@import "01-settings/utilities";
-
 // MARK: Bootstrap Modules
 
 // BS: theme settings
 @import "bootstrap/scss/variables";
 @import "bootstrap/scss/variables-dark";
 
-// DNB: map overrides
-@import "01-settings/maps";
+// DNB: map overrides should be added here
 
 // BS: other required parts
 @import "bootstrap/scss/maps";
@@ -612,9 +610,7 @@ figcaption {
 }
 
 // DNB: prose - article content formatting
-@include dnb.configure(
-  $border-radius: $border-radius
-);
+@include dnb.configure($border-radius: $border-radius);
 @include dnb.scrollbar;
 @include dnb.scrollbar(".prose", 3px);
 
@@ -656,17 +652,62 @@ figcaption {
   hyphenate-limit-last: always;
 
   @import "05-prose/prose";
-  @import "05-prose/tables";
+
+  // MARK: DNB Tables
+  table {
+    $table-color: $body-color;
+
+    .dark & {
+      @extend .table-dark;
+    }
+
+    .light & {
+      @extend .table-light;
+    }
+
+    code,
+    pre {
+      padding: 0.25rem;
+    }
+
+    @extend .table;
+    @extend .table-bordered;
+    @extend .table-sm;
+
+    td {
+      @extend .px-2;
+      @extend .py-1;
+
+      &:nth-of-type(1) {
+        white-space: nowrap;
+      }
+
+      :has(table) {
+        padding: 0;
+        @extend .px-0;
+        @extend .py-0;
+        @extend .py-0;
+      }
+    }
+
+    th {
+      @extend .px-2;
+      @extend .py-1;
+    }
+
+    @extend .mb-0;
+
+  }
 
   // @TODO perfect candidate for a module to @use with color settings.
   .light & {
     // light theme syntax highlighting
-    @import "05-prose/syntax/light";
+    @import "modules/syntax/light";
   }
 
   .dark & {
     // dark theme syntax highlighting
-    @import "05-prose/syntax/dark";
+    @import "modules/syntax/dark";
   }
 
 }
@@ -761,8 +802,8 @@ figcaption {
     a:link,
     a:hover {
       svg {
-        @extend .cx-36;
-        @extend .cy-36;
+        width: 36px;
+        height: 36px;
         @extend .p-0;
         @extend .m-0;
       }
@@ -863,9 +904,91 @@ figcaption {
       map.get(dnbcolors.$colors, "red") 100%);
 }
 
-// DNB: Components
-@import "04-components/search";
-@import "04-components/theme-toggle";
+// MARK: DNB Search Field
+/* stylelint-disable selector-class-pattern --- can't be changed due to its being a plugin */
+#pagefind {
+  .pagefind-ui__form {
+    @extend .input-group;
+    @extend .mb-3;
+
+    .pagefind-ui__search-input {
+      @extend .form-control;
+      @extend .mb-3;
+    }
+
+    .pagefind-ui__search-clear {
+      @extend .btn;
+      @extend .btn-outline-secondary;
+      @extend .mb-3;
+    }
+
+    .pagefind-ui__drawer {
+      @extend .container;
+    }
+
+  }
+
+  .pagefind-ui__button {
+    @extend .btn;
+    @extend .btn-primary;
+  }
+
+  .pagefind-ui__results {
+    @extend .row;
+    @extend .list-unstyled;
+
+    .pagefind-ui__result {
+      @extend .card;
+      @extend .col-md-4;
+      @extend .col-12;
+      @extend .border;
+      @extend .border-0;
+
+      /* stylelint-disable-next-line selector-max-compound-selectors --- can't be changed */
+      .pagefind-ui__result-thumb {
+
+        /* stylelint-disable-next-line max-nesting-depth, selector-max-compound-selectors --- can't be changed */
+        img {
+          @extend .mw-100;
+        }
+      }
+
+    }
+  }
+}
+
+// MARK: DNB Theme Toggle
+#themeswitcher {
+  // giving it a max width so no jumping around in the navigation
+  max-width: 59.31px;
+  max-height: 52px;
+  overflow: hidden;
+  border-left: 1px solid var(--bs-gray-700);
+  padding-left: $spacer * .75;
+  margin-left: $spacer;
+
+  >div {
+    @extend .btn;
+    @extend .btn-link;
+    @extend .rounded;
+
+    [data-bs-theme="light"] & .icon--bs {
+      @extend .text-dark;
+    }
+
+    [data-bs-theme="dark"] & .icon--bs {
+      @extend .text-light;
+    }
+  }
+
+  @include media-breakpoint-down(sm) {
+    display: inline-block;
+    position: absolute;
+    right: 1rem;
+    top: 5rem;
+  }
+
+}
 
 // DNB: plugins (imported from node_modules)
 @import "lite-yt-embed";
