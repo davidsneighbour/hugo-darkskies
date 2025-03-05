@@ -70,5 +70,8 @@
   ],
   "devDependencies": {
     "@types/youtube": "^0.1.0"
-  }
+  },
+  "stylelint": {
+    "extends": "@davidsneighbour/stylelint-config"
+  },
 }
