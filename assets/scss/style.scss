@@ -13,6 +13,7 @@
 @use "sass:string";
 @use "modules/mixins/scrollbar" as dnb;
 @use "modules/colors" as dnbcolors;
+@use "modules/mixins/wordwrap" as dnbww;
 
 // A comment about @import vs @use
 // Bootstrap seems to not yet support @use, so we use @import for now.
@@ -651,7 +652,313 @@ figcaption {
   hyphenate-limit-zone: 8%;
   hyphenate-limit-last: always;
 
-  @import "05-prose/prose";
+  // MARK: DNB Prose
+  /// universal block formatting reset
+  >*+* {
+    margin-block-start: var(--flow-space, 1em);
+  }
+
+  p {
+    text-align: justify;
+  }
+
+  a {
+    box-decoration-break: clone;
+
+    @extend .link-underline-primary;
+    @extend .link-offset-2;
+
+    @include dnbww.word-wrap;
+  }
+
+  abbr {
+    font-variant-caps: all-small-caps;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+
+    @extend .ff-body;
+    font-weight: 500;
+
+    margin-top: 3rem;
+
+    .heading-tools {
+      @extend .float-end;
+      @extend .ms-2;
+      @extend .d-none;
+    }
+
+    &:hover .heading-tools {
+      @extend .d-inline-block;
+    }
+
+    a {
+      @extend .text-decoration-none;
+    }
+  }
+
+  h1,
+  h2,
+  h3 {
+
+    @extend .border-bottom;
+    @extend .border-light-subtle;
+  }
+
+  /// hyphenation for various content types
+  .alert,
+  p,
+  li,
+  dd,
+  td {
+    text-wrap: pretty;
+
+    @extend .hyphenate;
+
+
+    @include dnbww.word-wrap;
+  }
+
+  blockquote {
+    padding-left: 0.95rem;
+    padding-top: $spacer;
+    padding-bottom: $spacer;
+    padding-right: $spacer;
+    border-left: $primary 5px solid;
+    background-color: var(--bs-tertiary-bg);
+
+    cite {
+      font-style: italic;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      margin-top: 0;
+    }
+
+    ul {
+      margin-bottom: 0;
+    }
+  }
+
+  pre {
+    margin-bottom: 0;
+  }
+
+  .highlight {
+    // font-size: 0.9rem;
+    margin-bottom: $spacer;
+
+    .chroma {
+      padding: 0.3rem;
+    }
+  }
+
+  .section--meta {
+    border-top: 1px solid $primary;
+    font-size: 0.9rem;
+
+    @extend .pt-3;
+
+    a {
+      @extend .text-primary;
+
+      &:hover {
+        @extend .text-secondary;
+      }
+    }
+  }
+
+  kbd {
+    display: inline-block;
+    padding: 0.1rem 0.2rem 0;
+    line-height: 1;
+  }
+
+  .text-small {
+    /* @todo see if this can be done with rem */
+    font-size: 90%;
+  }
+
+  .nav-tabs .nav-item.show .nav-link,
+  .nav-tabs .nav-link.active {
+    border-top-width: 1px;
+    border-left-width: 1px;
+    border-right-width: 1px;
+    border-bottom: 0;
+  }
+
+  [id^="fnref"] {
+    color: $primary;
+  }
+
+  .footnotes {
+    margin-bottom: 0.5rem;
+
+    hr {
+      @extend .border;
+      @extend .border-primary;
+    }
+
+    .footnote-backref {
+      visibility: hidden;
+
+      &::before {
+        visibility: visible;
+        content: "↥";
+      }
+    }
+  }
+
+  figure {
+    @extend .mx-auto;
+  }
+
+  /// opentype font ligature and features
+  .dlig {
+    font-variant-ligatures: discretionary-ligatures;
+  }
+
+  .hlig {
+    font-variant-ligatures: historical-ligatures;
+  }
+
+  .dlig.hlig {
+    font-variant-ligatures: discretionary-ligatures historical-ligatures;
+  }
+
+  /* Apply both historic and discretionary */
+
+  .pnum {
+    font-variant-numeric: proportional-nums;
+  }
+
+  .tnum {
+    font-variant-numeric: tabular-nums;
+  }
+
+  .lnum {
+    font-variant-numeric: lining-nums;
+  }
+
+  .onum {
+    font-variant-numeric: oldstyle-nums;
+  }
+
+  .zero {
+    font-variant-numeric: slashed-zero;
+  }
+
+  .pnum.zero {
+    font-variant-numeric: proportional-nums slashed-zero;
+  }
+
+  /* Apply slashed zeroes to proportional numerals */
+  .tnum.zero {
+    font-variant-numeric: tabular-nums slashed-zero;
+  }
+
+  .lnum.zero {
+    font-variant-numeric: lining-nums slashed-zero;
+  }
+
+  .onum.zero {
+    font-variant-numeric: oldstyle-nums slashed-zero;
+  }
+
+  .tnum.lnum.zero {
+    font-variant-numeric: tabular-nums lining-nums slashed-zero;
+  }
+
+  .frac {
+    font-variant-numeric: diagonal-fractions;
+  }
+
+  .afrc {
+    font-variant-numeric: stacked-fractions;
+  }
+
+  .ordn {
+    font-variant-numeric: ordinal;
+  }
+
+  .smcp {
+    font-variant-caps: small-caps;
+  }
+
+  .c2sc {
+    font-variant-caps: unicase;
+  }
+
+  .hist {
+    font-variant-alternates: historical-forms;
+  }
+
+  pre,
+  code,
+  var,
+  samp,
+  kbd,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    -webkit-hyphens: manual;
+    hyphens: manual;
+  }
+
+
+  code {
+
+    &::before,
+    &::after {
+      content: "`";
+    }
+
+    background-color: rgba($primary, 0.05);
+  }
+
+  pre code {
+    /* fix: disable the backticks in highlighted code */
+
+    &::before,
+    &::after {
+      content: "";
+    }
+  }
+
+  h1,
+  h2,
+  h3 {
+    &.post-title {
+      border-bottom: $border-width solid $primary;
+    }
+  }
+
+  /// global figcaption design
+  figcaption {
+
+    @extend .text-end;
+    @extend .text-secondary;
+    @extend .fst-italic;
+    @extend .mt-0;
+    font-size: 0.9rem;
+    width: 100%;
+  }
+
+  .shortcode--youtube {
+    @extend .mb-3;
+  }
 
   // MARK: DNB Tables
   table {
