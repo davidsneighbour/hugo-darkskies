@@ -11,15 +11,7 @@
 @use "sass:math";
 @use "sass:string";
 @use "modules/colors" as dnbcolors;
-@use "modules/mixins/scrollbar" as dnb;
-@use "modules/mixins/wordwrap" as dnbww;
-
-// A note about @import vs @use
-// Bootstrap seems to not yet support @use, so we use @import for now.
-// In regards to the DNB theme, we @use modules and all @imports are deprecated.
-
-// BS: Configuration
-@import "bootstrap/scss/functions";
+@use "modules/typography" as dnbtypography;
 
 // MARK: Settings Fonts
 
@@ -296,6 +288,11 @@ $code-font-size: 90%;
 // MARK: Bootstrap Modules
 
 // BS: theme settings
+// A note about @import vs @use
+// Bootstrap seems to not yet support @use, so we use @import for now.
+// In regards to the DNB theme, we @use modules and all @imports are deprecated.
+
+@import "bootstrap/scss/functions";
 @import "bootstrap/scss/variables";
 @import "bootstrap/scss/variables-dark";
 
@@ -607,9 +604,9 @@ figcaption {
 }
 
 // DNB: prose - article content formatting
-@include dnb.configure($border-radius: $border-radius);
-@include dnb.scrollbar;
-@include dnb.scrollbar(".prose", 3px);
+@include dnbtypography.configure($border-radius: $border-radius);
+@include dnbtypography.scrollbar;
+@include dnbtypography.scrollbar(".prose", 3px);
 
 .prose {
 
@@ -664,7 +661,7 @@ figcaption {
     @extend .link-underline-primary;
     @extend .link-offset-2;
 
-    @include dnbww.word-wrap;
+    @include dnbtypography.word-wrap;
   }
 
   abbr {
@@ -715,7 +712,7 @@ figcaption {
     text-wrap: pretty;
 
     @extend .hyphenate;
-    @include dnbww.word-wrap;
+    @include dnbtypography.word-wrap;
   }
 
   blockquote {
