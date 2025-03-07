@@ -44,6 +44,9 @@ format = 'jpg'
 enabled = true
 ################################################################################
 
+[dnb.theme.giscus]
+enabledDev = true # set to false to disable giscus on localhost and development
+
 [dnb.theme.tags]
 threshold_for_overview = 2
 
@@ -218,3 +221,4 @@ file = "header-topnav-pre"
 [[dnb.hooks.items.theme.post-after]]
 cached = false
 file = "post-after"
+

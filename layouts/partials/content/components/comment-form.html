@@ -12,7 +12,7 @@
     </div>
   {{- end -}}
 {{- end -}}
-{{- if not hugo.IsServer -}}
+{{- if or (not hugo.IsServer) (eq true site.Params.dnb.theme.giscus.enableddev | default false) -}}
   {{- with (and site.Params.dnb.giscus $commentform) -}}
     {{- if (compare.Eq "true" $commentform) -}}
       <div class="col-12">
