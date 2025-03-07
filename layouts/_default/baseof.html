@@ -188,7 +188,7 @@
               {{- $order = $order | collections.Append $key -}}
             {{- end -}}
           {{- end -}}
-          <div class="widget social-media">
+          <div class="mb-5 widget social-media">
             <h3 class="my-5">{{- lang.Translate "theme.connect-on-social" -}}</h3>
             <div class="container-sm">
               <div class="row row-cols-4 justify-content-md-center">
@@ -221,7 +221,7 @@
             </div>
           </div>
         {{- end -}}
-        <div class="row-gap-2 mt-6 d-flex flex-column flex-md-row justify-content-center column-gap-3">
+        <div class="row-gap-2 mt-6 mb-5 d-flex flex-column flex-md-row justify-content-center column-gap-3">
           <div>
             {{- $year := partials.IncludeCached "func/getYear.html" . -}}
             {{- fmt.Printf (lang.Translate "theme.copyright-text") (cast.ToString $year) | .RenderString | safe.HTML -}}
