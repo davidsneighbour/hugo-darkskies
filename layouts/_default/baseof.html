@@ -155,9 +155,6 @@
       <div class="container text-center widgets">
         <h2 class="invisible d-none">Footer Items</h2>
         {{- partials.Include "func/hook.html" ( collections.Dictionary "hook" "footer-widgets-start" "context" . ) -}}
-        {{- with site.Params.subscription -}}
-          {{- partials.IncludeCached "footer/newsletter.html" site.Params.subscription site.Params.subscription -}}
-        {{- end -}}
         {{- with site.Menus.footer -}}
           <div class="widget footer-navigation">
             <h3 class="my-5">{{ lang.Translate "theme.footer_menu_header" }}</h3>
