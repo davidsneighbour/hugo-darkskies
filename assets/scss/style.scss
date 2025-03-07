@@ -94,9 +94,9 @@ $fontdir: "/assets/webfonts" !default;
 }
 
 /// font family setup
-$ff-headline: Changa, sans-serif;
-$ff-body: Exo2, sans-serif;
-$ff-mono: JetBrainsMono, monospace;
+$ff-headline: Changa, sans-serif !default;
+$ff-body: Exo2, sans-serif !default;
+$ff-mono: JetBrainsMono, monospace !default;
 
 // MARK: Settings Colors
 
@@ -135,13 +135,11 @@ $dark-contrast: 12% !default;
 $light-contrast: 7% !default;
 
 // MARK: Settings Theme
-
 :root {
   /// @link https://developer.chrome.com/docs/css-ui/animate-to-height-auto/
   interpolate-size: allow-keywords;
 }
 
-:root,
 [data-bs-theme="dark"] {
   color-scheme: dark;
 
@@ -274,7 +272,6 @@ $mark-padding: 0 0.1875em;
 }
 
 @media (prefers-reduced-motion) {
-
   *,
   *::before,
   *::after {
@@ -295,7 +292,6 @@ $border-radius: 5px;
 
 /// code
 $code-font-size: 90%;
-// $code-color: $pink !default;
 
 // MARK: Bootstrap Modules
 
@@ -304,7 +300,6 @@ $code-font-size: 90%;
 @import "bootstrap/scss/variables-dark";
 
 // DNB: map overrides should be added here
-
 // BS: other required parts
 @import "bootstrap/scss/maps";
 @import "bootstrap/scss/mixins";
@@ -597,7 +592,15 @@ h2,
 h3,
 h4,
 h5,
-h6,
+h6{
+  text-wrap: balance;
+
+  code {
+    font-family: $ff-headline;
+    font-style: italic;
+  }
+}
+
 caption,
 figcaption {
   text-wrap: balance;
