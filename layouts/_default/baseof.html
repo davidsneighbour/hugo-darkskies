@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 {{- partials.Include "init.html" . -}}
 {{- partials.Include "func/hook.html" ( collections.Dictionary "hook" "setup" "context" . ) -}}
+{{- $config := site.Params.dnb.theme -}}
 {{- $sitelang := site.LanguageCode | compare.Default "en-US" -}}
 {{- $classes := partials.IncludeCached "func/getBodyClasses.html" . . -}}
-<html lang="{{- $sitelang -}}" data-bs-theme="{{- site.Params.dnb.theme.colorscheme -}}">
+<html lang="{{- $sitelang -}}" data-bs-theme="{{- $config.colorscheme -}}">
   {{- /* MARK: Head
   */ -}}
   <head>
@@ -34,12 +35,12 @@
           {{- partials.Include "func/hook.html" ( collections.Dictionary "hook" "header-topnav-start" "context" . ) -}}
           {{- /* Logo/Brand name */ -}}
           <div class="navbar-brand fsize-12 ff-headline">
-            {{- if site.Params.dnb.theme.logo -}}
+            {{- if $config.logo -}}
             <a href="{{- site.BaseURL | urls.RelLangURL -}}" class="mt-2 d-inline-block text-decoration-none">
-              <img class="rounded-circle" src="{{- site.Params.dnb.theme.logo | urls.AbsURL  -}}"
+              <img class="rounded-circle" src="{{- $config.logo | urls.AbsURL  -}}"
                   alt="Logo of {{ site.Title -}}"
-                  height="{{- site.Params.dnb.theme.logo_height -}}"
-                  width="{{- site.Params.dnb.theme.logo_width -}}">
+                  height="{{- $config.logo_height -}}"
+                  width="{{- $config.logo_width -}}">
             </a>
             {{- else -}}
             <a href="{{- site.BaseURL | urls.RelLangURL -}}" class="d-inline-block text-decoration-none text-hover-decoration-none">
@@ -236,7 +237,6 @@
       </div>
       {{- partials.Include "func/hook.html" ( collections.Dictionary "hook" "footer-end" "context" . ) -}}
     </footer>
-    {{- $config := site.Params.dnb.theme -}}
     {{- /* MARK: Back to Top
     */ -}}
     {{- if compare.Eq true $config.backtotop.enabled -}}
@@ -260,7 +260,7 @@
     {{- end -}}
     {{- partials.Include "func/hook.html" ( collections.Dictionary "hook" "footer-post" "context" . ) -}}
     {{- partials.Include "func/hook.html" ( collections.Dictionary "hook" "body-end-pre-script" "context" . ) -}}
-    {{- $buildoptions := site.Params.dnb.theme.jsbuild.options -}}
+    {{- $buildoptions := $config.jsbuild.options -}}
     {{- $params := (dict "debug" hugo.IsServer) }}
     {{- with resources.Get "data/build.json" -}}
       {{- $params = dict
@@ -270,7 +270,7 @@
             ) -}}
     {{- end -}}
     {{- $buildoptions = collections.Merge $buildoptions $params -}}
-    {{- $scripts := resources.Get (site.Params.dnb.theme.js.entrypoint | default "js/script.js") |
+    {{- $scripts := resources.Get ($config.js.entrypoint | default "js/script.js") |
           js.Build (
             collections.Merge $buildoptions (collections.Dictionary "targetPath" "assets/js/script.js")
           ) | resources.Fingerprint "sha512"
