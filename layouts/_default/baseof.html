@@ -270,7 +270,7 @@
             ) -}}
     {{- end -}}
     {{- $buildoptions = collections.Merge $buildoptions $params -}}
-    {{- $scripts := resources.Get ($config.js.entrypoint | default "js/script.js") |
+    {{- $scripts := resources.Get ($config.js.entrypoint | compare.Default "js/script.js") |
           js.Build (
             collections.Merge $buildoptions (collections.Dictionary "targetPath" "assets/js/script.js")
           ) | resources.Fingerprint "sha512"

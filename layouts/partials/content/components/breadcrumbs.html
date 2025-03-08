@@ -8,7 +8,7 @@
       <li class="breadcrumb-item active" aria-current="page">{{ .Title | transform.Markdownify }}</li>
     </ol>
   </nav>
-  {{/* @todo make this a partial */}}
+  {{/* @todo make this a partials.Include */}}
   <script type='application/ld+json'>
   {
     "@context": "https://schema.org",
@@ -35,6 +35,6 @@
     ]
   }
   </script>
-  {{ partial "func/vscode-link.html" . }}
+  {{ partials.Include "func/vscode-link.html" . }}
 </div>
 {{- end -}}
