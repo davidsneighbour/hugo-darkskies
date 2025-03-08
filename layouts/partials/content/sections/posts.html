@@ -4,7 +4,8 @@
     {{- with $paginator -}}
       {{- $currentPageNumber := .PageNumber -}}
       {{ if compare.Ne $currentPageNumber 1 }}
-        {{ partials.Include "content/components/pagination/pagination-simple.html" page }}
+        {{- /* @TODO why is this context page and below it's . */ -}}
+        {{ partials.Include "content/components/pagination.html" page }}
       {{ end }}
     {{- end -}}
     <div class="row">
@@ -26,6 +27,6 @@
         {{ end }}
       {{- end -}}
     </div>
-    {{ partials.Include "content/components/pagination/pagination-simple.html" . }}
+    {{ partials.Include "content/components/pagination.html" . }}
   </div>
 </section>
