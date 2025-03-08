@@ -24,6 +24,7 @@
 > [!WARNING]
 > This documentation is under (re)construction. Check back later for changes and feel free to [open an issue](https://github.com/davidsneighbour/hugo-Darkskies/issues) if you have questions or suggestions.
 
+* [Getting Started](/davidsnegihbour/hugo-darkskies/blog/main/documentation/getting-started/index.md)
 * [Configuration](/davidsneighbour/hugo-Darkskies/blob/main/documentation/configuration/index.md)
 * [Content](/davidsneighbour/hugo-Darkskies/blob/main/documentation/content/index.md)
 * [Developers](/davidsneighbour/hugo-Darkskies/blob/main/documentation/developers/index.md)
