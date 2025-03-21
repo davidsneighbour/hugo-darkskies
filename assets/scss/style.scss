@@ -19,71 +19,37 @@
 /// @type string
 $fontdir: "/assets/webfonts" !default;
 
-/// @link https://github.com/NDISCOVER/Exo-2.0
-@font-face {
-  font-family: Exo2;
-  src: url("#{$fontdir}/exo/normal.woff2") format("woff2") tech("variations"),
-  url("#{$fontdir}/exo/normal.woff2") format("woff2-variations");
-  font-weight: 100 900;
-  font-style: normal;
-  font-display: fallback;
-  text-rendering: optimizelegibility;
+/// @param {string} $family - Font family name
+/// @param {string} $subdir - Subdirectory inside $fontdir
+/// @param {string} $file - Filename (without extension)
+/// @param {string | number} $weight - Font weight or range
+/// @param {string} $style - normal | italic
+/// @param {string} $display - fallback | swap
+/// @param {list} $formats - List of formats and optional tech
+@mixin fontface($family, $subdir, $file, $weight, $style, $display, $formats) {
+  $sources: ();
+  @each $format in $formats {
+    $formatType: nth($format, 1);
+    $tech: if(length($format) > 1, ' tech("#{nth($format, 2)}")', '');
+    $sources: append($sources,
+        unquote('url("#{$fontdir}/#{$subdir}/#{$file}") format("#{$formatType}")#{$tech}'),
+        comma);
+  }
+  @font-face {
+    font-family: $family;
+    src: #{$sources};
+    font-weight: $weight;
+    font-style: $style;
+    font-display: $display;
+    text-rendering: optimizelegibility;
+  }
 }
-
-/// @link https://github.com/NDISCOVER/Exo-2.0
-@font-face {
-  font-family: Exo2;
-  src: url("#{$fontdir}/exo/italic.woff2") format("woff2") tech("variations"),
-  url("#{$fontdir}/exo/italic.woff2") format("woff2-variations");
-  font-weight: 100 900;
-  font-style: italic;
-  font-display: swap;
-  text-rendering: optimizelegibility;
-}
-
-/// @link https://github.com/JetBrains/JetBrainsMono
-@font-face {
-  font-family: JetBrainsMono;
-  src: url("#{$fontdir}/jetbrainsmono/JetBrainsMono[wght].woff2") format("woff2") tech("variations"),
-  url("#{$fontdir}/jetbrainsmono/JetBrainsMono[wght].woff2") format("woff2-variations");
-  font-weight: 100 800;
-  font-style: normal;
-  font-display: fallback;
-  text-rendering: optimizelegibility;
-}
-
-/// @link https://github.com/JetBrains/JetBrainsMono
-@font-face {
-  font-family: JetBrainsMono;
-  src: url("#{$fontdir}/jetbrainsmono/JetBrainsMono-Italic[wght].woff2") format("woff2") tech("variations"),
-  url("#{$fontdir}/jetbrainsmono/JetBrainsMono-Italic[wght].woff2") format("woff2-variations");
-  font-weight: 100 800;
-  font-style: italic;
-  font-display: swap;
-  text-rendering: optimizelegibility;
-}
-
-/// @link https://github.com/etunni/changa-one
-@font-face {
-  font-family: Changa;
-  src: url('#{$fontdir}/changa/changaone-regular-webfont.woff2') format('woff2'),
-  url('#{$fontdir}/changa/changaone-regular-webfont.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-  font-display: fallback;
-  text-rendering: optimizelegibility;
-}
-
-/// @link https://github.com/etunni/changa-one
-@font-face {
-  font-family: Changa;
-  src: url('#{$fontdir}/changa/changaone-italic-webfont.woff2') format('woff2'),
-  url('#{$fontdir}/changa/changaone-italic-webfont.woff') format('woff');
-  font-weight: normal;
-  font-style: italic;
-  font-display: swap;
-  text-rendering: optimizelegibility;
-}
+@include fontface("Exo2", "exo", "normal.woff2", 100 900, normal, fallback, (("woff2", "variations"), ("woff2-variations")));
+@include fontface("Exo2", "exo", "italic.woff2", 100 900, italic, swap, (("woff2", "variations"), ("woff2-variations")));
+@include fontface("JetBrainsMono", "jetbrainsmono", "JetBrainsMono[wght].woff2", 100 800, normal, fallback, (("woff2", "variations"), ("woff2-variations")));
+@include fontface("JetBrainsMono", "jetbrainsmono", "JetBrainsMono-Italic[wght].woff2", 100 800, italic, swap, (("woff2", "variations"), ("woff2-variations")));
+@include fontface("Changa", "changa", "changaone-regular-webfont.woff2", normal, normal, fallback, (("woff2"), ("woff")));
+@include fontface("Changa", "changa", "changaone-italic-webfont.woff2", normal, italic, swap, (("woff2"), ("woff")));
 
 /// font family setup
 $ff-headline: Changa, sans-serif !default;
@@ -237,8 +203,8 @@ $enable-important-utilities: false;
 $heading-height: 70px;
 $aspect-ratio: math.div(2, 1);
 /* 2:1. 2 would be enough, but then we would
-                                        forget how to set other aspect ratios
-                                        until next time ;] */
+  forget how to set other aspect ratios
+  until next time ;] */
 
 /// mark tag
 $mark-color: var(--bs-gray-dark);
