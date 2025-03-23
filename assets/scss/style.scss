@@ -8,9 +8,12 @@
 
 @use "sass:map";
 @use "sass:color";
+@use "sass:math";
 @use "sass:string";
 @use "modules/colors" as dnbcolors;
-mat // MARK: Settings Fonts
+@use "modules/typography" as dnbtypography;
+
+// MARK: Settings Fonts
 
 /// default directory to locate webfonts
 /// @type string
@@ -23,34 +26,24 @@ $fontdir: "/assets/webfonts" !default;
 /// @param {string} $style - normal | italic
 /// @param {string} $display - fallback | swap
 /// @param {list} $formats - List of formats and optional tech
-@mixin fontface($family,
-  $subdir,
-  $file,
-  $weight,
-  $style,
-  $display: swap,
-  $formats: (("woff2", "variations"))) {
-  $sources: (
-  );
-
-@each $format in $formats {
-  $formatType: nth($format, 1);
-  $tech: if(length($format) > 1, ' tech("#{nth($format, 2)}")', '');
-  $sources: append($sources,
-      unquote('url("#{$fontdir}/#{$subdir}/#{$file}") format("#{$formatType}")#{$tech}'),
-      comma);
+@mixin fontface($family, $subdir, $file, $weight, $style, $display, $formats) {
+  $sources: ();
+  @each $format in $formats {
+    $formatType: nth($format, 1);
+    $tech: if(length($format) > 1, ' tech("#{nth($format, 2)}")', '');
+    $sources: append($sources,
+        unquote('url("#{$fontdir}/#{$subdir}/#{$file}") format("#{$formatType}")#{$tech}'),
+        comma);
+  }
+  @font-face {
+    font-family: $family;
+    src: #{$sources};
+    font-weight: $weight;
+    font-style: $style;
+    font-display: $display;
+    text-rendering: optimizelegibility;
+  }
 }
-
-@font-face {
-  font-family: $family;
-  src: #{$sources};
-  font-weight: $weight;
-  font-style: $style;
-  font-display: $display;
-  text-rendering: optimizelegibility;
-}
-}
-
 @include fontface("Exo2", "exo", "normal.woff2", 100 900, normal, fallback, (("woff2", "variations"), ("woff2-variations")));
 @include fontface("Exo2", "exo", "italic.woff2", 100 900, italic, swap, (("woff2", "variations"), ("woff2-variations")));
 @include fontface("JetBrainsMono", "jetbrainsmono", "JetBrainsMono[wght].woff2", 100 800, normal, fallback, (("woff2", "variations"), ("woff2-variations")));
@@ -208,7 +201,7 @@ $enable-important-utilities: false;
 
 /// theme settings
 $heading-height: 70px;
-$aspect-ratio: 2 / 1;
+$aspect-ratio: math.div(2, 1);
 /* 2:1. 2 would be enough, but then we would
   forget how to set other aspect ratios
   until next time ;] */
@@ -237,7 +230,6 @@ $mark-padding: 0 0.1875em;
 }
 
 @media (prefers-reduced-motion) {
-
   *,
   *::before,
   *::after {
@@ -360,6 +352,8 @@ main {
   margin: 0 auto;
   max-width: clamp(320px, 90%, 60rem);
 
+  @extend .min-vh-100;
+
   @include media-breakpoint-up(md) {
     padding-top: 90px;
   }
@@ -377,20 +371,21 @@ article {
 .post-slider {
 
   figure {
-    width: 100%;
-    overflow: hidden;
-    border-top-left-radius: var(--bs-border-radius);
-    border-top-right-radius: var(--bs-border-radius);
+    @extend .w-100;
+    @extend .overflow-hidden;
+    @extend .rounded-top;
+    @extend .position-relative;
 
-    position: relative picture,
+    picture,
     img,
     .iframe-border,
     video {
       object-fit: cover;
       aspect-ratio: 2/1;
 
-      overflow: hidden;
-      border-radius: var(--bs-border-radius) width: 100%
+      @extend .overflow-hidden;
+      @extend .rounded;
+      @extend .w-100;
     }
 
   }
@@ -406,11 +401,12 @@ article {
   }
 
 
-  border-radius:var(--bs-border-radius)
+  @extend .rounded;
+
 }
 
 .breadcrumb {
-  margin-right: $spacer / 2;
+  margin-right: math.div($spacer, 2);
 
   .breadcrumb-item {
     float: none;
@@ -421,7 +417,7 @@ article {
 }
 
 a.text-hover-decoration-none:hover {
-  text-decoration: none;
+  @extend .text-decoration-none;
 }
 
 abbr {
@@ -438,17 +434,16 @@ abbr {
 
   a {
     /// adds colors to all links inside alerts
-    font-weight: 700;
-    color: var(--bs-alert-link-color)
+    @extend .alert-link;
   }
 
   /// remove unnessary margin from last paragraph in alerts
   p:last-of-type {
-    margin-bottom: 0
+    @extend .mb-0;
   }
 
   .icon--bootstrap {
-    box-shadow: var(--bs-box-shadow-lg);
+    @extend .shadow-lg;
     background-color: var(--bs-dark-bg-subtle);
     border: 2px solid var(--bs-dark-border-subtle);
     padding: 8px;
@@ -467,9 +462,8 @@ abbr {
 }
 
 input:autofill {
-  border-width: 1px;
-  --bs-border-opacity: 1;
-  border-color: rgba(var(--bs-primary-rgb), var(--bs-border-opacity))
+  @extend .border-1;
+  @extend .border-primary;
 }
 
 textarea {
@@ -502,17 +496,16 @@ textarea {
     font-size: 800%;
   }
 
-  font-weight:600;
-  line-height:1;
-  text-align:center;
-  --bs-text-opacity:1;
-  color:rgba(var(--bs-primary-rgb), var(--bs-text-opacity));
+  @extend .fw-semibold;
+  @extend .lh-1;
+  @extend .text-center;
+  @extend .text-primary;
 
   a {
-    text-decoration: none;
+    @extend .text-decoration-none;
 
     :hover {
-      text-decoration: none;
+      @extend .text-decoration-none;
     }
   }
 
@@ -525,7 +518,7 @@ $mark-lighten-percentage: 20%; // Configurable percentage for lightening
 ///
 /// the $colors here is the bootstrap colors, not dnb colors array
 @each $name, $color in $colors {
-  $light-color: color-mix(white, $color, $mark-lighten-percentage);
+  $light-color: color.mix(white, $color, $mark-lighten-percentage);
 
   /* lighten($color, $mark-lighten-percentage); */
 
@@ -543,7 +536,8 @@ $mark-lighten-percentage: 20%; // Configurable percentage for lightening
 }
 
 mark {
-  border-radius: var(--bs-border-radius);
+  @extend .mark-green;
+  @extend .rounded;
 }
 
 code,
@@ -561,7 +555,7 @@ h2,
 h3,
 h4,
 h5,
-h6 {
+h6{
   text-wrap: balance;
 
   code {
@@ -584,7 +578,10 @@ figcaption {
 
   /* max-inline-size: 55rem; */
   margin-inline: auto;
+
   margin-bottom: 1rem;
+
+  font-variant-numeric: oldstyle-nums;
 
   /* @link https://kilianvalkhof.com/2022/css-html/your-css-reset-needs-text-size-adjust-probably/ */
   -moz-text-size-adjust: none;
@@ -604,10 +601,11 @@ figcaption {
 
   /* hyphenation
    @link https://clagnut.com/blog/2395/ */
-  @include word-wrap();
+  -webkit-hyphens: auto;
   -webkit-hyphenate-limit-before: 4;
   -webkit-hyphenate-limit-after: 3;
   -webkit-hyphenate-limit-lines: 2;
+  hyphens: auto;
   hyphenate-limit-chars: 7 4 3;
   hyphenate-limit-lines: 2;
   hyphenate-limit-zone: 8%;
@@ -626,10 +624,8 @@ figcaption {
   a {
     box-decoration-break: clone;
 
-    --bs-link-underline-opacity: 1;
-    -webkit-text-decoration-color: rgba(var(--bs-primary-rgb), var(--bs-link-underline-opacity));
-    text-decoration-color: rgba(var(--bs-primary-rgb), var(--bs-link-underline-opacity));
-    text-underline-offset: 0.25em;
+    @extend .link-underline-primary;
+    @extend .link-offset-2;
 
     @include dnbtypography.word-wrap;
   }
@@ -645,31 +641,32 @@ figcaption {
   h5,
   h6 {
 
-    font-family: $ff-body;
+    @extend .ff-body;
     font-weight: 500;
 
     margin-top: 3rem;
 
     .heading-tools {
-      float: right;
-      margin-left: .5rem;
-      display: none;
+      @extend .float-end;
+      @extend .ms-2;
+      @extend .d-none;
     }
 
     &:hover .heading-tools {
-      display: inline-block;
+      @extend .d-inline-block;
     }
 
     a {
-      text-decoration: none;
+      @extend .text-decoration-none;
     }
   }
 
   h1,
   h2,
   h3 {
-    border-bottom: var(--bs-border-width) var(--bs-border-style) var(--bs-border-color);
-    border-color: var(--bs-light-border-subtle);
+
+    @extend .border-bottom;
+    @extend .border-light-subtle;
   }
 
   /// hyphenation for various content types
@@ -727,15 +724,13 @@ figcaption {
     border-top: 1px solid $primary;
     font-size: 0.9rem;
 
-    padding-top: 1rem;
+    @extend .pt-3;
 
     a {
-      --bs-text-opacity: 1;
-      color: rgba(var(--bs-primary-rgb), var(--bs-text-opacity));
+      @extend .text-primary;
 
       &:hover {
-        --bs-text-opacity: 1;
-        color: rgba(var(--bs-secondary-rgb), var(--bs-text-opacity));
+        @extend .text-secondary;
       }
     }
   }
@@ -767,9 +762,8 @@ figcaption {
     margin-bottom: 0.5rem;
 
     hr {
-      border: var(--bs-border-width) var(--bs-border-style) var(--bs-border-color);
-      --bs-border-opacity: 1;
-      border-color: rgba(var(--bs-primary-rgb), var(--bs-border-opacity));
+      @extend .border;
+      @extend .border-primary;
     }
 
     .footnote-backref {
@@ -783,8 +777,7 @@ figcaption {
   }
 
   figure {
-    margin-right: auto;
-    margin-left: auto;
+    @extend .mx-auto;
   }
 
   /// opentype font ligature and features
@@ -912,17 +905,16 @@ figcaption {
   /// global figcaption design
   figcaption {
 
-    text-align: right;
-    --bs-text-opacity: 1;
-    color: rgba(var(--bs-secondary-rgb), var(--bs-text-opacity));
-    font-style: italic;
-    margin-top: 0;
+    @extend .text-end;
+    @extend .text-secondary;
+    @extend .fst-italic;
+    @extend .mt-0;
     font-size: 0.9rem;
     width: 100%;
   }
 
   .shortcode--youtube {
-    margin-bottom: 1rem;
+    @extend .mb-3;
   }
 
   // MARK: DNB Tables
@@ -930,7 +922,7 @@ figcaption {
     $table-color: $body-color;
 
     .dark & {
-d
+      @extend .table-dark;
     }
 
     .light & {
@@ -1060,7 +1052,9 @@ d
 
 /// hyphenation for paragraphs and stuff
 .hyphenate {
-  @include word-wrap();
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  hyphens: auto;
   hyphenate-limit-chars: 10 4 4;
 }
 
