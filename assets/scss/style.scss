@@ -27,23 +27,27 @@ $fontdir: "/assets/webfonts" !default;
 /// @param {string} $display - fallback | swap
 /// @param {list} $formats - List of formats and optional tech
 @mixin fontface($family, $subdir, $file, $weight, $style, $display, $formats) {
-  $sources: ();
-  @each $format in $formats {
-    $formatType: nth($format, 1);
-    $tech: if(length($format) > 1, ' tech("#{nth($format, 2)}")', '');
-    $sources: append($sources,
-        unquote('url("#{$fontdir}/#{$subdir}/#{$file}") format("#{$formatType}")#{$tech}'),
-        comma);
-  }
-  @font-face {
-    font-family: $family;
-    src: #{$sources};
-    font-weight: $weight;
-    font-style: $style;
-    font-display: $display;
-    text-rendering: optimizelegibility;
-  }
+  $sources: (
+  );
+
+@each $format in $formats {
+  $formatType: nth($format, 1);
+  $tech: if(length($format) > 1, ' tech("#{nth($format, 2)}")', '');
+  $sources: append($sources,
+      unquote('url("#{$fontdir}/#{$subdir}/#{$file}") format("#{$formatType}")#{$tech}'),
+      comma);
 }
+
+@font-face {
+  font-family: $family;
+  src: #{$sources};
+  font-weight: $weight;
+  font-style: $style;
+  font-display: $display;
+  text-rendering: optimizelegibility;
+}
+}
+
 @include fontface("Exo2", "exo", "normal.woff2", 100 900, normal, fallback, (("woff2", "variations"), ("woff2-variations")));
 @include fontface("Exo2", "exo", "italic.woff2", 100 900, italic, swap, (("woff2", "variations"), ("woff2-variations")));
 @include fontface("JetBrainsMono", "jetbrainsmono", "JetBrainsMono[wght].woff2", 100 800, normal, fallback, (("woff2", "variations"), ("woff2-variations")));
@@ -230,6 +234,7 @@ $mark-padding: 0 0.1875em;
 }
 
 @media (prefers-reduced-motion) {
+
   *,
   *::before,
   *::after {
@@ -352,7 +357,7 @@ main {
   margin: 0 auto;
   max-width: clamp(320px, 90%, 60rem);
 
-  @extend .min-vh-100;
+  min-height: 100vh;
 
   @include media-breakpoint-up(md) {
     padding-top: 90px;
@@ -371,10 +376,11 @@ article {
 .post-slider {
 
   figure {
-    @extend .w-100;
-    @extend .overflow-hidden;
-    @extend .rounded-top;
-    @extend .position-relative;
+    width: 100%;
+    overflow: hidden;
+    border-top-left-radius: var(--bs-border-radius);
+    border-top-right-radius: var(--bs-border-radius);
+    position: relative;
 
     picture,
     img,
@@ -383,9 +389,9 @@ article {
       object-fit: cover;
       aspect-ratio: 2/1;
 
-      @extend .overflow-hidden;
-      @extend .rounded;
-      @extend .w-100;
+      overflow: hidden;
+      border-radius: var(--bs-border-radius);
+      width: 100%;
     }
 
   }
@@ -401,7 +407,7 @@ article {
   }
 
 
-  @extend .rounded;
+  border-radius:var(--bs-border-radius);
 
 }
 
@@ -417,7 +423,7 @@ article {
 }
 
 a.text-hover-decoration-none:hover {
-  @extend .text-decoration-none;
+  text-decoration: none;
 }
 
 abbr {
@@ -434,16 +440,17 @@ abbr {
 
   a {
     /// adds colors to all links inside alerts
-    @extend .alert-link;
+    font-weight: 700;
+    color: var(--bs-alert-link-color);
   }
 
   /// remove unnessary margin from last paragraph in alerts
   p:last-of-type {
-    @extend .mb-0;
+    margin-bottom: 0;
   }
 
   .icon--bootstrap {
-    @extend .shadow-lg;
+    box-shadow: var(--bs-box-shadow-lg);
     background-color: var(--bs-dark-bg-subtle);
     border: 2px solid var(--bs-dark-border-subtle);
     padding: 8px;
@@ -462,8 +469,9 @@ abbr {
 }
 
 input:autofill {
-  @extend .border-1;
-  @extend .border-primary;
+  border-width: 1px;
+  --bs-border-opacity: 1;
+  border-color: rgba(var(--bs-primary-rgb), var(--bs-border-opacity));
 }
 
 textarea {
@@ -496,16 +504,17 @@ textarea {
     font-size: 800%;
   }
 
-  @extend .fw-semibold;
-  @extend .lh-1;
-  @extend .text-center;
-  @extend .text-primary;
+  font-weight:600;
+  line-height:1;
+  text-align:center;
+  --bs-text-opacity:1;
+  color:rgba(var(--bs-primary-rgb), var(--bs-text-opacity));
 
   a {
-    @extend .text-decoration-none;
+    text-decoration: none;
 
     :hover {
-      @extend .text-decoration-none;
+      text-decoration: none;
     }
   }
 
@@ -514,31 +523,24 @@ textarea {
 /* highlighting via `mark` tag */
 $mark-lighten-percentage: 20%; // Configurable percentage for lightening
 
-/// @name mark-[error|warning|success|info]
-///
-/// the $colors here is the bootstrap colors, not dnb colors array
-@each $name, $color in $colors {
-  $light-color: color.mix(white, $color, $mark-lighten-percentage);
-
-  /* lighten($color, $mark-lighten-percentage); */
-
-  .mark-#{$name} {
-    display: inline-block;
-    background: linear-gradient(100deg,
-      #{$light-color}00 1%,
-      #{$light-color} 2.5%,
-      #{$light-color}80 5.7%,
-      #{$light-color}1a 93%,
-      #{$light-color}b4 95%,
-      #{$light-color}00 98%),
-    linear-gradient(182deg, #{$light-color}00, #{$light-color}4d 8%, #{$light-color}00 15%);
-  }
+/// Applies the default mark background styling
+/// @param {Color} $base-color - The base Bootstrap color to use
+@mixin mark-background($base-color) {
+  $light-color: color.mix(white, $base-color, $mark-lighten-percentage);
+  background: linear-gradient(100deg,
+    #{$light-color}00 1%,
+    #{$light-color} 2.5%,
+    #{$light-color}80 5.7%,
+    #{$light-color}1a 93%,
+    #{$light-color}b4 95%,
+    #{$light-color}00 98%),
+  linear-gradient(182deg, #{$light-color}00, #{$light-color}4d 8%, #{$light-color}00 15%);
 }
 
-mark {
-  @extend .mark-green;
-  @extend .rounded;
-}
+// mark {
+//   @include mark-background(map.get($colors, "success"));
+//   border-radius: var(--bs-border-radius);
+// }
 
 code,
 kbd,
@@ -555,7 +557,7 @@ h2,
 h3,
 h4,
 h5,
-h6{
+h6 {
   text-wrap: balance;
 
   code {
@@ -624,8 +626,10 @@ figcaption {
   a {
     box-decoration-break: clone;
 
-    @extend .link-underline-primary;
-    @extend .link-offset-2;
+    --bs-link-underline-opacity: 1;
+    -webkit-text-decoration-color: rgba(var(--bs-primary-rgb), var(--bs-link-underline-opacity));
+    text-decoration-color: rgba(var(--bs-primary-rgb), var(--bs-link-underline-opacity));
+    text-underline-offset: 0.25em;
 
     @include dnbtypography.word-wrap;
   }
@@ -641,23 +645,23 @@ figcaption {
   h5,
   h6 {
 
-    @extend .ff-body;
+    font-family: $ff-body;
     font-weight: 500;
 
     margin-top: 3rem;
 
     .heading-tools {
-      @extend .float-end;
-      @extend .ms-2;
-      @extend .d-none;
+      float: right;
+      margin-left: .5rem;
+      display: none;
     }
 
     &:hover .heading-tools {
-      @extend .d-inline-block;
+      display: inline-block;
     }
 
     a {
-      @extend .text-decoration-none;
+      text-decoration: none;
     }
   }
 
@@ -665,8 +669,8 @@ figcaption {
   h2,
   h3 {
 
-    @extend .border-bottom;
-    @extend .border-light-subtle;
+    border-bottom: var(--bs-border-width) var(--bs-border-style) var(--bs-border-color);
+    border-color: var(--bs-light-border-subtle);
   }
 
   /// hyphenation for various content types
@@ -677,7 +681,7 @@ figcaption {
   td {
     text-wrap: pretty;
 
-    @extend .hyphenate;
+    @include dnbtypography.hyphenate;
     @include dnbtypography.word-wrap;
   }
 
@@ -724,13 +728,15 @@ figcaption {
     border-top: 1px solid $primary;
     font-size: 0.9rem;
 
-    @extend .pt-3;
+    padding-top: 1rem;
 
     a {
-      @extend .text-primary;
+      --bs-text-opacity: 1;
+      color: rgba(var(--bs-primary-rgb), var(--bs-text-opacity));
 
       &:hover {
-        @extend .text-secondary;
+        --bs-text-opacity: 1;
+        color: rgba(var(--bs-secondary-rgb), var(--bs-text-opacity));
       }
     }
   }
@@ -762,8 +768,9 @@ figcaption {
     margin-bottom: 0.5rem;
 
     hr {
-      @extend .border;
-      @extend .border-primary;
+      border: var(--bs-border-width) var(--bs-border-style) var(--bs-border-color);
+      --bs-border-opacity: 1;
+      border-color: rgba(var(--bs-primary-rgb), var(--bs-border-opacity));
     }
 
     .footnote-backref {
@@ -777,7 +784,8 @@ figcaption {
   }
 
   figure {
-    @extend .mx-auto;
+    margin-right: auto;
+    margin-left: auto;
   }
 
   /// opentype font ligature and features
@@ -905,16 +913,17 @@ figcaption {
   /// global figcaption design
   figcaption {
 
-    @extend .text-end;
-    @extend .text-secondary;
-    @extend .fst-italic;
-    @extend .mt-0;
+    text-align: right;
+    --bs-text-opacity: 1;
+    color: rgba(var(--bs-secondary-rgb), var(--bs-text-opacity));
+    font-style: italic;
+    margin-top: 0;
     font-size: 0.9rem;
     width: 100%;
   }
 
   .shortcode--youtube {
-    @extend .mb-3;
+    margin-bottom: 1rem;
   }
 
   // MARK: DNB Tables
@@ -922,11 +931,31 @@ figcaption {
     $table-color: $body-color;
 
     .dark & {
-      @extend .table-dark;
+      --bs-table-color: #fff;
+      --bs-table-bg: #212529;
+      --bs-table-border-color: #4d5154;
+      --bs-table-striped-bg: #2c3034;
+      --bs-table-striped-color: #fff;
+      --bs-table-active-bg: #373b3e;
+      --bs-table-active-color: #fff;
+      --bs-table-hover-bg: #323539;
+      --bs-table-hover-color: #fff;
+      color: var(--bs-table-color);
+      border-color: var(--bs-table-border-color);
     }
 
     .light & {
-      @extend .table-light;
+      --bs-table-color: #000;
+      --bs-table-bg: #f8f9fa;
+      --bs-table-border-color: #c6c7c8;
+      --bs-table-striped-bg: #ecedee;
+      --bs-table-striped-color: #000;
+      --bs-table-active-bg: #dfe0e1;
+      --bs-table-active-color: #000;
+      --bs-table-hover-bg: #e5e6e7;
+      --bs-table-hover-color: #000;
+      color: var(--bs-table-color);
+      border-color: var(--bs-table-border-color);
     }
 
     code,
@@ -939,8 +968,10 @@ figcaption {
     @extend .table-sm;
 
     td {
-      @extend .px-2;
-      @extend .py-1;
+      padding-right: .5rem;
+      padding-left: .5rem;
+      padding-top: .25rem;
+      padding-bottom: .25rem;
 
       &:nth-of-type(1) {
         white-space: nowrap;
@@ -948,18 +979,17 @@ figcaption {
 
       :has(table) {
         padding: 0;
-        @extend .px-0;
-        @extend .py-0;
-        @extend .py-0;
       }
     }
 
     th {
-      @extend .px-2;
-      @extend .py-1;
+      padding-right: .5rem;
+      padding-left: .5rem;
+      padding-top: .25rem;
+      padding-bottom: .25rem;
     }
 
-    @extend .mb-0;
+    margin-bottom:0;
 
   }
 
@@ -1038,7 +1068,7 @@ figcaption {
   }
 
   article:has(&) {
-    @extend .position-relative;
+    position: relative;
   }
 }
 
@@ -1050,13 +1080,7 @@ figcaption {
   background-color: var(--bs-primary);
 }
 
-/// hyphenation for paragraphs and stuff
-.hyphenate {
-  overflow-wrap: break-word;
-  word-wrap: break-word;
-  hyphens: auto;
-  hyphenate-limit-chars: 10 4 4;
-}
+
 
 // MARK: DNB Footer
 #footer {
@@ -1068,11 +1092,12 @@ figcaption {
       svg {
         width: 36px;
         height: 36px;
-        @extend .p-0;
-        @extend .m-0;
+        padding: 0;
+        margin: 0;
       }
 
-      @extend .px-3;
+      padding-right:1rem;
+      padding-left:1rem;
     }
   }
 
@@ -1091,12 +1116,12 @@ figcaption {
   a {
     color: $primary;
 
-    @extend .text-decoration-none;
+    text-decoration: none;
 
     &:hover {
       color: var(--bs-primary-color);
 
-      @extend .text-decoration-none;
+      text-decoration: none;
     }
   }
 }
@@ -1158,13 +1183,13 @@ figcaption {
 .progress {
   background: linear-gradient(90deg,
       map.get(dnbcolors.$colors, "red") 0%,
-      map.get(dnbcolors.$colors, "orange") 12%,
+      map.get(dnbcolors.$colors, "orange") 12.5%,
       map.get(dnbcolors.$colors, "yellow") 25%,
-      map.get(dnbcolors.$colors, "springgreen") 37%,
+      map.get(dnbcolors.$colors, "springgreen") 37.5%,
       map.get(dnbcolors.$colors, "deepskyblue") 50%,
-      map.get(dnbcolors.$colors, "blueviolet") 62%,
+      map.get(dnbcolors.$colors, "blueviolet") 62.5%,
       map.get(dnbcolors.$colors, "mediumvioletred") 75%,
-      map.get(dnbcolors.$colors, "deeppink") 87%,
+      map.get(dnbcolors.$colors, "deeppink") 87.5%,
       map.get(dnbcolors.$colors, "red") 100%);
 }
 
@@ -1173,23 +1198,22 @@ figcaption {
 #pagefind {
   .pagefind-ui__form {
     @extend .input-group;
-    @extend .mb-3;
+    margin-bottom: 1rem;
 
     .pagefind-ui__search-input {
       @extend .form-control;
-      @extend .mb-3;
+      margin-bottom: 1rem;
     }
 
     .pagefind-ui__search-clear {
       @extend .btn;
       @extend .btn-outline-secondary;
-      @extend .mb-3;
+      margin-bottom: 1rem;
     }
 
     .pagefind-ui__drawer {
       @extend .container;
     }
-
   }
 
   .pagefind-ui__button {
@@ -1213,10 +1237,9 @@ figcaption {
 
         /* stylelint-disable-next-line max-nesting-depth, selector-max-compound-selectors --- can't be changed */
         img {
-          @extend .mw-100;
+          max-width: 100%;
         }
       }
-
     }
   }
 }
@@ -1234,14 +1257,16 @@ figcaption {
   >div {
     @extend .btn;
     @extend .btn-link;
-    @extend .rounded;
+    border-radius: var(--bs-border-radius);
 
     [data-bs-theme="light"] & .icon--bs {
-      @extend .text-dark;
+      --bs-text-opacity: 1;
+      color: rgba(var(--bs-dark-rgb), var(--bs-text-opacity));
     }
 
     [data-bs-theme="dark"] & .icon--bs {
-      @extend .text-light;
+      --bs-text-opacity: 1;
+      color: rgba(var(--bs-light-rgb), var(--bs-text-opacity));
     }
   }
 

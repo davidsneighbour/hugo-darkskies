@@ -13,6 +13,15 @@ $border-radius: 5px !default;
   text-overflow: ellipsis;
 }
 
+/// Applies consistent hyphenation and word-breaking rules
+/// @group utilities
+@mixin hyphenate {
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  hyphens: auto;
+  hyphenate-limit-chars: 10 4 4;
+}
+
 @mixin configure($border-radius: null) {
 
   @if $border-radius {
@@ -45,16 +54,16 @@ $border-radius: 5px !default;
 
     // chrome, edge, and safari
     // the entire scrollbar.
-    ::-webkit-scrollbar {
-    }
+    ::-webkit-scrollbar {}
 
     //::-webkit-scrollbar-button — the buttons on the scrollbar (arrows pointing upwards and downwards that scroll one line at a time).
-    ::-webkit-scrollbar-button {    }
+    ::-webkit-scrollbar-button {}
 
     //::-webkit-scrollbar:horizontal{} — the horizontal scrollbar.
     ::-webkit-scrollbar:horizontal {
       height: $width;
     }
+
     //::-webkit-scrollbar:vertical{} — the vertical scrollbar.
     ::-webkit-scrollbar:vertical {
       width: $width;
