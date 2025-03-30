@@ -33,6 +33,11 @@ logo_height = "40"
 logo_width = "40"
 show_title = true
 
+[dnb.theme.limits]
+archive = 25 
+home = 10 # 1 full plus 9
+list = 10 
+
 # stylesheet modifications
 ################################################################################
 [dnb.theme.styles]

@@ -1,21 +1,23 @@
 {{- partials.Include "func/hook.html" ( collections.Dictionary "hook" "init" "context" . ) -}}
+{{- $config := site.Params.dnb.theme -}}
 {{- $paginator := collections.Dictionary -}}
 {{- if compare.Eq "home" .Kind -}}
   {{- /*
   - see https://discourse.gohugo.io/t/possible-first-list-page-showing-9-items-following-showing-10-items/36186/
   */ -}}
-  {{- $p := collections.Where site.RegularPages "Type" "in" site.Params.mainSections -}}
-  {{- $p = collections.Slice site.Home | collections.Append $p -}}
-  {{- $paginator = $.Paginate $p -}}
+  {{- $pageCollection:= collections.Where site.RegularPages "Type" "in" site.Params.mainSections -}}
+  {{- $pageCollection= collections.Sort $pageCollection"Date" "desc" -}}
+  {{- $pageCollection= collections.Slice site.Home | collections.Append $pageCollection -}}
+  {{- $paginator = $.Paginate $pageCollection -}}
 {{- else if compare.Eq .Section "components" -}}
-  {{- $p := collections.Where site.RegularPages "Section" "eq" "components" -}}
-  {{- $p = collections.Where $p "Params.subcollection" "!=" "true" -}}
-  {{- $p = collections.Sort $p "Date" "desc" -}}
-  {{- $paginator = $.Paginate $p -}}
+  {{- $pageCollection:= collections.Where site.RegularPages "Section" "eq" "components" -}}
+  {{- $pageCollection= collections.Where $pageCollection"Params.subcollection" "!=" "true" -}}
+  {{- $pageCollection= collections.Sort $pageCollection"Date" "desc" -}}
+  {{- $paginator = $.Paginate $pageCollection -}}
 {{- else if compare.Eq .Section "archive" -}}
-  {{- $p := collections.Where site.RegularPages "Type" "in" site.Params.mainSections -}}
-  {{- $p = collections.Sort $p "Date" "desc" -}}
-  {{- $paginator = $.Paginate $p 25 -}}
+  {{- $pageCollection:= collections.Where site.RegularPages "Type" "in" site.Params.mainSections -}}
+  {{- $pageCollection= collections.Sort $pageCollection"Date" "desc" -}}
+  {{- $paginator = $.Paginate $pageCollection$config.limits.archive -}}
 {{- else if .IsNode -}}
   {{- $paginator = $.Paginator -}}
 {{- end -}}
