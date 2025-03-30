@@ -157,9 +157,11 @@
         {{/* MARK: >> Section Layout
         */}}
         {{ if eq .Kind "section" }}
-          {{- partials.Include "documentation/pages/list.html" . -}}
+          {{- $path := printf "pages/%s/list.html" (index $config.sectionlayout .Section) -}}
+          {{- partials.Include $path . -}}
         {{ else }}
-          {{- partials.Include "documentation/pages/single.html" . -}}
+          {{- $path := printf "pages/%s/single.html" (index $config.sectionlayout .Section) -}}
+          {{- partials.Include $path . -}}
         {{ end }}
 
       {{ else if eq .Kind "home" }}

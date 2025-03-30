@@ -38,15 +38,16 @@ show_title = true
 [dnb.theme.styles]
 # bgimage = 'images/background.jpg' # relative to /assets
 [dnb.theme.styles.bgimage]
-enabled = true
-format = 'jpg'
-quality = 'q40'
-resize = '1200x'
+enabled = true 
+format = 'jpg' 
+quality = 'q40' 
+resize = '1200x' 
 url = 'images/background.jpg' # relative to /assets
 ################################################################################
 
 [dnb.theme.sectionlayout]
 # force the use of a layout system per section
+# section slug = "layout name"
 documentation = "documentation"
 gohugo = "documentation"
 
@@ -115,7 +116,7 @@ limit = 3
 [dnb.pictures]
 # webp requires the extended gohugo version
 default_format = "jpg" # one of webp, png, jpg
-default_image = "images/og_sitewide.png"
+default_image = "images/og_sitewide.png" 
 # 16:9, 4:3, 1:1 or whatever ratio you want for thumbnails
 # this needs to be a string and needs to be two floats separated by a colon
 # aspect_ratio = "16:9"
@@ -135,7 +136,7 @@ image_sizes = ["494", "517"]
 # head - @see https://dnbhub.xyz/head
 ################################################################################
 [dnb.head]
-disable = []
+disable = [] 
 notranslate = false # tell Google not to provide a translation for this document
 # https://webmonetization.org/docs/getting-started
 monetization = ""
