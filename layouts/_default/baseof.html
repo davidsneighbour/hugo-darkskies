@@ -142,9 +142,144 @@
     {{- /* MARK: Main Content
     */ -}}
     {{- partials.Include "func/hook.html" ( collections.Dictionary "hook" "body-pre-main" "context" . ) -}}
-    <main id="maincontent" tabindex="-1">
+    <main id="maincontent" class="min-vh-100" tabindex="-1">
       {{- partials.Include "func/hook.html" ( collections.Dictionary "hook" "body-main-start" "context" . ) -}}
-      {{- block "main" . -}}{{- end -}}
+
+      {{/*
+      Kind - page, section
+      Layout - set manual via frontmatter (and override Type)
+      Type - set manual via frontmatter
+      Section - everything in the content folder level 1
+      */}}
+
+      {{ if or (eq .Section "gohugo") (eq .Section "documentation") }}
+        {{ if eq .Kind "section" }}
+          {{- partials.Include "documentation/pages/list.html" . -}}
+        {{ else }}
+          {{- partials.Include "documentation/pages/single.html" . -}}
+        {{ end }}
+      {{ else if eq .Kind "home" }}
+
+        {{/* MARK: >> Home Page
+        */}}
+
+        {{- $config := site.Params.dnb.theme -}}
+
+        {{- $mainsectionlink := fmt.Printf "%s%s/" "/" $config.mainsection -}}
+        <section class="section--content">
+          <div class="container-fluid">
+
+            {{- $paginator := .Scratch.Get "paginator" -}}
+            {{- $counter := 0 -}}
+            {{- $home := collections.First 1 $paginator.Pages -}}
+            {{- $first := collections.Complement $home (collections.First 2 $paginator.Pages) -}}
+            {{- $homePosts := collections.Complement $home $first (collections.First 8 $paginator.Pages) -}}
+
+            <div class="row">
+              <div class="mb-5 col-12 snap-align-start snap-y">
+                {{- with (collections.Index $first 0) -}}
+                  {{- partials.Include "content/post.html" . -}}
+                {{- end -}}
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-12">
+                <h2 class="">
+                  <a href="{{- $mainsectionlink -}}">
+                    {{- lang.Translate "theme.recentposts" -}}
+                  </a>
+                </h2>
+              </div>
+            </div>
+
+            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3">
+              {{- range $index, $item := $homePosts -}}
+                <div class="mb-5 col">
+                  {{- $post := collections.Dictionary "context" $item "level" "3" "index" $counter -}}
+                  {{- partials.Include "content/post-preview.html" $post -}}
+                </div>
+                {{- $counter = math.Add $counter 1 -}}
+              {{- end -}}
+            </div>
+
+            <div class="row">
+              <div class="text-center col">
+                <a href="{{- $mainsectionlink -}}" class="btn btn-outline-primary btn-lg">
+                  {{- lang.Translate "theme.readall" -}}
+                </a>
+              </div>
+            </div>
+
+          </div>
+        </section>
+
+      {{ else if eq .Kind "term" }}
+
+        {{/* MARK: >> Term Page
+        */}}
+        {{- partials.Include "func/hook.html" ( collections.Dictionary "hook" "container-start" "context" . ) -}}
+
+        {{- $paginator := .Scratch.Get "paginator" -}}
+
+        <section class="section--title">
+          <div class="container">
+            <div class="row">
+              <div class="mb-5 col-12">
+                <h1 class="post-title text-primary">
+                  {{- lang.Translate "theme.posts_tagged_with" $paginator.TotalNumberOfElements -}}
+                  {{ with .Params.icon }}
+                    {{ partials.Include "icon.html" . }}
+                  {{ end }}
+                  #{{ .Data.Term | urls.URLize | strings.ToLower }}
+                </h1>
+                {{- with .Content -}}
+                  <p class="post-subtitle">{{ . }}</p>
+                {{- end -}}
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {{- partials.Include "content/sections/posts.html" . -}}
+        {{- $options := dict "type" "list" "context" . -}}
+        {{- partials.Include "content/components/tags/tags-overview.html" $options -}}
+        {{- partials.Include "func/hook.html" ( collections.Dictionary "hook" "container-end" "context" . ) -}}
+
+      {{ else if eq .Kind "taxonomy" }}
+
+        {{/* MARK: >> Taxonomy Page
+        */}}
+        {{- $counter := 0 -}}
+        <section class="section--content">
+          <div class="container-fluid">
+            <div class="row">
+              <div class="mb-5 col-12">
+                <h1 class="post-title">{{ lang.Translate "theme.tags" }}</h1>
+              </div>
+              {{- range $key, $taxonomy := site.Taxonomies.tags.ByCount -}}
+                {{- if compare.Lt $counter 4 -}}
+                  {{- with site.GetPage (fmt.Printf "/tags/%s/" .Name) -}}
+                    {{- if compare.Ne .Content "" -}}
+                      <div class="mb-3 col-md-6">
+                        {{- $post := collections.Dictionary "context" . "level" "3" "index" (math.Add $key 1) -}}
+                        {{- partials.Include "content/post-preview.html" $post -}}
+                      </div>
+                      {{- $counter = math.Add $counter 1 -}}
+                    {{- end -}}
+                  {{- end -}}
+                {{- end -}}
+              {{- end -}}
+            </div>
+          </div>
+        </section>
+        {{- $options := dict "type" "list" "context" . -}}
+        {{- partials.Include "content/components/tags/tags-overview.html" $options -}}
+      {{ else }}
+        {{/* MARK: >> All others
+        */}}
+        {{- block "main" . -}}{{- end -}}
+      {{ end }}
       {{- partials.Include "func/hook.html" ( collections.Dictionary "hook" "body-main-end" "context" . ) -}}
     </main>
     {{- partials.Include "func/hook.html" ( collections.Dictionary "hook" "body-post-main" "context" . ) -}}
