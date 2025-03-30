@@ -246,7 +246,7 @@ $mark-padding: 0 0.1875em;
 
 /// breadcrumbs setup
 /* stylelint-disable-next-line scss/no-global-function-names -- quote alone is ok */
-$breadcrumb-divider: string.quote(⟩);
+$breadcrumb-divider: string.quote(∕) !default;
 $breadcrumb-font-size: 0.8rem;
 $breadcrumb-margin-bottom: 0.25rem;
 $breadcrumb-divider-color: var(--bs-tertiary-color);
