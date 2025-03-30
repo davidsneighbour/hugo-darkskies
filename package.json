@@ -6,22 +6,22 @@
   "author": "Patrick Kollitsch <patrick@davids-neighbour.com>",
   "keywords": [],
   "dependencies": {
-    "@alpinejs/collapse": "3.14.8",
-    "@alpinejs/intersect": "3.14.8",
-    "@davidsneighbour/bootstrap-config": "2025.0.2",
+    "@alpinejs/collapse": "3.14.9",
+    "@alpinejs/intersect": "3.14.9",
+    "@davidsneighbour/bootstrap-config": "2025.1.1",
     "@davidsneighbour/debuglogger": "^0.1.0",
-    "@davidsneighbour/markdownlint-config": "2025.0.2",
-    "@davidsneighbour/postcss-config": "2025.0.2",
-    "@davidsneighbour/release-config": "2025.0.2",
-    "@davidsneighbour/remark-config": "2025.0.2",
-    "@davidsneighbour/stylelint-config": "^2025.0.2",
-    "@davidsneighbour/tools": "2025.0.2",
+    "@davidsneighbour/markdownlint-config": "2025.1.1",
+    "@davidsneighbour/postcss-config": "2025.1.1",
+    "@davidsneighbour/release-config": "2025.1.1",
+    "@davidsneighbour/remark-config": "2025.1.1",
+    "@davidsneighbour/stylelint-config": "^2025.1.1",
+    "@davidsneighbour/tools": "2025.1.1",
     "@fullhuman/postcss-purgecss": "7.0.2",
     "@types/alpinejs": "3.13.11",
     "@types/alpinejs__collapse": "3.13.4",
     "@types/alpinejs__intersect": "3.13.4",
-    "@types/node": "22.13.9",
-    "alpinejs": "3.14.8",
+    "@types/node": "22.13.14",
+    "alpinejs": "3.14.9",
     "cssnano-preset-advanced": "7.0.6",
     "pagefind": "1.3.0",
     "postcss": "8.5.3",
@@ -29,7 +29,7 @@
     "sassdoc": "2.7.4",
     "sassdoc-extras": "3.0.0",
     "sassdoc-theme-herman": "6.0.2",
-    "stylelint": "^16.15.0"
+    "stylelint": "^16.17.0"
   },
   "scripts": {
     "release": "wireit",
@@ -69,9 +69,9 @@
     "README.md"
   ],
   "devDependencies": {
-    "@types/youtube": "^0.1.0"
+    "@types/youtube": "0.1.0"
   },
   "stylelint": {
     "extends": "@davidsneighbour/stylelint-config"
-  },
+  }
 }
