@@ -152,19 +152,20 @@
       Section - everything in the content folder level 1
       */}}
 
-      {{ if or (eq .Section "gohugo") (eq .Section "documentation") }}
+      {{ if collections.IsSet $config.sectionlayout .Section }}
+
+        {{/* MARK: >> Section Layout
+        */}}
         {{ if eq .Kind "section" }}
           {{- partials.Include "documentation/pages/list.html" . -}}
         {{ else }}
           {{- partials.Include "documentation/pages/single.html" . -}}
         {{ end }}
+
       {{ else if eq .Kind "home" }}
 
         {{/* MARK: >> Home Page
         */}}
-
-        {{- $config := site.Params.dnb.theme -}}
-
         {{- $mainsectionlink := fmt.Printf "%s%s/" "/" $config.mainsection -}}
         <section class="section--content">
           <div class="container-fluid">
@@ -275,10 +276,13 @@
         </section>
         {{- $options := dict "type" "list" "context" . -}}
         {{- partials.Include "content/components/tags/tags-overview.html" $options -}}
+
       {{ else }}
+
         {{/* MARK: >> All others
         */}}
         {{- block "main" . -}}{{- end -}}
+
       {{ end }}
       {{- partials.Include "func/hook.html" ( collections.Dictionary "hook" "body-main-end" "context" . ) -}}
     </main>

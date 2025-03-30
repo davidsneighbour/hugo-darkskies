@@ -14,6 +14,7 @@ package_path = "dnb/%s.json"
 # theme setup
 ################################################################################
 [dnb.theme]
+devmode = false
 mainsection = "blog"
 slug = "darkskies"
 
@@ -37,12 +38,17 @@ show_title = true
 [dnb.theme.styles]
 # bgimage = 'images/background.jpg' # relative to /assets
 [dnb.theme.styles.bgimage]
-url = 'images/background.jpg' # relative to /assets
-resize = '1200x'
-quality = 'q40'
-format = 'jpg'
 enabled = true
+format = 'jpg'
+quality = 'q40'
+resize = '1200x'
+url = 'images/background.jpg' # relative to /assets
 ################################################################################
+
+[dnb.theme.sectionlayout]
+# force the use of a layout system per section
+documentation = "documentation"
+gohugo = "documentation"
 
 [dnb.theme.giscus]
 enabledDev = true # set to false to disable giscus on localhost and development
@@ -75,8 +81,8 @@ icon = "chevron-double-up"
 
 [dnb.theme.js]
 # script generation settings
-script_type = "typescript" # one of "javascript", "typescript"
 entrypoint = "js/script.ts" # relative to /assets
+script_type = "typescript" # one of "javascript", "typescript"
 
 [dnb.theme.jsbuild.options]
 # options for the js.Build method
@@ -164,11 +170,11 @@ method = "postcss"
 [dnb.head.styles.sassOptions]
 # options for the compilation of CSS
 # see https://gohugo.io/hugo-pipes/scss-sass/#options
-transpiler = "dartsass"
 enableSourceMap = true
 includePaths = ["node_modules/", "assets/"]
 outputStyle = "compressed"
 targetPath = "theme.css"
+transpiler = "dartsass"
 
 [dnb.head.styles.postcssOptions]
 # see https://gohugo.io/functions/css/postcss/#options
@@ -221,4 +227,3 @@ file = "header-topnav-pre"
 [[dnb.hooks.items.theme.post-after]]
 cached = false
 file = "post-after"
-
